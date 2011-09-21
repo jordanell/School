@@ -56,7 +56,7 @@ class Parser {
                 matchFunction();
             } while(nextToken != Token.Eof);
         } catch( ParseError e ) {
-            Console.WriteLine("{0}:{1}: {2}", filename, sc.LineNum, e.Message);
+            SemanticError(e.Message, null);
         }
         return semanticErrorCnt;
     }
