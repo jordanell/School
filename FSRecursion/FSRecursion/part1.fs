@@ -41,8 +41,42 @@ let AllPerms list  =
 
 ////////////////////////////////////////////////////////////
 
+// Does the actual recursion for the even and odd function
+let rec RecursiveOddEven list even odd =
+    match list with
+    | [] -> (even, odd)
+    | hd::tl -> if ((List.head list) % 2 = 0) then
+                    RecursiveOddEven (List.tail list) ((List.head list)::even) odd
+                else
+                    RecursiveOddEven (List.tail list) even ((List.head list)::odd)
+
+// OddEven function
 let OddEven list =
-    
+    RecursiveOddEven list [] []
+
+////////////////////////////////////////////////////////////
+
+// Actual recursion for the merge function
+let rec RecursionMerge final lista listb =
+    match lista with
+    | [] -> List.append final listb
+    | hd::tl -> if (listb = []) then
+                    List.append final lista
+                else if ((List.head lista) <= (List.head listb)) then
+                    printf "final:%A add:%A" final (List.head lista)
+                    RecursionMerge (final @ [(List.head lista)]) (List.tail lista) listb
+                else
+                    printf "final:%A add:%A" final (List.head listb)
+                    RecursionMerge (final @ [(List.head listb)]) lista (List.tail listb)
+
+// Merge function
+let Merge lista listb =
+    RecursionMerge [] lista listb
+
+////////////////////////////////////////////////////////////
+
+// MergeSort function
+let rec MergeSort lista listb =
 
 
 
