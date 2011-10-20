@@ -3,6 +3,7 @@ open System
 
 let testList = [1;3;5;]
 let testList2 = [2;4;6]
+let testList3 = [1;6;3;5;2;4;]
 
 let main =
     Console.WriteLine("Running FSRecurssion...");
@@ -22,5 +23,9 @@ let main =
     let a = part1.Merge testList testList2
     printfn "%A" a
     Console.WriteLine("Excercise 4 done.");
+    Console.WriteLine("Part1, Excercise 5")
+    let a = part1.MergeSort testList3
+    printfn "%A" a
+    Console.WriteLine("Excercise 5 done.");
     Console.ReadKey()
 

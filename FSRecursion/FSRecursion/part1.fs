@@ -46,9 +46,9 @@ let rec RecursiveOddEven list even odd =
     match list with
     | [] -> (even, odd)
     | hd::tl -> if ((List.head list) % 2 = 0) then
-                    RecursiveOddEven (List.tail list) ((List.head list)::even) odd
+                    RecursiveOddEven (List.tail list) (even @ [(List.head list)]) odd
                 else
-                    RecursiveOddEven (List.tail list) even ((List.head list)::odd)
+                    RecursiveOddEven (List.tail list) even (odd @ [(List.head list)])
 
 // OddEven function
 let OddEven list =
@@ -63,10 +63,8 @@ let rec RecursionMerge final lista listb =
     | hd::tl -> if (listb = []) then
                     List.append final lista
                 else if ((List.head lista) <= (List.head listb)) then
-                    printf "final:%A add:%A" final (List.head lista)
                     RecursionMerge (final @ [(List.head lista)]) (List.tail lista) listb
                 else
-                    printf "final:%A add:%A" final (List.head listb)
                     RecursionMerge (final @ [(List.head listb)]) lista (List.tail listb)
 
 // Merge function
@@ -75,8 +73,25 @@ let Merge lista listb =
 
 ////////////////////////////////////////////////////////////
 
+// Cuts list in half
+let gencut(n, list) = 
+    let firstList = list |> Seq.take n |> Seq.toList
+    let secondList = list |> Seq.skip n |> Seq.toList
+    (firstList, secondList)
+    
 // MergeSort function
-let rec MergeSort lista listb =
+let rec MergeSort list =
+    if List.length list <= 1 then
+        list
+    else
+       let (left, right) = gencut (List.length list / 2, list)
+       let leftm = MergeSort left
+       let rightm = MergeSort right
+       let result = Merge leftm rightm
+       result
+
+///////////////////////////////////////////////////////////
+
 
 
 
