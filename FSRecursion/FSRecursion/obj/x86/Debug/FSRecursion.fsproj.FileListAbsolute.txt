@@ -1,0 +1,6 @@
+C:\Users\Jordan\Desktop\CSC-330\FSRecursion\FSRecursion\bin\Debug\FSRecursion.XML
+C:\Users\Jordan\Desktop\CSC-330\FSRecursion\FSRecursion\bin\Debug\FSRecursion.exe
+C:\Users\Jordan\Desktop\CSC-330\FSRecursion\FSRecursion\bin\Debug\FSRecursion.pdb
+C:\Users\Jordan\Desktop\CSC-330\FSRecursion\FSRecursion\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jordan\Desktop\CSC-330\FSRecursion\FSRecursion\obj\x86\Debug\FSRecursion.exe
+C:\Users\Jordan\Desktop\CSC-330\FSRecursion\FSRecursion\obj\x86\Debug\FSRecursion.pdb

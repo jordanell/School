@@ -22,5 +22,10 @@ func Main() {
    y = "def";
    z = x + y;
    WriteLine("z = ", z);
+   z = x * 3;
+   WriteLine("z = ", z);
+   z = x * 0;
+   WriteLine("z = ", z);
+   z = gcd1(x, y, z);
    return 0;
 }
