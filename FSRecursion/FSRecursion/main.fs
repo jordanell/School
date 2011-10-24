@@ -1,11 +1,21 @@
 ﻿module main
 open System
+open System.Text.RegularExpressions
+open Language
 
 let testList = [1;3;5;]
 let testList2 = [2;4;6]
 let testList3 = [1;6;3;5;2;4;]
 
 let vals = [ ("Num", 37); ("x", 42); ("y", -1); ("Num", 11) ]
+
+//TEST VALUES
+let testExp = [ Language.IntConst(99); Language.AddOp; Language.IntConst(40); Language.EOF ]
+
+let exp1 = [ Identifier("x"); MulOp; IntConst(99); AddOp; Identifier("x"); SubOp; IntConst(37); DivOp; SubOp; Identifier("x"); EOF ]
+let exp2 = [ Language.Identifier("x"); Language.MulOp; Language.Identifier("foo"); Language.EOF ]
+let (expTree1,_) = Language.ParseExp exp1
+let (expTree2,_) = Language.ParseExp exp2
 
 let main =
     Console.WriteLine("Running FSRecurssion...");
@@ -40,6 +50,13 @@ let main =
     let a = part2.Update vals "foo" 666
     printfn "%A" a
     Console.WriteLine("Excercise 8 done.");
+
+    ////////////////////////////////////////////////////
+
+    Console.WriteLine("Part2, Excercise 7")
+    let a = part2.Eval vals expTree1
+    printfn "%A" a
+    Console.WriteLine("Excercise 7 done.");
 
     Console.ReadKey()
 

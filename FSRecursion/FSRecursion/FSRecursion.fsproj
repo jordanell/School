@@ -42,6 +42,7 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Language.fs" />
     <Compile Include="part1.fs" />
     <Compile Include="part2.fs" />
     <Compile Include="main.fs" />
