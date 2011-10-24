@@ -66,3 +66,32 @@ let rec Update list string num =
 
  
 /////////////////////////////////////////////////////////////
+
+let Add list string num =
+    ([string, num]) @ list
+
+let rec SingleStep list stmt =
+    let rec AddVarList list vl =
+        match vl with
+        | [] -> list
+        | [v] -> Add list v 0
+        | v :: tail -> AddVarList (Add list v 0) tail
+
+    match stmt with
+    | Declaration(lista) -> match lista with
+                            | [] -> list
+                            | hd::tl -> AddVarList list lista
+                                        
+    | Assignment(name,expression) -> let x = Eval list expression
+                                     if x = None then
+                                        list
+                                     else
+                                        let a = LookUp list name
+                                        if a = None then
+                                            printf "Error: name %A is undeclared" name
+                                            list
+                                        else
+                                            Update list name (Option.get x)
+
+
+/////////////////////////////////////////////////////////////
