@@ -65,5 +65,13 @@ let main =
     printfn "%A" b
     Console.WriteLine("Excercise 9 done.");
 
+    ///////////////////////////////////////////////////
+
+    Console.WriteLine("Part2, Excercise 10")
+    let code = ReadProgram () ;
+    let a = part2.Interpret code
+    //printfn "%A" a
+    Console.WriteLine("Excercise 10 done.");
+
     Console.ReadKey()
 

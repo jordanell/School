@@ -95,3 +95,18 @@ let rec SingleStep list stmt =
 
 
 /////////////////////////////////////////////////////////////
+
+let Interpret stmts =
+    let rec recInterpret list stmts =
+        match stmts with
+        | [] -> list
+        | hd::tail -> let list = SingleStep list hd
+                      recInterpret list tail
+    let rec printInterpret list = 
+        match list with
+        | [] -> printf ""
+        | hd::tail -> printfn "%A = %A" (fst(hd)) (snd(hd))
+                      printInterpret tail
+    let a = recInterpret [] stmts
+    printfn "Interpretation ended normally with\n"
+    printInterpret a
