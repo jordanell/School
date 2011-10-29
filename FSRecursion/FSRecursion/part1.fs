@@ -1,4 +1,4 @@
-﻿// CSC 330 Assignment 2
+﻿// Jordan Ell V00660306 CSC 330 Assignment 2
 module part1
 open System
 
@@ -44,7 +44,7 @@ let AllPerms list  =
 // Does the actual recursion for the even and odd function
 let rec RecursiveOddEven list even odd =
     match list with
-    | [] -> (even, odd)
+    | [] -> (odd, even)
     | hd::tl -> if ((List.head list) % 2 = 0) then
                     RecursiveOddEven (List.tail list) (even @ [(List.head list)]) odd
                 else

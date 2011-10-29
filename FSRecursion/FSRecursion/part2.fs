@@ -1,4 +1,4 @@
-﻿// CSC 330 Assignment 2
+﻿// Jordan Ell V00660306 CSC 330 Assignment 2
 module part2
 open System
 open Language
@@ -46,7 +46,7 @@ let Eval list exp =
         | IntConstExp(n) -> Some(n)
         | IdentifierExp(name) -> let a = (LookUp list name)
                                  if ( a = Option.None ) then
-                                     printf "Error: identifier %A is unbound" name
+                                     printfn "Error: identifier %A is unbound" name
                                      None
                                  else
                                      Some(Option.get a)
@@ -88,7 +88,7 @@ let rec SingleStep list stmt =
                                      else
                                         let a = LookUp list name
                                         if a = None then
-                                            printf "Error: name %A is undeclared" name
+                                            printfn "Error: name %A is undeclared" name
                                             list
                                         else
                                             Update list name (Option.get x)
