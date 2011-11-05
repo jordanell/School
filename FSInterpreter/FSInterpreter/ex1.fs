@@ -38,7 +38,7 @@ let Eval list exp =
                     let l = EvalExp0 left
                     let r = EvalExp0 right
                     if (l <> None && r <> None) then
-                        Some(EvalBinaryToken t (EvalExp0 left) (EvalExp0 right))
+                        Some(EvalBinaryToken t (l) (r))
                     else
                         None
         | UnaryOpExp(t,opnd) -> Some(EvalUnaryToken t (EvalExp0 opnd))
@@ -50,9 +50,8 @@ let Eval list exp =
                                  else
                                      Some(Option.get a)
         | InputExp -> printf "Enter a number: "
-                      let num = Console.Read()
-                      printfn "%A" num
-                      Some(num)
+                      let num = Console.ReadLine()
+                      Some(Convert.ToInt32 num)
 
     EvalExp0 exp
 
