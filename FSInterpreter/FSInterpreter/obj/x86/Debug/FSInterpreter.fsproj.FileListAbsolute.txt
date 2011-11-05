@@ -1,0 +1,6 @@
+C:\Users\Jordan\Desktop\CSC-330\FSInterpreter\FSInterpreter\bin\Debug\FSInterpreter.XML
+C:\Users\Jordan\Desktop\CSC-330\FSInterpreter\FSInterpreter\bin\Debug\FSInterpreter.exe
+C:\Users\Jordan\Desktop\CSC-330\FSInterpreter\FSInterpreter\bin\Debug\FSInterpreter.pdb
+C:\Users\Jordan\Desktop\CSC-330\FSInterpreter\FSInterpreter\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jordan\Desktop\CSC-330\FSInterpreter\FSInterpreter\obj\x86\Debug\FSInterpreter.exe
+C:\Users\Jordan\Desktop\CSC-330\FSInterpreter\FSInterpreter\obj\x86\Debug\FSInterpreter.pdb

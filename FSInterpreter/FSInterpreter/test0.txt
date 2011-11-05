@@ -1,0 +1,3 @@
+var i, sum ;
+i = 10;
+sum = 0;
