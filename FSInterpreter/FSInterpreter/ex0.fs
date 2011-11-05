@@ -3,6 +3,6 @@ open ex1
 open Language
 
 let Run file =
-    ex4.Interpret (ReadProgram file)
+    ex5.Interpret (ReadProgram file)
     
 

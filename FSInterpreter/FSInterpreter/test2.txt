@@ -14,7 +14,8 @@ j = 10;
 while j  do {
     var k;
     k = foo(j, 3);
-    j = j / b;
+    output = 3;
+    j = j / k;
     output = k;
 }
 return 0;

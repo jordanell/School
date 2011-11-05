@@ -1,3 +1,20 @@
-var i, sum ;
-i = 10;
-sum = 0;
+function bar( x ) {
+    output = x;
+    return a + b + x;
+}
+
+function foo( a, b ) {
+    var x;
+    x = bar(a) + b;
+    return x * b;
+}
+
+var j;
+j = 10;
+while j  do {
+    var k;
+    k = foo(j, 3);
+    j = j / b;
+    output = k;
+}
+return 0;

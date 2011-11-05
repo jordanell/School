@@ -118,6 +118,13 @@ let rec SingleStep list stmt =
         | hd::tail -> let list = SingleStep list hd
                       recInterpret list tail
 
+    let rec OperateLoop list exp body = 
+        if((Option.get (Eval list exp)) <> 0) then
+            let b = SingleStep list body
+            OperateLoop list exp body
+        else
+            list
+
     match stmt with
     | Declaration(lista) -> match lista with
                             | [] -> list
@@ -144,10 +151,8 @@ let rec SingleStep list stmt =
                                        SingleStep list thenpart
                                    else
                                        SingleStep list elsepart
-    | While(exp,body) -> if((Option.get (Eval list exp)) <> 0) then
-                            SingleStep list body
-                         else
-                            list
+    | While(exp,body) -> let list = (OperateLoop list exp body)
+                         list
     | Block(stlst) -> let list = NewScope list
                       let list = recInterpret list stlst
                       RemoveTopScope list
