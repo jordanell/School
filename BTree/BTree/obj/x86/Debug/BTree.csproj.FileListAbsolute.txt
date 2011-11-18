@@ -1,1 +1,5 @@
 C:\Users\Jordan\Desktop\CSC-330\BTree\BTree\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jordan\Desktop\CSC-330\BTree\BTree\bin\Debug\BTree.exe
+C:\Users\Jordan\Desktop\CSC-330\BTree\BTree\bin\Debug\BTree.pdb
+C:\Users\Jordan\Desktop\CSC-330\BTree\BTree\obj\x86\Debug\BTree.exe
+C:\Users\Jordan\Desktop\CSC-330\BTree\BTree\obj\x86\Debug\BTree.pdb

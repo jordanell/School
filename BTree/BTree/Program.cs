@@ -7,13 +7,13 @@ namespace BTree
 {
     class Program
     {
-        static void Main(string[] args)
+       /* static void Main(string[] args)
         {
             BTree<string> tree = new BTree<string>();
 
             tree.Add("programming");
 
             Console.WriteLine("test");
-        }
+        }*/
     }
 }

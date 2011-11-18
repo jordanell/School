@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Jordan Ell V00660306 */
+
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -78,16 +81,46 @@ class BTree<T> : ICollection<T> where T : IComparable<T>
     }
 
     /* The copy to function */
+    private void RecursiveCopyTo(T[] array, int arrayIndex, Node node)
+    {
+        if (node.leftChild != null)
+        {
+            RecursiveCopyTo(array, arrayIndex, node.leftChild);
+            arrayIndex++;
+        }
+
+        array[arrayIndex] = node.value;
+
+        if (node.rightChild != null)
+        {
+            RecursiveCopyTo(array, arrayIndex, node.rightChild);
+            arrayIndex++;
+        }
+    }
+
     public void CopyTo(T[] array, int arrayIndex)
     {
-
+        RecursiveCopyTo(array, arrayIndex, root);
     }
 
     /* Get the enumerator */
-    
+    private IEnumerator<T> RecursiveGetEnumerator(Node node)
+    {
+        if (node.leftChild != null)
+            RecursiveGetEnumerator(node.leftChild);
+
+        yield return node.value;
+
+        if (node.rightChild != null)
+            RecursiveGetEnumerator(node.rightChild);
+
+        if (node == root)
+            yield break;
+    }
+
     public IEnumerator<T> GetEnumerator()
     {
-        return root.value;
+        return RecursiveGetEnumerator(root);
     }
 
 
@@ -97,8 +130,136 @@ class BTree<T> : ICollection<T> where T : IComparable<T>
     }
 
     /* Remove a node from the tree */
+    private Node FindMax(Node node)
+    {
+        Node max;
+        if (node.rightChild != null)
+        {
+            max = FindMax(node.rightChild);
+            return max;
+        }
+        else
+            return node;
+    }
+    private void RecursiveRemove(T x, Node node, Node parent)
+    {
+        if (node.value.CompareTo(x) == 0)
+        {
+            // Is a leaf
+            if (node.leftChild == null && node.rightChild == null)
+                node = null;
+
+            // Has only one child
+            if (node.leftChild == null && node.rightChild != null)
+                node = node.rightChild;
+            else if (node.leftChild != null && node.rightChild == null)
+                node = node.leftChild;
+
+            // Has two children
+            if (node.leftChild != null && node.rightChild != null)
+            {
+                Node max = FindMax(node.leftChild);
+                T value = max.value;
+                node.value = value;
+                RecursiveRemove(value, max, null);
+            }
+        }
+        else
+        {
+            if (node.leftChild != null)
+                RecursiveRemove(x, node.leftChild, node);
+            if (node.rightChild != null)
+                RecursiveRemove(x, node.rightChild, node);
+        }
+    }
+
     public bool Remove(T x)
     {
+        if (Contains(x))
+        {
+            RecursiveRemove(x, root, null);
+            return true;
+        }
         return false;
+    }
+
+    /* Clone the tree functions */
+    private void InsertNodeChildren(Node newnode, Node oldnode)
+    {
+        if (oldnode.leftChild != null)
+        {
+            newnode.leftChild = new Node(oldnode.leftChild.value);
+            InsertNodeChildren(newnode.leftChild, oldnode.leftChild);
+        }
+
+        if (oldnode.rightChild != null)
+        {
+            newnode.rightChild = new Node(oldnode.rightChild.value);
+            InsertNodeChildren(newnode.rightChild, oldnode.rightChild);
+        }
+    }
+    public BTree<T> Clone()
+    {
+        BTree<T> newTree = new BTree<T>();
+        //Insert the root node
+        if (this.root != null)
+        {
+            newTree.Add(this.root.value);
+            InsertNodeChildren(this.root, newTree.root);
+        }
+        
+        return newTree;
+    }
+
+    /* Overloading the + operator functions */
+    private void RecursiveAdd(BTree<T> tree, Node node2)
+    {
+        if(node2 != null)
+            tree.Add(node2.value);
+
+        if(node2.leftChild != null)
+            RecursiveAdd(tree, node2.leftChild);
+        if (node2.rightChild != null)
+            RecursiveAdd(tree, node2.rightChild);
+    }
+
+    public static BTree<T> operator+(BTree<T> T1, BTree<T> T2)
+    {
+        T1.RecursiveAdd(T1, T2.root);
+        return T1;
+    }
+
+    /* The ToString method functions */
+    private StringBuilder RecursiveToString(StringBuilder str, Node node)
+    {
+        if (node.leftChild != null)
+        {
+            str.Append("(");
+            str = RecursiveToString(str, node.leftChild);
+            str.Append(")");
+            str.Append(" ");
+        }
+
+        if (node.leftChild == null)
+            str.Append(node.value.ToString());
+
+        if (node.rightChild != null)
+        {
+            str.Append(" ");
+            str.Append("(");
+            str = RecursiveToString(str, node.rightChild);
+            str.Append(")");
+        }
+
+        return str;
+    }
+    public override string ToString()
+    {
+        StringBuilder str = new StringBuilder();
+        str.Append("(");
+        str = RecursiveToString(str, root);
+        str.Append(")");
+
+        return RecursiveToString(str, root).ToString();
     }
 }
