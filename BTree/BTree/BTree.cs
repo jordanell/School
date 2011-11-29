@@ -13,12 +13,14 @@ class BTree<T> : ICollection<T> where T : IComparable<T>
         public T value;
         public Node leftChild;
         public Node rightChild;
+        public Node parent;
 
         public Node(T value)
         {
             this.value = value;
             leftChild = null;
             rightChild = null;
+            parent = null;
         }
 
         public IEnumerator<T> RecursiveGetEnumerator(Node node)
@@ -80,6 +82,7 @@ class BTree<T> : ICollection<T> where T : IComparable<T>
             if (node.leftChild == null)
             {
                 node.leftChild = new Node(x);
+                node.leftChild.parent = node;
                 Count += 1;
             }
             else
@@ -90,6 +93,7 @@ class BTree<T> : ICollection<T> where T : IComparable<T>
             if (node.rightChild == null)
             {
                 node.rightChild = new Node(x);
+                node.rightChild.parent = node;
                 Count += 1;
             }
             else
@@ -141,7 +145,6 @@ class BTree<T> : ICollection<T> where T : IComparable<T>
         }
 
         array[arrayIndex] = node.value;
-        Console.WriteLine("Index: " + arrayIndex + "      Value: " + node.value.ToString());
         arrayIndex++;
 
         if (node.rightChild != null)
@@ -158,7 +161,7 @@ class BTree<T> : ICollection<T> where T : IComparable<T>
         {
             RecursiveCopyTo(array, arrayIndex, root);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             Console.WriteLine("Unable to copy to array. Check your array input size");
         }
@@ -194,16 +197,36 @@ class BTree<T> : ICollection<T> where T : IComparable<T>
         {
             // Is a leaf
             if (node.leftChild == null && node.rightChild == null)
-                node = null;
+            {
+                // Is not the root
+                if (node.parent != null)
+                {
+                    if (node.parent.leftChild != null && node.parent.leftChild.value.CompareTo(x) == 0)
+                        node.parent.leftChild = null;
+                    else
+                        node.parent.rightChild = null;
 
+                    node = null;
+                }
+                else
+                {
+                    root = null;
+                }
+            }
             // Has only one child
-            if (node.leftChild == null && node.rightChild != null)
-                node = node.rightChild;
+            else if (node.leftChild == null && node.rightChild != null)
+            {
+                node.value = node.rightChild.value;
+                node.rightChild = null;
+            }
             else if (node.leftChild != null && node.rightChild == null)
-                node = node.leftChild;
+            {
+                node.value = node.leftChild.value;
+                node.leftChild = null;
+            }
 
             // Has two children
-            if (node.leftChild != null && node.rightChild != null)
+            else if (node.leftChild != null && node.rightChild != null)
             {
                 Node max = FindMax(node.leftChild);
                 T value = max.value;

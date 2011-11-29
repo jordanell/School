@@ -18,6 +18,7 @@ namespace BTree
            tree.Add("opportunity");
            tree.Add("for");
            tree.Add("mistakes");
+           tree.Add("zelda");
 
            Console.WriteLine(tree.printTest());
 
@@ -36,12 +37,19 @@ namespace BTree
            ///////////////////////////////////////////////////
 
            String[] strArray = new string[10];
-           tree.CopyTo(strArray, 6);
+           tree.CopyTo(strArray, 0);
            foreach (string s in strArray)
            {
                Console.WriteLine(s);
            }
 
+           ///////////////////////////////////////////////////
+
+           tree.Remove("languages");
+           foreach (string n in tree)
+           {
+               Console.WriteLine(n.ToString());
+           }
 
 
 
