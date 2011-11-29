@@ -31,6 +31,18 @@ namespace BTree
                Console.WriteLine("Contains is working!");
            }
 
+           Console.WriteLine(tree.Count.ToString());
+
+           ///////////////////////////////////////////////////
+
+           String[] strArray = new string[10];
+           tree.CopyTo(strArray, 6);
+           foreach (string s in strArray)
+           {
+               Console.WriteLine(s);
+           }
+
+
 
 
             Console.Read();

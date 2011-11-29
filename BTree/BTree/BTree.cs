@@ -20,6 +20,34 @@ class BTree<T> : ICollection<T> where T : IComparable<T>
             leftChild = null;
             rightChild = null;
         }
+
+        public IEnumerator<T> RecursiveGetEnumerator(Node node)
+        {
+            if (node.leftChild != null)
+            {
+                foreach (T x in node.leftChild)
+                {
+                    yield return x;
+                }
+            }
+
+            yield return node.value;
+
+            if (node.rightChild != null)
+            {
+                foreach (T x in node.rightChild)
+                {
+                    yield return x;
+                }
+            }
+            
+            yield break;
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return RecursiveGetEnumerator(this);
+        }
     }
 
     private Node root;
@@ -41,7 +69,7 @@ class BTree<T> : ICollection<T> where T : IComparable<T>
 
     public string printTest()
     {
-        return root.leftChild.rightChild.value.ToString();
+        return root.leftChild.leftChild.value.ToString();
     }
 
     /* Following two functions are for adding a node */
@@ -50,14 +78,20 @@ class BTree<T> : ICollection<T> where T : IComparable<T>
         if (node.value.CompareTo(x) == 1)
         {
             if (node.leftChild == null)
+            {
                 node.leftChild = new Node(x);
+                Count += 1;
+            }
             else
                 RecursiveAdd(x, node.leftChild);
         }
         else
         {
             if (node.rightChild == null)
+            {
                 node.rightChild = new Node(x);
+                Count += 1;
+            }
             else
                 RecursiveAdd(x, node.rightChild);
         }
@@ -66,7 +100,10 @@ class BTree<T> : ICollection<T> where T : IComparable<T>
     public void Add(T x)
     {
         if (root == null)
+        {
+            Count += 1;
             root = new Node(x);
+        }
         else
             RecursiveAdd(x, root);
     }
@@ -96,46 +133,41 @@ class BTree<T> : ICollection<T> where T : IComparable<T>
     }
 
     /* The copy to function */
-    private void RecursiveCopyTo(T[] array, int arrayIndex, Node node)
+    private int RecursiveCopyTo(T[] array, int arrayIndex, Node node)
     {
         if (node.leftChild != null)
         {
-            RecursiveCopyTo(array, arrayIndex, node.leftChild);
-            arrayIndex++;
+            arrayIndex = RecursiveCopyTo(array, arrayIndex, node.leftChild);
         }
 
         array[arrayIndex] = node.value;
+        Console.WriteLine("Index: " + arrayIndex + "      Value: " + node.value.ToString());
+        arrayIndex++;
 
         if (node.rightChild != null)
         {
-            RecursiveCopyTo(array, arrayIndex, node.rightChild);
-            arrayIndex++;
+            arrayIndex = RecursiveCopyTo(array, arrayIndex, node.rightChild);
         }
+
+        return arrayIndex;
     }
 
     public void CopyTo(T[] array, int arrayIndex)
     {
-        RecursiveCopyTo(array, arrayIndex, root);
+        try
+        {
+            RecursiveCopyTo(array, arrayIndex, root);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Unable to copy to array. Check your array input size");
+        }
     }
 
-    /* Get the enumerator */
-    private IEnumerator<T> RecursiveGetEnumerator(Node node)
-    {
-        if (node.leftChild != null)
-            RecursiveGetEnumerator(node.leftChild);
-
-        yield return node.value;
-
-        if (node.rightChild != null)
-            RecursiveGetEnumerator(node.rightChild);
-
-        if (node == root)
-            yield break;
-    }
-
+    /* Get the enumerator. Enumorator is actually through the nodes. */
     public IEnumerator<T> GetEnumerator()
     {
-        return RecursiveGetEnumerator(root);
+        return root.RecursiveGetEnumerator(root);
     }
 
 
