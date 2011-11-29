@@ -7,13 +7,33 @@ namespace BTree
 {
     class Program
     {
-       /* static void Main(string[] args)
+       static void Main(string[] args)
         {
-            BTree<string> tree = new BTree<string>();
+           BTree<string> tree = new BTree<string>();
+           
+           tree.Add("programming");
+           tree.Add("languages");
+           tree.Add("provide");
+           tree.Add("lots");
+           tree.Add("opportunity");
+           tree.Add("for");
+           tree.Add("mistakes");
 
-            tree.Add("programming");
+           Console.WriteLine(tree.printTest());
 
-            Console.WriteLine("test");
-        }*/
+           foreach(string n in tree)
+           {
+               Console.WriteLine(n.ToString());
+           }
+
+           if (tree.Contains("lots"))
+           {
+               Console.WriteLine("Contains is working!");
+           }
+
+
+
+            Console.Read();
+        }
     }
 }

@@ -23,29 +23,41 @@ class BTree<T> : ICollection<T> where T : IComparable<T>
     }
 
     private Node root;
-    public int Count { get { return Count; }
-                       set { Count = value; } }
-    public bool IsReadOnly { get { return false; } }
-
+    private int count;
+    public int Count 
+    { 
+        get { return count; }
+        set { count = value; } 
+    }
+    public bool IsReadOnly
+    { 
+        get { return false; } 
+    }
 
     public BTree()
     {
         root = null;
     }
 
+    public string printTest()
+    {
+        return root.leftChild.rightChild.value.ToString();
+    }
+
     /* Following two functions are for adding a node */
     private void RecursiveAdd(T x, Node node)
     {
-        if (node == null)
+        if (node.value.CompareTo(x) == 1)
         {
-            node = new Node(x);
-            Count = Count + 1;
+            if (node.leftChild == null)
+                node.leftChild = new Node(x);
+            else
+                RecursiveAdd(x, node.leftChild);
         }
-
         else
         {
-            if (node.value.CompareTo(x) == 1)
-                RecursiveAdd(x, node.leftChild);
+            if (node.rightChild == null)
+                node.rightChild = new Node(x);
             else
                 RecursiveAdd(x, node.rightChild);
         }
@@ -53,7 +65,10 @@ class BTree<T> : ICollection<T> where T : IComparable<T>
 
     public void Add(T x)
     {
-        RecursiveAdd(x, root);
+        if (root == null)
+            root = new Node(x);
+        else
+            RecursiveAdd(x, root);
     }
 
     /* This function resets the birnary tree */
@@ -65,14 +80,14 @@ class BTree<T> : ICollection<T> where T : IComparable<T>
     /* The following two functions check to see if a value is in the tree */
     private bool RecursiveContains(T x, Node node)
     {
-        if (node.value.CompareTo(x) == 0)
+        if (node == null)
+            return false;
+        else if (node.value.CompareTo(x) == 0)
             return true;
-        else if (node.value.CompareTo(x) == 1)
-            RecursiveContains(x, node.leftChild);
+        else if (node.value.CompareTo(x) >= 0)
+            return RecursiveContains(x, node.leftChild);
         else
-            RecursiveContains(x, node.rightChild);
-
-        return false;
+            return RecursiveContains(x, node.rightChild);
     }
 
     public bool Contains(T x)
