@@ -300,24 +300,24 @@ class BTree<T> : ICollection<T> where T : IComparable<T>
     }
 
     /* The ToString method functions */
-    private StringBuilder RecursiveToString(StringBuilder str, Node node)
+    private StringBuilder RecursiveToString(Node node)
     {
+        StringBuilder str = new StringBuilder();
         if (node.leftChild != null)
         {
             str.Append("(");
-            str = RecursiveToString(str, node.leftChild);
+            str.Append(RecursiveToString(node.leftChild));
             str.Append(")");
             str.Append(" ");
         }
 
-        if (node.leftChild == null)
-            str.Append(node.value.ToString());
+        str.Append(node.value.ToString());
 
         if (node.rightChild != null)
         {
             str.Append(" ");
             str.Append("(");
-            str = RecursiveToString(str, node.rightChild);
+            str.Append(RecursiveToString(node.rightChild));
             str.Append(")");
         }
 
@@ -327,9 +327,9 @@ class BTree<T> : ICollection<T> where T : IComparable<T>
     {
         StringBuilder str = new StringBuilder();
         str.Append("(");
-        str = RecursiveToString(str, root);
+        str.Append(RecursiveToString(root));
         str.Append(")");
 
-        return RecursiveToString(str, root).ToString();
+        return str.ToString();
     }
 }

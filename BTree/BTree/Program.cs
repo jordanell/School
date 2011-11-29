@@ -18,7 +18,7 @@ namespace BTree
            tree.Add("opportunity");
            tree.Add("for");
            tree.Add("mistakes");
-           tree.Add("zelda");
+           //tree.Add("zelda");
 
            Console.WriteLine(tree.printTest());
 
@@ -45,15 +45,19 @@ namespace BTree
 
            ///////////////////////////////////////////////////
 
+           /*
            tree.Remove("languages");
            foreach (string n in tree)
            {
                Console.WriteLine(n.ToString());
            }
+           */
 
+           ///////////////////////////////////////////////////
 
+           Console.WriteLine(tree.ToString());
 
-            Console.Read();
+           Console.Read();
         }
     }
 }
