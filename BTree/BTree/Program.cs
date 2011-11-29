@@ -20,6 +20,13 @@ namespace BTree
            tree.Add("mistakes");
            //tree.Add("zelda");
 
+           BTree<string> tree2 = new BTree<string>();
+
+           tree2.Add("golf");
+           tree2.Add("Hockey");
+           tree2.Add("Baseball");
+           tree2.Add("Swimming");
+
            Console.WriteLine(tree.printTest());
 
            foreach(string n in tree)
@@ -55,6 +62,25 @@ namespace BTree
 
            ///////////////////////////////////////////////////
 
+           Console.WriteLine(tree.ToString());
+
+           ///////////////////////////////////////////////////
+
+           tree = tree + tree2;
+           foreach (string n in tree)
+           {
+               Console.WriteLine(n.ToString());
+           }
+           Console.WriteLine(tree.ToString());
+
+           ///////////////////////////////////////////////////
+
+           BTree<string> newTree = tree.Clone();
+           Console.WriteLine(newTree.ToString());
+
+           newTree.Remove("Hockey");
+
+           Console.WriteLine(newTree.ToString());
            Console.WriteLine(tree.ToString());
 
            Console.Read();

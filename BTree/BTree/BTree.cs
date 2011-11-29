@@ -254,19 +254,21 @@ class BTree<T> : ICollection<T> where T : IComparable<T>
     }
 
     /* Clone the tree functions */
-    private void InsertNodeChildren(Node newnode, Node oldnode)
+    private BTree<T> InsertNodeChildren(BTree<T> newTree, Node oldnode)
     {
         if (oldnode.leftChild != null)
         {
-            newnode.leftChild = new Node(oldnode.leftChild.value);
-            InsertNodeChildren(newnode.leftChild, oldnode.leftChild);
+            newTree.Add(oldnode.leftChild.value);
+            newTree = InsertNodeChildren(newTree, oldnode.leftChild);
         }
 
         if (oldnode.rightChild != null)
         {
-            newnode.rightChild = new Node(oldnode.rightChild.value);
-            InsertNodeChildren(newnode.rightChild, oldnode.rightChild);
+            newTree.Add(oldnode.rightChild.value);
+            newTree = InsertNodeChildren(newTree, oldnode.rightChild);
         }
+
+        return newTree;
     }
     public BTree<T> Clone()
     {
@@ -275,7 +277,7 @@ class BTree<T> : ICollection<T> where T : IComparable<T>
         if (this.root != null)
         {
             newTree.Add(this.root.value);
-            InsertNodeChildren(this.root, newTree.root);
+            newTree = InsertNodeChildren(newTree, this.root);
         }
         
         return newTree;
