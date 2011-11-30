@@ -9,32 +9,30 @@ namespace BTree
     {
        static void Main(string[] args)
         {
-           BTree<string> tree = new BTree<string>();
+            BTree<float> tree = new BTree<float>();
            
-           tree.Add("programming");
-           tree.Add("languages");
-           tree.Add("provide");
-           tree.Add("lots");
-           tree.Add("opportunity");
-           tree.Add("for");
-           tree.Add("mistakes");
+           tree.Add(5.0f);
+           tree.Add(3.1f);
+           tree.Add(4.3f);
+           tree.Add(1.0f);
+           tree.Add(6.8f);
            //tree.Add("zelda");
 
-           BTree<string> tree2 = new BTree<string>();
+           BTree<float> tree2 = new BTree<float>();
 
-           tree2.Add("golf");
-           tree2.Add("Hockey");
-           tree2.Add("Baseball");
-           tree2.Add("Swimming");
+           tree2.Add(5.6f);
+           tree2.Add(7.8f);
+           tree2.Add(4.2f);
+           tree2.Add(2.3f);
 
            Console.WriteLine(tree.printTest());
 
-           foreach(string n in tree)
+           foreach(float n in tree)
            {
                Console.WriteLine(n.ToString());
            }
 
-           if (tree.Contains("lots"))
+           if (tree.Contains(10.3f))
            {
                Console.WriteLine("Contains is working!");
            }
@@ -43,22 +41,22 @@ namespace BTree
 
            ///////////////////////////////////////////////////
 
-           String[] strArray = new string[10];
+           float[] strArray = new float[10];
            tree.CopyTo(strArray, 0);
-           foreach (string s in strArray)
+           foreach (float s in strArray)
            {
                Console.WriteLine(s);
            }
 
            ///////////////////////////////////////////////////
 
-           /*
-           tree.Remove("languages");
-           foreach (string n in tree)
+           
+           tree.Remove(10.0f);
+           foreach (float n in tree)
            {
                Console.WriteLine(n.ToString());
            }
-           */
+           
 
            ///////////////////////////////////////////////////
 
@@ -67,7 +65,7 @@ namespace BTree
            ///////////////////////////////////////////////////
 
            tree = tree + tree2;
-           foreach (string n in tree)
+           foreach (float n in tree)
            {
                Console.WriteLine(n.ToString());
            }
@@ -75,10 +73,10 @@ namespace BTree
 
            ///////////////////////////////////////////////////
 
-           BTree<string> newTree = tree.Clone();
+           BTree<float> newTree = tree.Clone();
            Console.WriteLine(newTree.ToString());
 
-           newTree.Remove("Hockey");
+           //newTree.Remove("Hockey");
 
            Console.WriteLine(newTree.ToString());
            Console.WriteLine(tree.ToString());
