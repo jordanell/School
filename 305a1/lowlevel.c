@@ -70,6 +70,9 @@ vertex* newVertex(int x, int y) {
 void setVertex(int x, int y) {
   if (ind < 3) {
     v[ind] = newVertex(x,y);
+	v[ind]->v_color.red = current.red;
+	v[ind]->v_color.green = current.green;
+	v[ind]->v_color.blue = current.blue;
     ind++;
   }
 }
@@ -120,6 +123,35 @@ void yInc(edge* e) {
   }
 }
 
+/* Prints a color for debugging */
+void printColor(color* color)
+{
+	printf("Red: %i Green: %i, Blue: %i\n", color->red, color->green, color->blue);
+}
+
+void printVertex(vertex* vertex)
+{
+	printf("X: %i Y: %i\n", vertex->x, vertex->y);
+	printColor(&vertex->v_color);
+}
+
+/* Interpolate a color based on two end verticies and a given point along their line */
+color* interpolateColor(vertex* left, vertex* right, int x)
+{
+	color* nColor;
+	nColor = (color*) malloc(sizeof(color));
+	
+	GLubyte red = left->v_color.red + ((float)(x - left->x) * (((float)right->v_color.red - (float)left->v_color.red)/((float)right->x - (float)left->x)));
+	GLubyte green = left->v_color.green + ((float)(x - left->x) * (((float)right->v_color.green - (float)left->v_color.green)/((float)right->x - (float)left->x)));
+	GLubyte blue = left->v_color.blue + ((float)(x - left->x) * (((float)right->v_color.blue - (float)left->v_color.blue)/((float)right->x - (float)left->x)));
+	
+	nColor->red = red;
+	nColor->green = green;
+	nColor->blue = blue;
+	
+	return nColor;
+}
+
 
 /* Innermost loop - draws one row of a triangle */
 void drawRow(int left, int right, int y) {
@@ -127,9 +159,25 @@ void drawRow(int left, int right, int y) {
 
   while (x < right) {
     /* draw pixel using macro (see lowlevel.h) */
+	// ADD CODE HERE
+	
     DRAWPIX(x,y,current.red,current.green,current.blue);  
     x++;
   }
+}
+
+/* Draws a row of the triangle based on verticies */
+void drawRowByVertex(vertex* left, vertex* right, int y)
+{
+	int x = left->x;
+	
+	while (x < right->x)
+	{
+		color* nColor = interpolateColor(left, right, x);
+		DRAWPIX(x,y,nColor->red,nColor->green,nColor->blue);
+		free(nColor);
+		x++;
+	}
 }
 
 /* Draws a triangle with bottom vertex b, top vertex t, and point
@@ -143,10 +191,29 @@ void drawLeftTriangle(vertex* b, vertex* t, vertex* m) {
   lEdge = newEdge(b,m);
   rEdge = newEdge(b,t);
 
-  //interpolate edge colors
-
   for (y=b->y; y<m->y; y++) {
-    drawRow(lEdge->x,rEdge->x,y);
+    //drawRow(lEdge->x,rEdge->x,y);
+	
+	/* Create the left vertex */
+	vertex* leftV = (vertex*) malloc(sizeof(vertex));
+	leftV->x = lEdge->x;
+	leftV->y = y;
+	color* nColor = interpolateColor(b, m, lEdge->x);
+	leftV->v_color = *nColor;
+	
+	/* Create the right vertex */
+	vertex* rightV = (vertex*) malloc(sizeof(vertex));
+	rightV->x = rEdge->x;
+	rightV->y = y;
+	color* nColor2 = interpolateColor(b, t, rEdge->x);
+	rightV->v_color = *nColor2;
+	
+	/* Draw the row with the newly created verticies */
+	drawRowByVertex(leftV, rightV, y);
+	
+	free(leftV);
+	free(rightV);
+	  
     yInc(lEdge);
     yInc(rEdge);
   }
@@ -155,7 +222,28 @@ void drawLeftTriangle(vertex* b, vertex* t, vertex* m) {
   /* now rows from middle-top edge to bottom-top edge */
   lEdge = newEdge(m,t);
   for (; y<=t->y;y++) {
-    drawRow(lEdge->x,rEdge->x,y);
+    //drawRow(lEdge->x,rEdge->x,y);
+	
+	/* Create the left vertex */
+	vertex* leftV = (vertex*) malloc(sizeof(vertex));
+	leftV->x = lEdge->x;
+	leftV->y = y;
+	color* nColor = interpolateColor(m, t, lEdge->x);
+	leftV->v_color = *nColor;
+	  
+	/* Create the right vertex */
+	vertex* rightV = (vertex*) malloc(sizeof(vertex));
+	rightV->x = rEdge->x;
+	rightV->y = y;
+	color* nColor2 = interpolateColor(b, t, rEdge->x);
+	rightV->v_color = *nColor2;
+	  
+	/* Draw the row with the newly created verticies */
+	drawRowByVertex(leftV, rightV, y);
+	
+	free(leftV);
+	free(rightV);
+	  
     yInc(lEdge);
     yInc(rEdge);
   }
@@ -176,7 +264,28 @@ void drawRightTriangle(vertex* b, vertex* t, vertex* m) {
   rEdge = newEdge(b,m);
 
   for (y=b->y; y<m->y; y++) {
-    drawRow(lEdge->x,rEdge->x, y);
+    //drawRow(lEdge->x,rEdge->x, y);
+	
+	  /* Create the left vertex */
+	  vertex* leftV = (vertex*) malloc(sizeof(vertex));
+	  leftV->x = lEdge->x;
+	  leftV->y = y;
+	  color* nColor = interpolateColor(b, t, lEdge->x);
+	  leftV->v_color = *nColor;
+	  
+	  /* Create the right vertex */
+	  vertex* rightV = (vertex*) malloc(sizeof(vertex));
+	  rightV->x = rEdge->x;
+	  rightV->y = y;
+	  color* nColor2 = interpolateColor(b, m, rEdge->x);
+	  rightV->v_color = *nColor2;
+	  
+	  /* Draw the row with the newly created verticies */
+	  drawRowByVertex(leftV, rightV, y);
+	  
+	  free(leftV);
+	  free(rightV);
+	  
     yInc(lEdge);
     yInc(rEdge);
   }
@@ -185,7 +294,28 @@ void drawRightTriangle(vertex* b, vertex* t, vertex* m) {
   /* Draw rows from bottom-top edge to middle-top edge */
   rEdge = newEdge(m,t);
   for (; y<=t->y;y++) {
-    drawRow(lEdge->x,rEdge->x, y);
+    //drawRow(lEdge->x,rEdge->x, y);
+	
+	  /* Create the left vertex */
+	  vertex* leftV = (vertex*) malloc(sizeof(vertex));
+	  leftV->x = lEdge->x;
+	  leftV->y = y;
+	  color* nColor = interpolateColor(b, t, lEdge->x);
+	  leftV->v_color = *nColor;
+	  
+	  /* Create the right vertex */
+	  vertex* rightV = (vertex*) malloc(sizeof(vertex));
+	  rightV->x = rEdge->x;
+	  rightV->y = y;
+	  color* nColor2 = interpolateColor(m, t, rEdge->x);
+	  rightV->v_color = *nColor2;
+	  
+	  /* Draw the row with the newly created verticies */
+	  drawRowByVertex(leftV, rightV, y);
+	  
+	  free(leftV);
+	  free(rightV);
+	  
     yInc(lEdge);
     yInc(rEdge);
   }
