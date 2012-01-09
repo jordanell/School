@@ -141,9 +141,9 @@ color* interpolateColor(vertex* left, vertex* right, int x)
 	color* nColor;
 	nColor = (color*) malloc(sizeof(color));
 	
-	GLubyte red = left->v_color.red + ((float)(x - left->x) * (((float)right->v_color.red - (float)left->v_color.red)/((float)right->x - (float)left->x)));
-	GLubyte green = left->v_color.green + ((float)(x - left->x) * (((float)right->v_color.green - (float)left->v_color.green)/((float)right->x - (float)left->x)));
-	GLubyte blue = left->v_color.blue + ((float)(x - left->x) * (((float)right->v_color.blue - (float)left->v_color.blue)/((float)right->x - (float)left->x)));
+	GLubyte red = (float)left->v_color.red + ((float)(x - left->x) * (((float)right->v_color.red - (float)left->v_color.red)/((float)right->x - (float)left->x)));
+	GLubyte green = (float)left->v_color.green + ((float)(x - left->x) * (((float)right->v_color.green - (float)left->v_color.green)/((float)right->x - (float)left->x)));
+	GLubyte blue = (float)left->v_color.blue + ((float)(x - left->x) * (((float)right->v_color.blue - (float)left->v_color.blue)/((float)right->x - (float)left->x)));
 	
 	nColor->red = red;
 	nColor->green = green;
