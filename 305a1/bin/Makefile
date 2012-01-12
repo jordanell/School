@@ -78,7 +78,7 @@ PROG = canvas
 OBJS = canvas.o lowlevel.o readFile.o
 
 # Header files 
-HDRS = lowlevel.h readFile.h
+HDRS = ../source/lowlevel.h ../source/readFile.h
 
 ########
 # Finally, the commands that actually make stuff
@@ -94,8 +94,12 @@ $(PROG):  $(OBJS)
 
 # change a C object file whenever the corresponding source file
 # or any of the header files changes
-%.o : %.c $(HDRS) 
-	$(CC) -c $(CFLAGS) $(INCLUDE) $<
+canvas.o: ../source/canvas.c $(HDRS)
+	$(CC) -c $(CFLAGS) $(INCLUDE) ../source/$<
+lowlevel.o: ../source/lowlevel.c $(HDRS)
+	$(CC) -c $(CFLAGS) $(INCLUDE) ../source/$<
+readFile.o: ../source/readFile.c $(HDRS)
+	$(CC) -c $(CFLAGS) $(INCLUDE) ../source/$<
 # What this means: 
 # The %.o and %.c mean any .o file and the corresponding .c file
 # All .c's are recompiled if you change one of the header files

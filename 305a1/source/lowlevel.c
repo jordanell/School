@@ -19,7 +19,7 @@ int ind = 0;  /* index of current vertex in the array */
 /* Fake frame buffer - Use an array of 3 GLubytes per pixel as an imitiation
    frame buffer. We'll color the pixels of this array to draw a triangle */
 
-/* pointer to fake frame buffer */
+/* pointer to fake frame buffer */ 
 GLubyte* fb;
 
 
@@ -152,7 +152,8 @@ color* interpolateColor(vertex* left, vertex* right, int x)
 	return nColor;
 }
 
-/* Bresenham's algorithm which does the actual integer interpolation using integers and addition */
+/* Bresenham's algorithm which does the actual integer interpolation using integers and addition
+   Source: http://www.codekeep.net/snippets/e39b2d9e-0843-4405-8e31-44e212ca1c45.aspx */
 int bresenhamAlgorithm(int p1x, int p1y, int p2x, int p2y, int dy, int dx, int dy2, int dx2, int dy2_minus_dx2, int dy2_plus_dx2, int xm)
 {
 	int F, x, y;
@@ -249,7 +250,8 @@ int bresenhamAlgorithm(int p1x, int p1y, int p2x, int p2y, int dy, int dx, int d
 	}
 }
 
-/* Interpolate a color based on two end verticies and a given point along their line using integers and addition */
+/* Interpolate a color based on two end verticies and a given point along their line using integers and addition
+   Source: http://www.codekeep.net/snippets/e39b2d9e-0843-4405-8e31-44e212ca1c45.aspx */
 color* interpolateColorInt(vertex* left, vertex* right, int x)
 {
 	color* nColor;
@@ -282,8 +284,7 @@ color* interpolateColorInt(vertex* left, vertex* right, int x)
 	int dgreen2_plus_dx2 = dgreen2 + dx2;
 	int dblue2_minus_dx2 = dblue2 - dx2;
 	int dblue2_plus_dx2 = dblue2 + dx2;
-	
-	
+		
 	// Call the actual algorithm
 	GLubyte red = bresenhamAlgorithm(left->x, left->v_color.red, right->x, right->v_color.red, dred, dx, dred2, dx2, dred2_minus_dx2, dred2_plus_dx2, x);
 	GLubyte green = bresenhamAlgorithm(left->x, left->v_color.green, right->x, right->v_color.green, dgreen, dx, dgreen2, dx2, dgreen2_minus_dx2, dgreen2_plus_dx2, x);
@@ -293,7 +294,7 @@ color* interpolateColorInt(vertex* left, vertex* right, int x)
 	nColor->green = green;
 	nColor->blue = blue;
 	
-	return nColor;
+	return nColor; 
 }
 
 
