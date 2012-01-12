@@ -250,12 +250,37 @@ int bresenhamAlgorithm(int p1x, int p1y, int p2x, int p2y, int dy, int dx, int d
 	}
 }
 
+/* Interpolate an individual channel of a color using only integers
+ * Source: http://www.codekeep.net/snippets/e39b2d9e-0843-4405-8e31-44e212ca1c45.aspx */
+GLubyte interpolateChannelInt(int p1x, int p1y, int p2x, int p2y, int x)
+{
+	GLubyte channel;
+	
+	// Set up all the variables
+	int dy = p2y - p1y;
+	int dx = p2x - p1x;
+	int dy2 = (dy << 1);
+	int dx2 = (dx << 1);
+	int dy2_minus_dx2 = dy2 - dx2;
+	int dy2_plus_dx2 = dy2 + dx2;
+	
+	// Call the actual algorithm
+	channel = bresenhamAlgorithm(p1x, p1y, p2x, p2y, dy, dx, dy2, dx2, dy2_minus_dx2, dy2_plus_dx2, x);
+	
+	return channel;
+
+}
+
 /* Interpolate a color based on two end verticies and a given point along their line using integers and addition
    Source: http://www.codekeep.net/snippets/e39b2d9e-0843-4405-8e31-44e212ca1c45.aspx */
-color* interpolateColorInt(vertex* left, vertex* right, int x)
+color* interpolateColorInt(vertex* left, vertex* right, int x, int y)
 {
 	color* nColor;
 	nColor = (color*) malloc(sizeof(color));
+	
+	GLubyte red;
+	GLubyte green;
+	GLubyte blue;
 	
 	if(left->x > right->x)
 	{
@@ -265,30 +290,63 @@ color* interpolateColorInt(vertex* left, vertex* right, int x)
 		right = templeft;
 	}
 	
-	// Set up all the variables
-	int dred = right->v_color.red - left->v_color.red;
-	int dgreen = right->v_color.green - left->v_color.green;
-	int dblue = right->v_color.blue - left->v_color.blue;
+	int changex = right->x - left->x;
 	
-	int dx = right->x - left->x;
+	if(left->y > right->y)
+	{
+		vertex* templeft = left;
+		vertex* tempright = right;
+		left = tempright;
+		right = templeft;
+	}
 	
-	int dred2 = (dred << 1);
-	int dgreen2 = (dgreen << 1);
-	int dblue2 = (dblue << 1);
+	int changey = right->y - left->y;
 	
-	int dx2 = (dx << 1);
-	
-	int dred2_minus_dx2 = dred2 - dx2;
-	int dred2_plus_dx2 = dred2 + dx2;
-	int dgreen2_minus_dx2 = dgreen2 - dx2;
-	int dgreen2_plus_dx2 = dgreen2 + dx2;
-	int dblue2_minus_dx2 = dblue2 - dx2;
-	int dblue2_plus_dx2 = dblue2 + dx2;
+	// Handle if we should interpolte by x: angle less than 45 degrees
+	if(changex >= changey)
+	{
+		if(left->x > right->x)
+		{
+			vertex* templeft = left;
+			vertex* tempright = right;
+			left = tempright;
+			right = templeft;
+		}
 		
-	// Call the actual algorithm
-	GLubyte red = bresenhamAlgorithm(left->x, left->v_color.red, right->x, right->v_color.red, dred, dx, dred2, dx2, dred2_minus_dx2, dred2_plus_dx2, x);
-	GLubyte green = bresenhamAlgorithm(left->x, left->v_color.green, right->x, right->v_color.green, dgreen, dx, dgreen2, dx2, dgreen2_minus_dx2, dgreen2_plus_dx2, x);
-	GLubyte blue = bresenhamAlgorithm(left->x, left->v_color.blue, right->x, right->v_color.blue, dblue, dx, dblue2, dx2, dblue2_minus_dx2, dblue2_plus_dx2, x);
+		// Set up all the variables
+		int dred = right->v_color.red - left->v_color.red;
+		int dgreen = right->v_color.green - left->v_color.green;
+		int dblue = right->v_color.blue - left->v_color.blue;
+	
+		int dx = right->x - left->x;
+	
+		int dred2 = (dred << 1);
+		int dgreen2 = (dgreen << 1);
+		int dblue2 = (dblue << 1);
+	
+		int dx2 = (dx << 1);
+	
+		int dred2_minus_dx2 = dred2 - dx2;
+		int dred2_plus_dx2 = dred2 + dx2;
+		int dgreen2_minus_dx2 = dgreen2 - dx2;
+		int dgreen2_plus_dx2 = dgreen2 + dx2;
+		int dblue2_minus_dx2 = dblue2 - dx2;
+		int dblue2_plus_dx2 = dblue2 + dx2;
+		
+		// Call the actual algorithm
+		red = bresenhamAlgorithm(left->x, left->v_color.red, right->x, right->v_color.red, dred, dx, dred2, dx2, dred2_minus_dx2, dred2_plus_dx2, x);
+		green = bresenhamAlgorithm(left->x, left->v_color.green, right->x, right->v_color.green, dgreen, dx, dgreen2, dx2, dgreen2_minus_dx2, dgreen2_plus_dx2, x);
+		blue = bresenhamAlgorithm(left->x, left->v_color.blue, right->x, right->v_color.blue, dblue, dx, dblue2, dx2, dblue2_minus_dx2, dblue2_plus_dx2, x);
+	}
+	// Handle interpolating by Y: angle greater than 45 degrees.
+	else
+	{
+		// Call the actual algorithm by channel
+		red = interpolateChannelInt(left->y, left->v_color.red, right->y, right->v_color.red, y);
+		green = interpolateChannelInt(left->y, left->v_color.green, right->y, right->v_color.green, y);
+		blue = interpolateChannelInt(left->y, left->v_color.blue, right->y, right->v_color.blue, y);
+	
+	}
 	
 	nColor->red = red;
 	nColor->green = green;
@@ -304,7 +362,7 @@ void drawRow(int left, int right, int y) {
 
   while (x < right) {
     /* draw pixel using macro (see lowlevel.h) */
-	// ADD CODE HERE
+	// ADD CODE HERE IN OTHER FUNCTIONS
 	
     DRAWPIX(x,y,current.red,current.green,current.blue);  
     x++;
@@ -318,7 +376,7 @@ void drawRowByVertex(vertex* left, vertex* right, int y)
 	
 	while (x < right->x)
 	{
-		color* nColor = interpolateColorInt(left, right, x);
+		color* nColor = interpolateColorInt(left, right, x,y);
 		DRAWPIX(x,y,nColor->red,nColor->green,nColor->blue);
 		free(nColor);
 		x++;
@@ -343,14 +401,14 @@ void drawLeftTriangle(vertex* b, vertex* t, vertex* m) {
 	vertex* leftV = (vertex*) malloc(sizeof(vertex));
 	leftV->x = lEdge->x;
 	leftV->y = y;
-	color* nColor = interpolateColorInt(b, m, lEdge->x);
+	color* nColor = interpolateColorInt(b, m, lEdge->x,y);
 	leftV->v_color = *nColor;
 	
 	/* Create the right vertex */
 	vertex* rightV = (vertex*) malloc(sizeof(vertex));
 	rightV->x = rEdge->x;
 	rightV->y = y;
-	color* nColor2 = interpolateColorInt(b, t, rEdge->x);
+	color* nColor2 = interpolateColorInt(b, t, rEdge->x,y);
 	rightV->v_color = *nColor2;
 	
 	/* Draw the row with the newly created verticies */
@@ -373,14 +431,14 @@ void drawLeftTriangle(vertex* b, vertex* t, vertex* m) {
 	vertex* leftV = (vertex*) malloc(sizeof(vertex));
 	leftV->x = lEdge->x;
 	leftV->y = y;
-	color* nColor = interpolateColorInt(m, t, lEdge->x);
+	color* nColor = interpolateColorInt(m, t, lEdge->x,y);
 	leftV->v_color = *nColor;
 	  
 	/* Create the right vertex */
 	vertex* rightV = (vertex*) malloc(sizeof(vertex));
 	rightV->x = rEdge->x;
 	rightV->y = y;
-	color* nColor2 = interpolateColorInt(b, t, rEdge->x);
+	color* nColor2 = interpolateColorInt(b, t, rEdge->x,y);
 	rightV->v_color = *nColor2;
 	  
 	/* Draw the row with the newly created verticies */
@@ -415,14 +473,14 @@ void drawRightTriangle(vertex* b, vertex* t, vertex* m) {
 	  vertex* leftV = (vertex*) malloc(sizeof(vertex));
 	  leftV->x = lEdge->x;
 	  leftV->y = y;
-	  color* nColor = interpolateColorInt(b, t, lEdge->x);
+	  color* nColor = interpolateColorInt(b, t, lEdge->x,y);
 	  leftV->v_color = *nColor;
 	  
 	  /* Create the right vertex */
 	  vertex* rightV = (vertex*) malloc(sizeof(vertex));
 	  rightV->x = rEdge->x;
 	  rightV->y = y;
-	  color* nColor2 = interpolateColorInt(b, m, rEdge->x);
+	  color* nColor2 = interpolateColorInt(b, m, rEdge->x,y);
 	  rightV->v_color = *nColor2;
 	  
 	  /* Draw the row with the newly created verticies */
@@ -445,14 +503,14 @@ void drawRightTriangle(vertex* b, vertex* t, vertex* m) {
 	  vertex* leftV = (vertex*) malloc(sizeof(vertex));
 	  leftV->x = lEdge->x;
 	  leftV->y = y;
-	  color* nColor = interpolateColorInt(b, t, lEdge->x);
+	  color* nColor = interpolateColorInt(b, t, lEdge->x,y);
 	  leftV->v_color = *nColor;
 	  
 	  /* Create the right vertex */
 	  vertex* rightV = (vertex*) malloc(sizeof(vertex));
 	  rightV->x = rEdge->x;
 	  rightV->y = y;
-	  color* nColor2 = interpolateColorInt(m, t, rEdge->x);
+	  color* nColor2 = interpolateColorInt(m, t, rEdge->x,y);
 	  rightV->v_color = *nColor2;
 	  
 	  /* Draw the row with the newly created verticies */
