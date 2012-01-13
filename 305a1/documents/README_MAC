@@ -1,0 +1,39 @@
+Jordan Ell, V00660306, Assignment 1
+
+To compile this program, navigate to /bin of the project and type "make BOX=mac".
+To run this program with an input file type "./canvas tri1.input" where tri1.input is the name of your
+input file. make sure you are also inside the folder to which you compiled the code to.
+
+Problem: Integer Interpolation
+
+Description: The integer interpolation problem is simply being able to interpolate all points of a given
+line while only using integers and addition (and subtraction) only. The normal approach to interpolation
+is to use floating point values to easily calculate the need values and then rounding to integers to be
+plotted on a line. So this extra requirement adds some form of complexity to the assignment.
+
+Solution: The solution to this problem is to use Bresenham's Algorithm which provides an instance
+of integer only linear interpolation.
+
+Methodology: The way Bresenham's Algorithm works is to find the change in x and the change in y required
+for each small step of the line. Now each time you move to the next step of the line you can add dx and dy
+to running totals and this way you can keep track of when you need to move y up or down a integer and the 
+same with x. This way you avoid floating point values.
+
+Modified Code: The code that was changed was all in lowlevel.c I change the inner two for loops inside of
+both drawLeftTriangle and drawRightTriangle so that they call interpolate on the edges so that the end
+values are set for a horizontal line. I added drawRowByVertex which takes two vertices as end points so
+that the color can be stored. It also calls interpolate on all points in the line. I added 
+interpolateColorInt function as a starting point of Bresenham's Algorithm and added bresenhamAlgorithm 
+as the rest of the algorithm function. I added interpolateColor for interpolating with floating point
+values. I also added printColor and printVertex as debugging functions. I have also added a function called
+interpolateChannelInt which interpolates only one channel of a color, aka one line.
+
+Additional Marks: I believe I have completed the following tasks outile in the grading rubric:
+	- Hand in source code (20)
+	- Documentation (10)
+	- Code runs without problems (20)
+	- Code compiles (20)
+	- Draws with several triangles; Tuned in images (10)
+	- Integer interpolation (20)
+	- Submitted additional files that make pretty pictures (20) (tri4.input, tri5.input)
+
