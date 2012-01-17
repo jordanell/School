@@ -1,6 +1,8 @@
 Jordan Ell, V00660306, Assignment 1
 
-To compile this program, navigate to /bin of the project and type "make BOX=mac".
+To compile this program, navigate to /bin of the project and type "make BOX=dell". This will work on 
+the machines in Lab ECS242.
+
 To run this program with an input file type "./canvas tri1.input" where tri1.input is the name of your
 input file. make sure you are also inside the folder to which you compiled the code to.
 
