@@ -33,6 +33,10 @@ class Matrix4 {
   void setTranslation(const Vector4 &v);
   void setTranslation(const float &a, const float &b,
 		      const float &c, const float&d);
+			  
+  void setScaleX(float x);
+  void setScaleY(float y);
+  void setScaleZ(float z);
 
                 		
   // operator overloading

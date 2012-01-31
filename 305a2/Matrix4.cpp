@@ -5,6 +5,11 @@
  ******************************/
  
 #include "Matrix4.h"
+#include "Vector4.h"
+
+#include <iostream>
+
+using namespace std;
  
 Matrix4::Matrix4()
 {
@@ -87,6 +92,19 @@ float Matrix4::getValue(int i, int j)
 	return data[index];
 }
 
+void Matrix4::turnLeft(float angle)
+{
+	data[0] = cos(angle);
+	data[1] = -sin(angle);
+	data[4] = sin(angle);
+	data[5] = cos(angle);
+}
+
+void Matrix4::turnRight(float angle)
+{
+	turnLeft(-angle);
+}
+
 Vector4 Matrix4::getTranslation()
 {
 	Vector4 newVector4;
@@ -109,6 +127,21 @@ void Matrix4::setTranslation(const float &a, const float &b, const float &c, con
 	data[7] = b;
 	data[11] = c;
 	data[15] = d;
+}
+
+void Matrix4::setScaleX(float x)
+{
+	data[0] = x;
+}
+
+void Matrix4::setScaleY(float y)
+{
+	data[5] = y;
+}
+
+void Matrix4::setScaleZ(float z)
+{
+	data[10] = z;
 }
 
 float Matrix4::operator() (float i, float j)
@@ -176,10 +209,13 @@ Matrix4 operator*(Matrix4 lhm, Matrix4 rhm)
 	Matrix4 newMatrix4;
 	
 	int i, j;
-	for(int a = 0; i < 16; i++)
+	for(int a = 0; a < 16; a++)
 	{
 		i = a/4 + 1;
-		j = a%4;
+		j = a%4 + 1;
+		//cout << "i: " << i << "\n";
+		//cout << "j: " << j << "\n";
+		//cout << lhm(i,1) << "*" << rhm(1,j) << "+" << lhm(i,2) << "*" << rhm(2,j) << "+" << lhm(i,3) << "*" << rhm(3,j) << "+" << lhm(i,4) << "*" << rhm(4,j) << "\n";
 		newMatrix4.data[a] = lhm(i,1)*rhm(1,j) + lhm(i,2)*rhm(2,j) + lhm(i,3)*rhm(3,j) + lhm(i,4)*rhm(4,j);
 	}
 	
