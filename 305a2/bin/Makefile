@@ -83,7 +83,7 @@ OBJS = plant.o drawplant.o Matrix4.o Vector4.o
 # myVector.o myMatrix.o
 
 # Header files 
-HDRS = drawplant.h Matrix4.h Vector4.h
+HDRS = ../source/drawplant.h ../source/Matrix4.h ../source/Vector4.h
 # myVector.h myMatrix.h
 
 ########
@@ -100,8 +100,14 @@ $(PROG):  $(OBJS)
 
 # change a C object file whenever the corresponding source file
 # or any of the header files changes
-%.o : %.c $(HDRS) 
-	$(CC) -c $(CFLAGS) $(INCLUDE) $<
+plant.o: ../source/plant.cpp $(HDRS)
+	$(CC) -c $(CFLAGS) $(INCLUDE) ../source/$<
+drawplant.o: ../source/drawplant.cpp $(HDRS)
+	$(CC) -c $(CFLAGS) $(INCLUDE) ../source/$<
+Matrix4.o: ../source/Matrix4.cpp $(HDRS)
+	$(CC) -c $(CFLAGS) $(INCLUDE) ../source/$<
+Vector4.o: ../source/Vector4.cpp $(HDRS)
+	$(CC) -c $(CFLAGS) $(INCLUDE) ../source/$<
 # What this means: 
 # The %.o and %.c mean any .o file and the corresponding .c file
 # All .c's are recompiled if you change one of the header files

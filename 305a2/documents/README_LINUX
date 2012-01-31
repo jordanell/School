@@ -1,0 +1,69 @@
+Jordan Ell, V00660306
+
+Title: CSC 305 Assignment 2 - L Systems
+
+Compile / Run Instructions: To compile this program simply navigate to the bin folder in a linux terminal and type 
+"make BOX=dell" without the quotes. Then to run the program simply type "./plant X" where X is a small integer. You
+should see three small plants. To grown a plant press "." and to shrink the plants press ",". If you want to remove
+a tree from the scene look in drawplant.cpp in the drawPlant() method. Here you can comment out trees you don't 
+want in the scene. After you do this, simply recompile and run.
+
+Problem Title: Creating a resizable L System using OpenGL
+
+Solution Methodology: The solution I used consisted of 3 parts. The first part was to create a customized row-order 
+matrix class and a vector class that can work in 2D and in 3D as well. These two classes can be found in the source
+folder under Matrix4 and Vector4. These class allow me to manipulate matrices easily. The second part of my solution
+is generating a string for which the L System can parse over and create the tree. These strings are generated in about
+the same fashion as a grammar. You provide a stater string and some rules and the grammar takes car of substituting
+the rules into the string. The difference here is that all rules get applied to the string at once, not one after
+another which is more traditional in a grammar. The final step is to parse the strings with matrices. Each 
+character in the string represent a matrix operation. Simply keep stacking these operations over each other. Some
+characters also represent when to draw parts of the tree, so load the stacked matrix into OpenGL and then draw the
+part of the tree that you need.
+
+Modified / Added Code: I added the two implementation files for the custom matrix and vector classes under Matrix4.cpp
+and Vector4.cpp. All other code modifications came inside of drawplant.cpp. The drawPlant method now draws multiple
+trees in each scene. I modified the drawLeaf function to load the currentMatrix before drawing. I added the drawBranch
+method to draw branches. I added the load3DMatrix method to take my row order matrices and load them column order 
+into OpenGL. I removed the old load2DMatrix. I added handleLetter and handleLetterWithRandmize functions that take a
+single character and apply the matrix transformation or drawing function required. The WithRandomize one does some
+random calculations to make the tree look more organic. I added applyRule, applyRuleNew and applyRuleNewTwo. The first
+one applies the standard rules to a tree. The second applied some new rules I created to create a different looking
+tree. And the last one creates a tree that has a curve to it. Finally I added generate string which goes over the 
+number of iterations and calls the functions to apply the rules.
+
+Additional Comments: I believe I have completed the following tasks for the assignment
+	-Documentation (10)
+	-Turned in images (10)
+	-Code Compiles (10)
+	-Branching (10)
+	-Turning (10)
+	-Scaling (10)
+	-Used custom matrix/vector classes (10)
+	-Runs without crashing in all cases (10)
+
+	-Significantly change rules(15)
+	-Curves (10)
+	-Randomness (7)
+	-Make many different kinds of plant in a single display (10)
+
+The rules I used are as follows:
+	Standard
+	Axiom: L
+	L -> rF[-L][+L]
+	F -> RF
+
+	New Set One
+	Axiom: L
+	L -> rF[-L][+L]
+	L -> rF[-L][rF[+L]]+rF[-L]
+	F -> RF
+	Note: Here a random number decided which L rules to use
+
+	New Set Two
+	Axiom: A
+	A -> F[-A]B
+	B -> F[+B]A
+
+	For all rules - is turn left, + is turn right, [ is push, ] is pop, A,B,L are leaves, F is branch, r is small
+	scale and R is large scale.
