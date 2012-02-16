@@ -147,6 +147,7 @@ CREATE TABLE complexes
 CREATE TABLE multisport
 (
  cid int,
+ PRIMARY KEY(cid),
  FOREIGN KEY (cid) REFERENCES complexes(cid)
 );
 
@@ -160,6 +161,7 @@ CREATE TABLE designatedfor
  cid int,
  sportname varchar(25),
  locIndicator varchar(20),
+ PRIMARY KEY(cid, sportname),
  FOREIGN KEY (cid) REFERENCES complexes(cid),
  FOREIGN KEY (sportname) REFERENCES sports(name)
 );
@@ -168,6 +170,7 @@ CREATE TABLE onesport
 (
  cid int,
  sportname varchar(25),
+ PRIMARY KEY(cid, sportname),
  FOREIGN KEY (cid) REFERENCES complexes(cid),
  FOREIGN KEY (sportname) REFERENCES sports(name)
 );
@@ -180,11 +183,12 @@ CREATE TABLE officials
 
 CREATE TABLE events
 (
- eventid int NOT NULL PRIMARY KEY,
+ eventid int NOT NULL,
  e_date DATE,
  np int,
  chief_org_oid int,
  cid int,
+ PRIMARY KEY(eventid, chief_org_oid, cid),
  FOREIGN KEY (chief_org_oid) REFERENCES officials(oid),
  FOREIGN KEY (cid) REFERENCES complexes(cid)
 );
@@ -193,6 +197,7 @@ CREATE TABLE involved
 (
  oid int,
  eventid int,
+ PRIMARY KEY(oid, eventid),
  FOREIGN KEY (oid) REFERENCES officials(oid),
  FOREIGN KEY (eventid) REFERENCES events(eventid)
 );
@@ -207,6 +212,7 @@ CREATE TABLE usedfor
 (
  equipid int,
  eventid int,
+ PRIMARY KEY(equipid, eventid),
  FOREIGN KEY (equipid) REFERENCES equipment(equipid),
  FOREIGN KEY (eventid) REFERENCES events(eventid)
 );
@@ -246,9 +252,10 @@ CREATE TABLE departments
 CREATE TABLE students
 (
  name varchar(30),
- snumber int NOT NULL PRIMARY KEY,
+ snumber int NOT NULL,
  code int,
  dob DATE,
+ PRIMARY KEY(snumber, code),
  FOREIGN KEY (code) REFERENCES departments(code)
 );
 
@@ -268,6 +275,7 @@ CREATE TABLE offered
 (
  code int,
  name varchar(30),
+ PRIMARY KEY(code, name),
  FOREIGN KEY (code) REFERENCES departments(code),
  FOREIGN KEY (name) REFERENCES courses(name)
 );
@@ -278,6 +286,7 @@ CREATE TABLE registered
  name varchar(30),
  term int,
  grade int,
+ PRIMARY KEY(snumber, name),
  FOREIGN KEY (snumber) REFERENCES students(snumber),
  FOREIGN KEY (name) REFERENCES courses(name)
 );
