@@ -103,15 +103,8 @@ void Arcball::setZoom(float radius, Vector4 eye, Vector4 up)
  */
 void Arcball::applyTransform()
 {
-	GLfloat M4D[16];
-	
-	M4D[0] = transform.data[0]; M4D[1] = transform.data[4]; M4D[2] = transform.data[8]; M4D[3] = transform.data[12];
-	M4D[4] = transform.data[1]; M4D[5] = transform.data[5]; M4D[6] = transform.data[9]; M4D[7] = transform.data[13];
-	M4D[8] = transform.data[2]; M4D[9] = transform.data[6]; M4D[10] = transform.data[10]; M4D[11] = transform.data[14];
-	M4D[12] = transform.data[3]; M4D[13] = transform.data[7]; M4D[14] = transform.data[11]; M4D[15] = transform.data[15];
-	
 	glMatrixMode(GL_MODELVIEW);
-	glMultMatrixf(M4D);
+	glMultMatrixf(transform.data);
 }
 
 Vector4 Arcball::sphereCoords(GLdouble mx, GLdouble my)
@@ -219,6 +212,11 @@ void Arcball::drag(GLdouble mx, GLdouble my)
 	}
 }
 
+/*
+ * This create the transformation quaternion
+ * This also converts the tranformation matrix into
+ * column order which OpenGL needs
+ */
 void Arcball::quaternion(GLfloat x, GLfloat y, GLfloat z, GLfloat w)
 {
 	GLfloat x2 = x*x;
@@ -232,15 +230,15 @@ void Arcball::quaternion(GLfloat x, GLfloat y, GLfloat z, GLfloat w)
 	GLfloat wz = w*z;
 	
 	thisRot.data[0] = 1 - 2*y2 - 2*z2;
-	thisRot.data[1] = 2*xy - 2*wz;
-	thisRot.data[2] = 2*xz + 2*wy;
+	thisRot.data[1] = 2*xy + 2*wz;
+	thisRot.data[2] = 2*xz - 2*wy;
 	
-	thisRot.data[4] = 2*xy + 2*wz;
+	thisRot.data[4] = 2*xy - 2*wz;
 	thisRot.data[5] = 1 - 2*x2 - 2*z2;
-	thisRot.data[6] = 2*yz - 2*wx;
+	thisRot.data[6] = 2*yz + 2*wx;
 	
-	thisRot.data[8] = 2*xz - 2*wy;
-	thisRot.data[9] = 2*yz + 2*wx;
+	thisRot.data[8] = 2*xz + 2*wy;
+	thisRot.data[9] = 2*yz - 2*wx;
 	thisRot.data[10]= 1 - 2*x2 - 2*y2;
 }
 
