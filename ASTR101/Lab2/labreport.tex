@@ -1,0 +1,211 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Laboratory Report LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{wasysym}
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+
+\title{Apparent Positions of The Planets \\ ASTR 101} % Title
+
+\author{Jordan \textsc{Ell} \\ jordan.ell7@gmail.com \\ V00660306} % Author name
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+\begin{tabular}{lr}
+Date Performed: 24/09/2012 \\ % Date the experiment was performed and partner's name
+Supervisor: Jillian Scudder % Instructor/supervisor
+\end{tabular}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Objective}
+
+This report will demonstrate the proper procedure of finding the five visible planets apparent positions in the sky.
+It explains how to map the planets on a polar coordinate graph and ecliptic constellation chart as well as the proper 
+use and data collection from a planisphere.\\
+ 
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+Being able to locate the planets inside our solar system is a key task during astronomical observations. 
+
+%----------------------------------------------------------------------------------------
+%	SECTION 3
+%----------------------------------------------------------------------------------------
+
+\section{Equipment}
+
+The three main pieces of equipment required for this lab are as follows. First, a polar coordinate graph which is used for
+charting where planets are relative to the sun at any given point. This report will use the chart with measuring 1 AU as 
+one dark black ring from the centre. Second, a constellation equatorial chart. This chart has measurements in declination, 
+measured in degrees, and right ascension, measured in hours and minutes. Lastly, a planisphere is needed, which is a
+quick reference to stars given a day and time of night. Other common equipment needed for this lab includes: protractor,
+scissors, and coloured pencils.
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 4
+%----------------------------------------------------------------------------------------
+
+\section{Procedure}
+
+Given the data inside of Table~\ref{tab:long} and Table~\ref{tab:radii}, a heliocentric sketch was made of Venus', Earth's, Mars', 
+Jupiter's, and Saturn's position at the dates of 2012-Sept-22, 2012-No-21, and 2013-Mar-20. This was accomplished by first
+looking up a planet in Table~\ref{tab:radii} to find its orbit radius (measured in A.U) in order to give it a distance away from the
+sun. We are assuming perfect circles for orbits. Next, a lookup of the planet's heliocentric longitude was preformed on 
+Table~\ref{tab:long}. With these two coordinates, a sketch of where the planet should be located was able to be made on the 
+polar coordinate graph given that the sun was placed at the centre and that each dark black line represented 1 A.U. This process
+was repeated for all five planets and all three dates listed in Table~\ref{tab:long}\\
+
+Next, the visibility of each planet given the four times of day: noon, sunset, midnight, and sunrise are made. This was accomplished
+using a small piece of paper as a guide for East and West on the Earth placed over top of the Earth in the sketch made above. Knowing,
+the Earth rotates counter clockwise, if viewed from above, the paper guide was rotated to simulate a field of vision on the Earth at
+the four given times of day. A planet's visibility can then be determined by locating it (visible) or not locating it (not visible) in the
+180$^\circ$ view provided by the paper guide. These results can be found in Table~\ref{tab:tod}.\\
+
+Now, the determination of the planet's alignment is made. By looking at sketch made above, it was determined (for the day of
+2012-Sept-22) what a planet's alignment is relative to the Earth and Sun. This was done purely by observation and with 
+approximating the planet's actual position to that of a specific alignment. The results from these observations can be found
+in the Configuration column of Table~\ref{tab:tod}.\\
+
+With the now sketched heliocentric view of planetary positions, geocentric equatorial positions of the planets were then
+calculated for the day of 2012-Sept-22. This was accomplished by first measuring the geocentric ecliptic longitudes of the planets.
+This was calculated by measuring the angle between the Earth and the planets in question, noting that the Earth is now the origin 
+of measurement as opposed to the sun and that angles are measured from. These measurements can be found in the 
+Ecliptic Long. column of Table~\ref{tab:pos}. Next, a plot of the ecliptic longitudes was made onto the provided SC001
+constellation chart. This was accomplished by simply mapping the found ecliptic longitude above with the given degrees on
+the ecliptic on the SC001. Finally, the right ascension (measured in hours and minutes) and declination (measured in degrees)
+were measured off the SC001 chart for the Sun and given planets. The results of these readings can be found in Table~\ref{tab:pos}.
+These results are our final geocentric equatorial positions of the planets.\\
+
+Lastly, minor approximate measurements were made using a Planisphere. The Planisphere was used by placing a provided circular
+map of the stars with labelled months and days of the year underneath an ellipse which has times of night and rotating the 
+circular map of the stars so that your desired time and day match up. What is shown through the ellipse of the stars is what will 
+be visible from the given latitude of the planisphere. The measurements taken can be found at the bottom of 
+Section~\ref{sec:tnm}.\\
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 5
+%----------------------------------------------------------------------------------------
+
+\section{Observations}
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 6
+%----------------------------------------------------------------------------------------
+
+\section{Tables and Measurements}
+\label{sec:tnm}
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{l c c c c c }
+\hline
+Date & Venus & Earth & Mars & Jupiter & Saturn\\
+\hline
+\hline
+2012-Sep-22 & 068 & 000 & 261 & 065 & 211\\
+2012-Nov-21 & 166 & 060 & 297 & 070 & 213\\
+2013-Mar-20 & 354 & 180 & 011 & 081 & 217\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Heliocentric Longitudes from Astronomical Almanac.\label{tab:long}}
+\end{table}
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{ c c c c }
+\hline
+Planet & Orbit Radius (A.U) & Period (years) & Symbol\\
+\hline
+\hline
+Sun &  &  & \astrosun \\
+Venus & 0.72 & 0.62 & \venus\\
+Earth & 1.00 & 1.00 & \earth\\
+Mars & 1.52 & 1.88 & \mars\\
+Jupiter & 5.20 & 11.86 & \jupiter\\
+Saturn & 9.54 & 29.46 & \saturn\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Radii and Period of Orbits.\label{tab:radii}}
+\end{table}
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{| c | c | c | c | c | c |}
+\hline
+Planet & Noon & Sunset & Midnight & Sunrise & Configuration\\
+\hline
+\hline
+Venus & \cmark & & & \cmark & Greatest Western Elongation \\
+Mars & \cmark & \cmark & & & Greatest Eastern Elongation\\
+Jupiter & & & \cmark & \cmark & Quadrature\\
+Saturn & \cmark & \cmark & & & Conjunction \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Planets as seen from the Earth.\label{tab:tod}}
+\end{table}
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{| c | c | c | c | c | }
+\hline
+Planet & Ecliptic Long. & Constellation & Right Ascension & Declination\\
+\hline
+\hline
+Sun & 180$^\circ$ & Virgo & 00:00 & 0$^\circ$. \\
+Venus & 134$^\circ$ & Cancer & 09:02 & 16$^\circ$. \\
+Mars & 230$^\circ$ & Libra & 15:10 & -17$^\circ$. \\
+Jupiter & 73.5$^\circ$ & Taurus & 04:41 & 21$^\circ$. \\
+Saturn & 207$^\circ$ & Virgo & 13:42 & -11$^\circ$. \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Geocentric Equatorial Position of the Planets.\label{tab:pos}}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\begin{thebibliography}{9}
+
+\bibitem{Smith:2012qr}
+Smith, J.~M. and Jones, A.~B. (2012).
+\newblock {\em Chemistry}.
+\newblock Publisher, City, 7th edition.
+
+\end{thebibliography}
+
+\end{document}
