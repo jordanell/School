@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.10)  24 SEP 2012 12:39
+=======
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.4)  12 SEP 2012 09:56
+>>>>>>> e7296205bdec3cd63ab44479cf10251e0df9e260
 entering extended mode
  %&-line parsing enabled.
 **labreport.tex
@@ -212,12 +216,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 254--255
 [8] [9] (./labreport.aux) ) 
 Here is how much of TeX's memory you used:
  1574 strings out of 493848
- 19077 string characters out of 1152823
+ 19077 string characters out of 1152824
  73892 words of memory out of 3000000
  4870 multiletter control sequences out of 15000+50000
  9016 words of font info for 33 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 27i,6n,20p,276b,236s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,6n,20p,278b,236s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texmf-texlive/fonts/type1/public/amsfont
 s/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmcsc1
 0.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
@@ -227,7 +231,11 @@ ts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/pub
 lic/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
 /cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b>
+<<<<<<< HEAD
 Output written on labreport.pdf (9 pages, 408209 bytes).
+=======
+Output written on labreport.pdf (9 pages, 408040 bytes).
+>>>>>>> e7296205bdec3cd63ab44479cf10251e0df9e260
 PDF statistics:
  76 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
