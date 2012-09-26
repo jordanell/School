@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.10)  25 SEP 2012 17:09
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.4)  26 SEP 2012 10:07
 entering extended mode
  %&-line parsing enabled.
 **labreport.tex
@@ -200,7 +200,7 @@ Missing character: There is no “ in font cmr10!
 [7] (./labreport.aux) ) 
 Here is how much of TeX's memory you used:
  1463 strings out of 493848
- 17300 string characters out of 1152823
+ 17300 string characters out of 1152824
  70340 words of memory out of 3000000
  4738 multiletter control sequences out of 15000+50000
  13507 words of font info for 53 fonts, out of 3000000 for 9000
@@ -215,7 +215,7 @@ pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/
 amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
 cmti10.pfb></usr/share/texmf-texlive/fonts/type1/urw/zapfding/uzdr.pfb></usr/sh
 are/texmf-texlive/fonts/type1/public/wasy/wasy10.pfb>
-Output written on labreport.pdf (7 pages, 121018 bytes).
+Output written on labreport.pdf (7 pages, 120815 bytes).
 PDF statistics:
  67 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
