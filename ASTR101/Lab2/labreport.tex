@@ -53,13 +53,21 @@ use of a planisphere.\\
 
 \section{Introduction}
 
-Observation of the planets dates is an important task in the field of astronomy. The term planet comes from Ancient Greek
+Observation of the planets is an important task in the field of astronomy. The term planet comes from an Ancient Greek word
 meaning "wandering star". Ancient tribes first spotted these stars moving against the backdrop of other stars and have been
 since studied for their orbits, elemental make-up as well as other properties. While most planets in our solar system have been
-discovered by simply looking up at the sky, some have also been discovered by mathematics (Uranus). As science has evolved,
-our model for the planets has moved from and Earth to Sun centred, which has drastic effects on the planet's orbits. After having
-read this report, our view of how to find the planets in the sky should become clear as well as having a broad understanding
-of their orbits in both distance and period.
+discovered by simply looking up at the sky, some have also been discovered by mathematics (Neptune)~\cite{Edmund:2008}. 
+As science has evolved, our model for the planets has moved from and Earth to Sun centred, which has drastic effects on the 
+planet's orbits. We have refined our notion of planetary movement from around the Earth to perfect circles around the Sun,
+to Kepler's 1st law which explains the elliptical path that planets take around the Sun~\cite{Holton:2009}. Our studies of the
+planets more recently have even included multiple satellites and even a few rovers on Mars to search for evidence of past
+life~\cite{NASA:2011}. While these explorations are viable, this report will focus on a simpler understanding of some planetary
+properties.
+After having read this report, our view of how to find the planets in the sky should become clear as well as having a broad 
+understanding of their positions in both distance and period from the Sun, and their equatorial positioning from Earth.
+During this lab, we will make the large assumption that planets travel in perfect circles around the Sun. We know this not
+to be true but will make for easier observations and possible calculations. It will also be assumed that planets travel along
+the ecliptic in a perfect path.\\
 
 %----------------------------------------------------------------------------------------
 %	SECTION 3
@@ -68,12 +76,11 @@ of their orbits in both distance and period.
 \section{Equipment}
 
 The three main pieces of equipment required for this lab are as follows. First, a polar coordinate graph which is used for
-charting where planets are relative to the sun at any given point. This report will use the chart with measuring 1 AU as 
-one dark black ring from the centre. Second, a constellation equatorial chart. This chart has measurements in declination, 
+charting where planets are relative to the sun at any given date. This report will use the chart with measuring 1 AU as 
+one dark black ring from the centre. Second, a  SC001 constellation equatorial chart. This chart has measurements in declination, 
 measured in degrees, and right ascension, measured in hours and minutes. Lastly, a planisphere is needed, which is a
 quick reference to stars given a day and time of night. Other common equipment needed for this lab includes: protractor,
-scissors, and coloured pencils.
-
+scissors, and coloured pencils.\\
 
 
 %----------------------------------------------------------------------------------------
@@ -97,25 +104,27 @@ the four given times of day. A planet's visibility can then be determined by loc
 180$^\circ$ view provided by the paper guide. These results can be found in Table~\ref{tab:tod}.\\
 
 Now, the determination of the planet's alignment is made. By looking at sketch made above, it was determined (for the day of
-2012-Sept-22) what a planet's alignment is relative to the Earth and Sun. This was done purely by observation and with 
+2012-Sept-22) what a planet's alignment is relative to the Earth and Sun. This was done purely by observation of the sketch
+made above and with 
 approximating the planet's actual position to that of a specific alignment. The results from these observations can be found
 in the Configuration column of Table~\ref{tab:tod}.\\
 
 With the now sketched heliocentric view of planetary positions, geocentric equatorial positions of the planets were then
 calculated for the day of 2012-Sept-22. This was accomplished by first measuring the geocentric ecliptic longitudes of the planets.
 This was calculated by measuring the angle between the Earth and the planets in question, noting that the Earth is now the origin 
-of measurement as opposed to the sun and that angles are measured from. These measurements can be found in the 
+of measurement as opposed to the Sun that angles are measured from. These measurements can be found in the 
 Ecliptic Long. column of Table~\ref{tab:pos}. Next, a plot of the ecliptic longitudes was made onto the provided SC001
 constellation chart. This was accomplished by simply mapping the found ecliptic longitude above with the given degrees on
-the ecliptic on the SC001. Finally, the right ascension (measured in hours and minutes) and declination (measured in degrees)
+the ecliptic on the SC001. This is under the assumption that the planets in question follow the ecliptic path perfectly and do not
+stray from it. Finally, the right ascension (measured in hours and minutes) and declination (measured in degrees)
 were measured off the SC001 chart for the Sun and given planets. The results of these readings can be found in Table~\ref{tab:pos}.
-These results are our final geocentric equatorial positions of the planets.\\
+These results are our final geocentric equatorial positions of the planets for the dat of 2012-Sept-22.\\
 
 Lastly, minor approximate measurements were made using a Planisphere. The Planisphere was used by placing a provided circular
 map of the stars with labelled months and days of the year underneath an ellipse which has times of night and rotating the 
 circular map of the stars so that your desired time and day match up. What is shown through the ellipse of the stars is what will 
-be visible from the given latitude of the planisphere. The measurements taken can be found at the bottom of 
-Section~\ref{sec:tnm}.\\
+be visible from the given latitude of the planisphere. The questions and answer measurements taken can be found in
+Section~\ref{sec:qna}.\\
 
 
 %----------------------------------------------------------------------------------------
@@ -214,6 +223,7 @@ Saturn & 207$^\circ$ & Virgo & 13:42 & -11$^\circ$. \\
 %----------------------------------------------------------------------------------------
 
 \section{Questions}
+\label{sec:qna}
 
 The following questions and answers are asked throughout the lab manual for ASTR101 Lab 2. The
 questions have been repeated for the reader.
@@ -221,12 +231,13 @@ questions have been repeated for the reader.
 \begin{enumerate}
 \item[Q.] Why does Venus go through phases? 
 \item[A.] Venus has phases similar to that of the sun because of the view the Earth has of Venus as it travels
-around the sun \textit{inside} of the orbit of the Earth around the sun. The different phases are caused by the different
-perspective we have on Earth of the sun shining on Venus. Figure~\ref{fig:pov} below shows how the different phases of
+around the sun \textit{inside} of the orbit of the Earth around the Sun. The different phases are caused by the different
+perspective we have on Earth of the sun shining on Venus.  The first person to observe these phases was Galileo 
+Galilei in 1610~\cite{Lance:1995}. Figure~\ref{fig:pov} below shows how the different phases of
 Venus appear from Earth.
 
 \addtocounter{figure}{2}
-\begin{figure}
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.4\textwidth]{images/blank}
 \caption{The phases of Venus.\label{fig:pov}}
@@ -235,7 +246,9 @@ Venus appear from Earth.
 \item[Q.] In which zodiacal constellation was the sun located when you were born? What is your astrological sign?
 Check with your partners and discuss any discrepancy.
 \item[A.] As per Figure 2, the sun was located in Gemini when I was born on July 12th. This is a discrepancy with
-my astrological sign of Cancer. This difference is caused by the precession of the Earth.
+my astrological sign of Cancer. This difference is caused by the precession of the Earth. Unknown to most, there
+is actually a 13th constellation which the Sun passes through known as Ophiuchus as opposed to the 
+traditionally known 12~\cite{Storm:1995}.
 \end{enumerate}
 
 The following answers are labelled to coincide with the lab manual for ASTR101 Lab 2 section
@@ -244,19 +257,22 @@ questions 1 and 3 are instructions rather than actual questions/measurements, th
 are given using the provided planisphere and approximations.
 
 \begin{enumerate}
-\item[2.] While the circular dial is being rotated, the star Polaris does not seem to move. 
+\item[2.] While the circular dial is being rotated, the star Polaris does not seem to move. This is to be expected as
+Polaris the "North Star" is the \textit{current} pivot point around which all stars rotate.
 \item[4.] At the time of 12AM on the night of June 01, the star Vega, which is apart of the constellation Lyra, appears to 
-be in the centre (Zenith) of the planisphere.
+be in the centre (Zenith) of the planisphere. Vega was the northern pole star around the year 12,000 BC~\cite{Stell:2009}.
 \item[5.] At the time of 12AM on the night of June 01, the star Spica, which is apart of the constellation Virgo, appears
 to be on the "Western Horizon" of the planisphere.
 \item[6.] At the time of 11PM on the night of June 15, the star Vega again appears at the Zenith while the star Spica
-again appears at the "Western Horizon" of the planisphere.
+again appears at the "Western Horizon" of the planisphere. Spica was a key star in the discovery of the precession
+of the Earth~\cite{Rufus:1943}.
 \item[7.] At the time of 11PM on the night of August 15, the star Deneb, which is apart of the constellation Cygnus, appears
 to be at the Zenith, while the star Arcturus appears to be at the "Western Horizon" of the planisphere.
 \item[8.] On the night of September 22nd, the star Antares will set at approximately 9PM. The star Antares will also
 set at 1AM on the night of July 30th.
 \item[9.] On the night of January 1st, the star Sirius will rise at approximately 7PM and will set at approximately 5AM, 
-giving a total time of 10 hours above the horizon.
+giving a total time of 10 hours above the horizon. Sirius is the brightest star in the night sky partial due to its proximity
+to Earth at a distance of 2.6 parsecs~\cite{van:2007}.
 \end{enumerate}
 
 %----------------------------------------------------------------------------------------
@@ -286,10 +302,29 @@ data provided.
 
 \begin{thebibliography}{9}
 
-\bibitem{Smith:2012qr}
-Smith, J.~M. and Jones, A.~B. (2012).
-\newblock {\em Chemistry}.
-\newblock Publisher, City, 7th edition.
+\bibitem{Edmund:2008}
+O'Connor, John J.; Robertson, Edmund F. (2006). "John Couch Adams' account of the discovery of Neptune". University of St Andrews. Retrieved February 18, 2008.
+
+\bibitem{Holton:2009}
+Holton, Gerald James; Brush, Stephen G. (2001). Physics, the Human Adventure: From Copernicus to Einstein and Beyond (3rd paperback ed.). Piscataway, NJ: Rutgers University Press. pp. 40–41. ISBN 0-8135-2908-5. Retrieved December 27, 2009.
+
+\bibitem{NASA:2011}
+NASA Staff (26 November 2011). "Mars Science Laboratory". NASA. Retrieved 2011-11-26.
+
+\bibitem{Lance:1995}
+ Goines, David Lance (October 18, 1995). "INFERENTIAL EVIDENCE FOR THE PRE-TELESCOPIC SIGHTING OF THE CRESCENT VENUS". Retrieved 2010-08-11.
+
+\bibitem{Storm:1995}
+Kollerstrom, N. (October 1995). "Ophiuchus and the media". The Observatory (KNUDSEN; OBS) 115: 261–262.
+
+\bibitem{Stell:2009}
+Calculation by the Stellarium application version 0.10.2, retrieved 2009-07-28
+
+\bibitem{Rufus:1943}
+Rufus, W. Carl (April 1943). "Copernicus, Polish Astronomer, 1473–1543". Journal of the Royal Astronomical Society of Canada 37 (4): 134. Bibcode 1943JRASC..37..129R
+
+\bibitem{van:2007}
+van Leeuwen, F. (November 2007), "Validation of the new Hipparcos reduction", Astronomy and Astrophysics 474 (2): 653–664
 
 \end{thebibliography}
 

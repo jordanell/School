@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.10)  24 SEP 2012 16:14
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.10)  25 SEP 2012 17:09
 entering extended mode
  %&-line parsing enabled.
 **labreport.tex
@@ -129,80 +129,95 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--49
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--71
+
+ []
+
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 85--92
+Underfull \hbox (badness 10000) in paragraph at lines 78--84
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--98
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--103
+Underfull \hbox (badness 10000) in paragraph at lines 100--105
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--113
+Underfull \hbox (badness 10000) in paragraph at lines 106--111
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 114--119
+Underfull \hbox (badness 10000) in paragraph at lines 112--122
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--134
+Underfull \hbox (badness 10000) in paragraph at lines 123--128
 
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 136--143
 
+ []
 
-Overfull \hbox (9.34781pt too wide) in paragraph at lines 179--190
+[3]
+Overfull \hbox (9.34781pt too wide) in paragraph at lines 188--199
  [] 
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[3] <images/blank.jpg, id=17, 351.3125pt x 356.33125pt>
+[4] <images/blank.jpg, id=23, 351.3125pt x 356.33125pt>
 File: images/blank.jpg Graphic file (type jpg)
  <use images/blank.jpg>
-[4] [5 <./images/blank.jpg>] [6] (./labreport.aux)
+[5 <./images/blank.jpg>] [6]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+Underfull \hbox (badness 4193) in paragraph at lines 315--316
+\OT1/cmr/m/n/10 FOR THE PRE-TELESCOPIC SIGHT-ING OF THE CRES-CENT
+ []
 
- ) 
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
+[7] (./labreport.aux) ) 
 Here is how much of TeX's memory you used:
- 1455 strings out of 493848
- 17210 string characters out of 1152823
- 73311 words of memory out of 3000000
- 4730 multiletter control sequences out of 15000+50000
+ 1463 strings out of 493848
+ 17300 string characters out of 1152823
+ 70340 words of memory out of 3000000
+ 4738 multiletter control sequences out of 15000+50000
  13507 words of font info for 53 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 25i,9n,24p,200b,275s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-t
-exlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts
-/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb
-></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/shar
-e/texmf-texlive/fonts/type1/urw/zapfding/uzdr.pfb></usr/share/texmf-texlive/fon
-ts/type1/public/wasy/wasy10.pfb>
-Output written on labreport.pdf (6 pages, 118867 bytes).
+ 25i,9n,24p,257b,273s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
+/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmcsc10.pf
+b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/shar
+e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
+cmti10.pfb></usr/share/texmf-texlive/fonts/type1/urw/zapfding/uzdr.pfb></usr/sh
+are/texmf-texlive/fonts/type1/public/wasy/wasy10.pfb>
+Output written on labreport.pdf (7 pages, 121018 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
+ 67 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
