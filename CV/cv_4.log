@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.10)  27 OCT 2012 13:09
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.10)  27 OCT 2012 13:29
 entering extended mode
  %&-line parsing enabled.
 **cv_4.tex
@@ -143,18 +143,18 @@ Overfull \hbox (30.0pt too wide) in paragraph at lines 30--30
 Here is how much of TeX's memory you used:
  767 strings out of 493848
  10193 string characters out of 1152823
- 65636 words of memory out of 3000000
+ 64636 words of memory out of 3000000
  4088 multiletter control sequences out of 15000+50000
  7639 words of font info for 27 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 27i,6n,21p,193b,239s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,6n,21p,193b,237s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/sh
 are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-t
 exlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/font
 s/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/publ
 ic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
 /cm/cmti10.pfb>
-Output written on cv_4.pdf (2 pages, 79209 bytes).
+Output written on cv_4.pdf (2 pages, 79580 bytes).
 PDF statistics:
  29 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
