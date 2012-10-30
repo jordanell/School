@@ -1,0 +1,303 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Laboratory Report LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{amssymb, amsmath}
+
+\title{Lunar Imaging \\ ASTR 101} % Title
+
+\author{Jordan \textsc{Ell} \\ jordan.ell7@gmail.com \\ V00660306} % Author name
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+\begin{tabular}{lr}
+Date Performed: 29/10/2012\\ % Date the experiment was performed and partner's name
+Instructor: Jillian Scudder % Instructor/supervisor
+\end{tabular}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Objective}
+
+This report will demonstrate how to correctly map objects of interest on the moon onto images taken of the moon near first quarter. It will
+also explain how to calculate various dimensional aspects of meteors and impact craters on the surface of the moon and Earth.
+ 
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+The moon has always been one of the bigger interests in the night sky due to its luminosity in our night sky as well as its
+proximity to Earth and being our one natural satellite. The moon is thought to have formed some 30-50 million years after
+the birth of the Solar System, which would put its birth date about 4.5 billion years ago~\cite{Kleine:2005}. The moon is
+believed to have formed during a type of giant impact involving the Earth and a Mars sized object. The impact broke
+off large pieces of the Earth which eventually accreted to form the moon~\cite{Taylor:1998}. The moon appears extremely
+barren and cratered due to two large time frames of bombardment.  The heavy bombardment and light bombardment stages of
+the moons life combined to create the Mares (from heavy) which were at one time large fields of lava that cooled over time,
+and the craters (from light) which scatter the moons surface. These craters formed inside, outside and sometime on the perimeter
+of the mares which caused them to be partially flooded by lava. The moon, as of late, has even also shown signs of the possibility
+that there is water on its surface or underground~\cite{Margot:1999}.\\
+
+During its lifetime the moon has always served as a point of research for mankind. Its cycles were first studied by 5th 
+century BC by Babylonian astronomers who recorded its phases and lunar eclipses~\cite{Aaboe:1999}. Aristotle marked
+the moon as the boundary between the changing and unchanging~\cite{Lewis:1964}. The space race in the 1960s saw man
+first land on the moon and collect lunar rocks for experimentation, as well as many other scientific endeavours. While these,
+expeditions serve all of mankind's knowledge base, this report will be focusing more on a simpler task of identifying lunar
+features as well as carrying out some measurements of these features.\\
+
+For the purposes of this report and to simplify calculations, it is being assumed that the diameter of the moon is 3476km
+and that all meteorites are 25 times less the size of the craters that they create. We know this last assumption not to be
+true due to velocity at impact and density of the object but it will make for a more relate-able approach to the calculations 
+to follow.\\
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 3
+%----------------------------------------------------------------------------------------
+
+\section{Equipment}
+
+The equipment used for this lab is as follows: three partials images of the moon near first quarter printed onto opaque paper, a map of the moon
+at full moon with a listing of known craters, mares and Apollo landing sites,  a pair of scissors, a ruler,
+and a roll of scotch tape.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 4
+%----------------------------------------------------------------------------------------
+
+\section{Procedure}
+
+Given the three images of the moon near first quarter, each image was cut out of the paper while ensuring not to cut too close to the moon 
+itself as this may distort the final image to be constructed. Once the images were cut out, they were aligned to form a single image of the moon
+near first quarter. During this process some of the images overlapped one another as each image did not end where the next one began. Once
+the images were aligned to form a single image, a strip of scotch tape was placed on their boundaries to keep the image from falling apart.
+The final image produced by these steps can be seen in Figure 1 at the back of the report.\\
+
+Next, given a map of the moon at full moon, labelling was done on the newly created image of the moon near first quarter. The full moon map
+contained a listing of all craters and mares on the moon as well as landing sites of the Apollo space missions. The items that were labelled and
+seen on Figure 1 at the back of this report are as follows: Mare Tranquilitatas, Mare Fecunditatis, Mare Crisium, Pilinius, Macrobius, Maskelyne,
+ Arago, Theophilis, 
+Fracastorius, Langrenus, Goelenius. Apollo 11, Apollo 16, and Apollo 17. To map these objects was a simple process of aligning the new first quarter
+image with the full moon image and finding the same craters on each image as the full moon map has craters labelled already and copying these labels
+onto the new map.\\
+
+Next, some calculations were carried out in regards to the size of craters on the moon. The following calculations can be found in Section~\ref{sec:calc}.
+To obtain initial measurements of the craters on the newly formed first quarter 
+moon picture, a simple measurement using a ruler was taken with the results being shown in Table~\ref{tab:craters}.
+Two craters were then selected, one being relatively large and the other being relatively small. To find the size of these craters, Equation~\ref{eq:csize} was used,
+and the final size of the craters found can be seen in Table~\ref{tab:craters}. 
+After, calculations were preformed to determine the approximate size of the
+meteorite which caused these craters. These calculations can be found in Section~\ref{sec:calc}, using Equation~\ref{eq:msize}. The results of these
+calculations can also be found in Table~\ref{tab:craters}.  \\
+
+Finally, some calculations were carried out on how often meteorites impact the moon and how that can be translated into how often meteorites
+would impact the Earth which are bigger than 1km across. These calculations can be found in Section~\ref{sec:calc} using Equation~\ref{eq:cavg}. 
+Also, a lookup was made given
+information in Table~\ref{tab:waves} of whether or not a person would be safe if a 2km wide meteorite impacted Earth, 300km from Victoria,
+standing on top of My. Doug. These results can also be found in Section~\ref{sec:qna}.\\
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 5
+%----------------------------------------------------------------------------------------
+
+\section{Observations}
+
+All observations for this report were made on the day of 2012-Oct-29. As all calculations and measurements made inside of this report are based off of
+given data, weather conditions and time of time have not been reported as they hold no effect. For all observations and
+calculations made using both the near first quarter moon image, the image and labelling
+can be found as Figure 1 in the back of this lab report. These observations include labels of 3 mares, 3 Apollo landing sites, and 9 various types of craters.
+Other rough calculations and simple tables can be found at the back
+of this lab report as well.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 6
+%----------------------------------------------------------------------------------------
+
+\section{Tables and Measurements}
+\label{sec:tnm}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{l c c c}
+\hline
+Crater Size & Scale Size (mm) & Real Size (km) & Meteorite Real Size (km)\\
+\hline
+\hline
+Small & 3mm & 38.338km & 1.534km\\
+Large & 7mm & 89.456km & 3.578km\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Measurements of impact craters on the moon.\label{tab:craters}}
+\end{table}
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{c c c c}
+\hline
+\hline
+Crater Diameter (km) & 150 & 50 & 10\\
+\hline
+Energy (ergs) & 1 X 10$^{30}$ & 6 X 10$^{28}$ & 2.6 X 10$^{26}$\\
+\hline
+\hline
+Distance (km) & Tsunami Height (meters) &  & \\
+10000 & 100m & 15m & 1m\\
+3000 & 250m & 40m & 3m\\
+1000 & 540m & 90m & 5m\\
+300 & 1300m & 200m & 15m\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Crater and Tsunami Size for Various Impact Energies.\label{tab:waves}}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 7
+%----------------------------------------------------------------------------------------
+
+\section{Calculations}
+\label{sec:calc}
+
+To calculate the real diameter of a given crater on the newly created first quarter moon image, Equation~\ref{eq:csize}
+is used below. By simply taking a ratio of measured sizes in millimetres and multiplying it by the given size
+of the moon in kilometres, the real size of the craters are obtained.
+
+\begin{equation}
+\label{eq:csize}
+\text{D}_{Rcrater} = \frac{D_{Mcrater}}{D_{Mmoon}} * D_{Rmoon}
+\end{equation}
+
+To calculate the size of a meteorite which created a given impact crater, Equation~\ref{eq:msize} is used below.
+Given the assumption that all craters are 25 times bigger than the meteorites which created them, a simple division
+of the crater's diameter by 25 yields the asteroids approximate size.
+
+\begin{equation}
+\label{eq:msize}
+\text{A}_{real} = \frac{{D}_{Rcrater}}{25}
+\end{equation}
+
+To calculate how often a meteorite of diameter larger than 1km will impact the Earth, Equation~\ref{eq:cavg} is
+used below. Given the information that there are 29 impact craters that formed on the moon of this size in the last
+3.5 billion years , and the Earth is 100 times larger than the moon's maria, a simple ratio of craters per year is formed.
+
+\begin{equation}
+\label{eq:cavg}
+\text{craters} = \frac{29 craters}{3.5 billion years} * 100
+\end{equation}
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 7
+%----------------------------------------------------------------------------------------
+
+\section{Questions}
+\label{sec:qna}
+
+The following questions and answers are asked inside of lab 9, Lunar Imaging, inside of the lab manual
+for ASTR101. The questions have been repeated for the reader.
+
+\begin{enumerate}
+\item[Q.] How big was the meteorite, which made these [the small and large craters in Table~\ref{tab:craters}]
+lunar craters, assuming the craters are 25 times bigger than the meteorite?
+\item[A.] This question was answered using Equation~\ref{eq:msize} given the measurements made in Table~\ref{tab:craters}
+in column Real Size. The final calculations for this question can be found in the same table in column 
+Meteorite Real Size.
+\item[Q.] In the Yucatan peninsula a crater has now been identified which is 190km in diameter and 65 million years old.
+ Is this crater about the right size [to have killed off the dinosaurs]?
+\item[A.] Given the assumption that the estimated asteroid to kill the dinosaurs was 10km in diameter and that all
+craters are 25 times larger than the meteorites which caused them, it was found that this new crater was formed
+by a meteorite 7.2km in diameter. It can be concluded that this meteorite is similar to the one that would
+have killed off the dinosaurs.  In fact, this is the crater from a meteorite which is widely beleived to have
+caused the mass extinction of the dinosaurs~\cite{Bates:1992}.
+\item[Q.] There are 29 craters bigger than 25km in diameter on the lunar Maria. The maria are 3.5 billion years
+old, so how often do craters of this size form on the maria?
+\item[A.] To answer this question, Equation~\ref{eq:cavg} was used, which gives a simple answer of 8.28 craters per
+billion years when not multiplying by the constant 100. This answer assumes that there is a constant rate
+of cratering which we know isn't exactly true.
+\item[Q.] If the area of the maria is about 5 million sq. km and, if the are of the Earth is 500 million sq. km, how 
+often would you expect a crater of this size to be formed
+on the Earth and end civilization?
+\item[A.]  To answer this question, Equation~\ref{eq:cavg} was used, which gives a simple answer of 828 craters per
+billion years. This answer assumes that there is a constant rate of cratering which we know isn't exactly true.
+\item [Q.] Given a meteorite impacting the Earth which is 2km in diameter, how big a crater would it make?
+How large would the tsunami be 300km from the impact sight?
+Would you be safe on Mt. Doug (altitude=210m)?
+\item [A.] Given that all meteorites cause craters 25 times larger than themselves, the crater would be 50km 
+in diameter. Given the information in Table~\ref{tab:waves}, if the meteorite landed in the ocean, the 
+tsunami would be 200m high at a distance of 300km from the impact sight. A person would just be safe on
+top of Mt. Doug which has an elevation of 210m.
+\end{enumerate}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 8
+%----------------------------------------------------------------------------------------
+
+\section{Conclusions / Discussions}
+
+This report has shown how to piece together multiple images of the same object in order to map the object's 
+properties. This report has also shown how to calculate the size of craters on the moon, the size of the meteorites
+which caused them as well as how often a large meteorite will impact the Earth.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 9
+%----------------------------------------------------------------------------------------
+
+\section{Evaluation}
+
+I found this report to have interesting properties for my own celestial observations. I have recently started
+to observe the moon with my Celestron Super C8 plus telescope and have also begun to hunt for CCD cameras
+in order to start astrophotography. I now see that some of the best images are actually composites of many 
+images. This has factored into me looking at the software for the CCD as much as the hardware. I would
+have liked to learn more about the Apollo missions and some of the experiments they carried out on the
+surface of the moon and what other knowledge has been gained from the moon rocks that they brought back.
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\begin{thebibliography}{9}
+
+\bibitem{Kleine:2005}
+ Kleine, T.; Palme, H.; Mezger, K.; Halliday, A.N. (2005). "Hf–W Chronometry of Lunar Metals and the Age and Early Differentiation of the Moon". Science 310 (5754): 1671–1674.
+
+\bibitem{Taylor:1998}
+Taylor, G. Jeffrey (31 December 1998). "Origin of the Earth and Moon". Planetary Science Research Discoveries. Retrieved 7 April 2010.
+
+\bibitem{Margot:1999}
+Margot, J. L.; Campbell, D. B.; Jurgens, R. F.; Slade, M. A. (4 June 1999). "Topography of the Lunar Poles from Radar Interferometry: A Survey of Cold Trap Locations". Science 284 (5420): 1658–1660
+
+\bibitem{Aaboe:1999}
+ Aaboe, A.; Britton, J. P.; Henderson,, J. A.; Neugebauer, Otto; Sachs, A. J. (1991). "Saros Cycle Dates and Related Babylonian Astronomical Texts". Transactions of the American Philosophical Society (American Philosophical Society) 81 (6): 1–75.
+
+\bibitem{Lewis:1964}
+ Lewis, C. S. (1964). The Discarded Image. Cambridge: Cambridge University Press. p. 108.
+
+\bibitem{Bates:1992}
+Bates, Robin (series producer), Chesmar, Terri and Baniewicz, Rich (associate producers) (1992). The Dinosaurs! Episode 4: "Death of the Dinosaur" (TV-series). PBS Video, WHYY-TV.
+
+\end{thebibliography}
+
+\end{document}
