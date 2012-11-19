@@ -65,7 +65,34 @@ calculations and data graphs.
 \section{Procedure}
 \label{sec:proc}
 
+Given an image of the centre of the Milky Way Galaxy, the first step done was to measure how many stars appear inside of a 1mm squared
+area on the picture. This was done using the provided measurement magnifying glass. The result of this measurement can be seen inside of
+Table~\ref{tab:drake}. Next, Equation~\ref{eq:stars} was used to extrapolate this information into the number of total stars inside of the 
+Milky Way Galaxy.\\
 
+Next, the given computers with the modelling program installed were used. This program was used to determine whether or not current 
+methods could detect planets of size Earth and Jupiter. This was done by editing the planet models radius, mass and orbital inclination inside
+of the program. The results for these finding can be found in Section~\ref{sec:qna}. Then, an estimate for what fraction of stars have planets
+was made based off of the given data from the Kepler space telescope which was observing around 4000 stars with approximately 2000 planet
+candidates. The result of this estimation were calculation with Equation~\ref{eq:planets} and results can be seen inside of Table~\ref{tab:drake}.\\
+
+Next, and estimation of how many habitable planets there are inside of each solar system. This was done by assuming that habitable means there
+is liquid water on the planet. Therefore, maximum and minimum distances away from the star were calculated using Equation~\ref{eq:mm} for a given
+planet to have liquid water. These distance were put onto the data given in Table~\ref{tab:planets}. Equation~\ref{eq:ne} was then used in order to give 
+a rough estimate on average how many solar systems have planets. Results can be seen inside of Table~\ref{tab:drake}.\\
+
+Next, an estimate was made of what fraction of habitable planets contain life. This was done by looking at Earth as an example and given the data
+that Earth has had liquid water for 4 billion years and life for 3.9 billion years. The result of this estimation were calculation with Equation~\ref{eq:life} 
+and results can be seen inside of Table~\ref{tab:drake}.\\
+
+Next, an estimate was made of what fraction of life is intelligent. This term intelligent for this report was defined as the ability to create and use
+tools inside of the civilization. This being the case, it was estimated that civilizations last for 500,000 years given that a civilization ending 
+disaster will occur every 1 million years. This time is also subject to the lifetime of the star that the civilization depends on.
+The result of this estimation were calculation with Equation~\ref{eq:civ} and results can be seen inside of Table~\ref{tab:drake}.\\
+
+Finally, the Drake equation was carried out by multiplying all drake parameters together in Equation~\ref{eq:drake} which resulted in
+17915.625 civilizations being inside of our Milky Way Galaxy. As an extra step, it was found that the nearest civilization to ours would
+be approximately 595.89 light years away by using Equation~\ref{eq:near}.\\
 
 
 %----------------------------------------------------------------------------------------
@@ -106,6 +133,36 @@ ${F}_{s}$ & 500,000 & 6.25x${10}^{-5}$\\
 \caption{Measurements of parameters inside the Drake Equation.\label{tab:drake}}
 \end{table}
 
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{l c c}
+\hline
+Solar System & Planet & Distance (AU)\\
+\hline
+\hline
+Our Solar System & Mercury & 0.387\\
+Our Solar System & Venus & 0.723\\
+Our Solar System & Earth & 1.00\\
+Our Solar System & Mars & 1.524\\
+Our Solar System & Jupiter & 5.203\\
+Ups Andromedae & - & 0.06\\
+Ups Andromedae & - & 0.83\\
+Ups Andromedae & - & 2.51\\
+55 Cancre & - &  0.04\\
+55 Cancre & - &  0.11\\
+55 Cancre & - &  0.24\\
+55 Cancre & - &  0.78\\
+55 Cancre & - &  5.77\\
+HD160691 & - &  0.09\\
+HD160691 & - &  0.92\\
+HD160691 & - &  1.5\\
+HD160691 & - &  4.17\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Given data of solar system planet's distance from the star.\label{tab:planets}}
+\end{table}
+
 %----------------------------------------------------------------------------------------
 %	SECTION 7
 %----------------------------------------------------------------------------------------
@@ -127,6 +184,13 @@ estimated to have planets around them.
 \begin{equation}
 \label{eq:planets}
 \text{f}_{p} = \frac{{P}_{estimated}}{{S}_{total}}
+\end{equation}
+
+To calculate the distance a planet must be away from its star to account for a given surface temperature, the following
+equation may be used.
+\begin{equation}
+\label{eq:mm}
+\text{D}_{p} = \frac{82944}{{T}_{P}^{2}}
 \end{equation}
 
 To calculate the number of habitable planets in each solar system we simply take the measurement of 
