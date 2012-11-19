@@ -1,0 +1,247 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Laboratory Report LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{amssymb, amsmath}
+
+\title{Search for Extraterrestrial Intelligence \\ ASTR 101} % Title
+
+\author{Jordan \textsc{Ell} \\ jordan.ell7@gmail.com \\ V00660306} % Author name
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+\begin{tabular}{lr}
+Date Performed: 19/11/2012\\ % Date the experiment was performed
+Instructor: Jillian Scudder % Instructor/supervisor
+\end{tabular}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Objective}
+
+This report will demonstrate how to properly estimate the number of intelligent civilizations there may be inside of the Milky Way Galaxy and
+how one can calculate how far away the nearest one to Earth may live. \\
+ 
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 3
+%----------------------------------------------------------------------------------------
+
+\section{Equipment}
+
+The equipment used for this lab is as follows: an image of the centre of the Milky Way Galaxy, a measurement magnifying glass,
+ a Sharp EL-510R calculator, a computer running Windows XP, and a modelling program for radial velocity and star luminosity 
+calculations and data graphs.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 4
+%----------------------------------------------------------------------------------------
+
+\section{Procedure}
+\label{sec:proc}
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 5
+%----------------------------------------------------------------------------------------
+
+\section{Observations}
+
+All observations for this report were made on the day of 2012-Nov-19. As all calculations and measurements made inside of this report are based off of
+given data, weather conditions and time of day have not been reported as they hold no effect. The measurement of how many stars are inside of our
+Milky Way Galaxy can be found in the Section~\ref{sec:tnm}. All other measurements are made using very rough approximations and their explanations
+can be found inside of Section~\ref{sec:proc} along with how they were calculated. Rough calculations and measurements can be found at the back of
+this lab report as well.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 6
+%----------------------------------------------------------------------------------------
+
+\section{Tables and Measurements}
+\label{sec:tnm}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{l c c}
+\hline
+Drake Parameter & Measurement & Result\\
+\hline
+\hline
+${N}_{*}$ & 8 & 1.2 Billion\\
+${f}_{p}$ & 2600 & .65\\ 
+${n}_{e}$ & 5 & 1.25\\
+${f}_{L}$ & - & 0.98\\
+${f}_{i}$ & - & 0.3\\
+${F}_{s}$ & 500,000 & 6.25x${10}^{-5}$\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Measurements of parameters inside the Drake Equation.\label{tab:drake}}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 7
+%----------------------------------------------------------------------------------------
+
+\section{Calculations}
+\label{sec:calc}
+
+To calculate the real number of stars in our Milky Way Galaxy, the measurement of ${N}_{*}$ in Table~\ref{tab:drake} can be
+multiplied by 150,000,000 to make up the ratio of the measured size of 1 square millimetre. Equation~\ref{eq:stars} below 
+shows this.
+\begin{equation}
+\label{eq:stars}
+\text{N}_{*} = S * 150,000,000
+\end{equation}
+
+To calculate the fraction of stars which have planets, Equation~\ref{eq:planets} below is used. By dividing the measurement of
+${f}_{p}$ in Table~\ref{tab:drake} by the total number of stars in our sample size, we get the percentage of stars which are 
+estimated to have planets around them.
+\begin{equation}
+\label{eq:planets}
+\text{f}_{p} = \frac{{P}_{estimated}}{{S}_{total}}
+\end{equation}
+
+To calculate the number of habitable planets in each solar system we simply take the measurement of 
+${n}_{e}$ in Table~\ref{tab:drake} which is the total number of habitable planets in a sample size and divide by the number 
+of total planets in that sample. This can be seen in Equation~\ref{eq:ne}.
+\begin{equation}
+\label{eq:ne}
+\text{f}_{e} = \frac{{P}_{habitable}}{{P}_{total}}
+\end{equation}
+
+To calculate the chance that planets have life on them and get the measurement of ${f}_{L}$ in Table~\ref{tab:drake}, 
+we take the number of years Earth is known to have like and divide it by the number of years Earth is known to have liquid
+water on its surface. This can be seen in Equation~\ref{eq:life}.
+\begin{equation}
+\label{eq:life}
+\text{f}_{L} = \frac{3.9 Billion}{4.0 Billion}
+\end{equation}
+
+To calculate the lifetime of a civilization, we take the measurement of ${F}_{S}$ in Table~\ref{tab:drake} which is the estimated
+lifetime of a civilization and divide it by the lifetime of a normal start such as our Sun. This can be found in Equation~\ref{eq:civ}.
+\begin{equation}
+\label{eq:civ}
+\text{f}_{L} = \frac{500,000}{8.0 Billion}
+\end{equation}
+
+To calculate the number of intelligent civilizations inside of out Milky Way Galaxy, we simply take all of the parameters to the
+Drake equation and multiply them together. This can be seen in Equation~\ref{eq:drake}.
+\begin{equation}
+\label{eq:drake}
+\text Intelligent Civilizations = {N}_{*} * {f}_{p} * {n}_{e} * {f}_{L} * {f}_{i} * {F}_{s}
+\end{equation}
+
+To calculate the nearest civilization in our galaxy to ours, we find the average area a civilization occupies in the Galaxy and then 
+take the square root of it. This can be seen below in Equation~\ref{eq:near}.
+\begin{equation}
+\label{eq:near}
+\text Nearest Civilization = \sqrt{\frac{\pi * 45,000^{2}}{Intelligent Civilizations}}
+\end{equation}
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 7
+%----------------------------------------------------------------------------------------
+
+\section{Questions}
+\label{sec:qna}
+
+The following questions and answers are asked inside of lab 8,Search for Extraterrestrial Intelligence, inside of the lab manual
+for ASTR101. The questions have been repeated for the reader.
+
+\begin{enumerate}
+\item[Q.] Would you be able to detect a Jupiter mass planet in a one year orbit?
+\item[A.] You would be able to detect a Jupiter mass planet as it has enough mass to pull the star around giving a reading in 
+radial velocity and it is also large enough to give off a dip in the star's luminosity reading. Being able to see these types of
+planets is a direct cause of the selection effect with our current detection methods.
+\item[Q.] Would it be possible to detect planets like the Earth?
+\item[A.] An Earth sized planet would not be able to be detected because it is too small to show a dip in the star's luminosity
+and it is not massive enough to show movement in the star causing radial velocity. These are the reasons the main methods
+of searching for planets right now do not often show Earth sized planets that are around 1AU away from the star.
+\item[Q.] Compare the average distance between civilizations to the lifetime of a civilization.
+\item[A.] In this report's estimated case, the distance to the nearest civilization is 595.89 light years while each civilization is
+estimated to survive for around 500,000 years. This means that the civilizations would be detectable sometime during
+the lifetime of the civilizations. They would be able to send about 830 messages in total between civilizations in this
+time span.
+\item[Q.] Would our earliest radio signals have made it to the nearest civilizations yet?
+\item[A.] Seeing as our earliest radio signals have only been travelling for about 50-60 years, these distant civilizations would
+not have picked up on them, nor would they see them for another ~520 years.
+\item[Q.] Based upon your above calculated distance to the nearest alien civilizations, do you expect it to detect any civilizations?
+Would conversations between civilizations be possible?
+\item[A.] I would expect, that sometime during our civilizations lifetime, we would be able to detect some of the more near
+civilizations in our Galaxy. Communications would be possible, however the full time for one conversation would be well over 
+1000 years, thus no single human would be able to carry our such a conversation.
+\item[Q.] What can you decipher about the creatures that made this plaque? Explain what you base it on.
+\item[A.] We can determine that the satellite left from the third planet of its origin solar system and the direction it took
+to leave that solar system. We know there are two different sexes among the same origin species. We know the origin
+species height in comparison to the satellite. We can see how the origin species has mapped their star given certain
+distances away from pulsars and which pulsars are indicated by the distance and spin rate given in the left hand side
+of the plaque. Finally, we know the hydrogen molecule for a standard measuring device.
+\end{enumerate}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 8
+%----------------------------------------------------------------------------------------
+
+\section{Conclusions / Discussions}
+
+This report has shown how to calculated an estimated number for how many intelligent civilizations there
+may be inside of our own Milky Way Galaxy as well as how close those civilizations may be to Earth. This report
+has also answered, through these calculations, the likelihood of contact with these civilizations.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 9
+%----------------------------------------------------------------------------------------
+
+\section{Evaluation}
+
+I found this report and lab very tedious. I believe that the Drake equation is one of the most ludicrous
+equations ever created inside of the sciences. Why have we continued to indulge an equation who's margin
+of error approaches 100\%? This makes the equation itself meaningless. Although, the equation does
+have us thinking in the correct direction and bring to the surface many of the variables that would
+have to be understood. I am a user of the SETI@home project though and found this report an
+interesting little side note to the data that is actually be collected and processed in the real world.
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\begin{thebibliography}{9}
+
+\bibitem{Kleine:2005}
+ Kleine, T.; Palme, H.; Mezger, K.; Halliday, A.N. (2005). "Hf–W Chronometry of Lunar Metals and the Age and Early Differentiation of the Moon". Science 310 (5754): 1671–1674.
+Bates, Robin (series producer), Chesmar, Terri and Baniewicz, Rich (associate producers) (1992). The Dinosaurs! Episode 4: "Death of the Dinosaur" (TV-series). PBS Video, WHYY-TV.
+
+\end{thebibliography}
+
+\end{document}
