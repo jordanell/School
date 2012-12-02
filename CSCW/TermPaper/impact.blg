@@ -6,46 +6,48 @@ Database file #1: impact.bib
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty title in Neisser:1974:USE
 
 Done.
-You've used 5 entries,
+You've used 15 entries,
             4024 wiz_defined-function locations,
-            855 strings with 8697 characters,
-and the built_in function-call counts, 4818 in all, are:
-= -- 385
-> -- 87
-< -- 40
-+ -- 49
-- -- 12
-* -- 262
-:= -- 731
-add.period$ -- 15
-call.type$ -- 5
-change.case$ -- 5
-chr.to.int$ -- 105
-cite$ -- 5
-duplicate$ -- 327
-empty$ -- 417
-format.name$ -- 16
-if$ -- 1102
+            940 strings with 11411 characters,
+and the built_in function-call counts, 13978 in all, are:
+= -- 1136
+> -- 262
+< -- 118
++ -- 147
+- -- 37
+* -- 731
+:= -- 2089
+add.period$ -- 42
+call.type$ -- 15
+change.case$ -- 14
+chr.to.int$ -- 306
+cite$ -- 16
+duplicate$ -- 966
+empty$ -- 1213
+format.name$ -- 49
+if$ -- 3239
 int.to.chr$ -- 0
-int.to.str$ -- 5
-missing$ -- 57
-newline$ -- 48
-num.names$ -- 5
-pop$ -- 130
+int.to.str$ -- 15
+missing$ -- 167
+newline$ -- 96
+num.names$ -- 15
+pop$ -- 381
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 358
+skip$ -- 1060
 stack$ -- 0
-substring$ -- 249
-swap$ -- 267
-text.length$ -- 5
+substring$ -- 732
+swap$ -- 792
+text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 5
-warning$ -- 0
-while$ -- 25
-width$ -- 6
-write$ -- 87
+type$ -- 15
+warning$ -- 1
+while$ -- 71
+width$ -- 17
+write$ -- 212
+(There was 1 warning)

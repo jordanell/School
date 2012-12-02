@@ -52,7 +52,7 @@ These high level
 modules are mostly studied for logical dependencies on which modules are changed together most
 often. When files A and B are always changed together or binaries A and B then it is assumed that
 when a changeset is committed to the source repository using on file or binary A then there is
-a high chance of inducing a software failure. These high level predictions are often not able to
+a high chance of inducing a software failure~\cite{Beyer:2005:CSA}. These high level predictions are often not able to
 provide any support to developers other than test focus or minor amounts of social
 coordination recommendations.\\
 
@@ -61,13 +61,17 @@ notion of awareness. Awareness is the ability to know and understand what action
 other members of a development team are taking. Through the notion of awareness, developers
 are provided information on their development product from which they can deduce their
 own social coordination actions. These actions can often lead to the prevention of software
-failures or catch software failures in an early stage of life. \\
+failures or catch software failures in an early stage of life. One type of awareness is that of
+workspace awareness which is up to the minute knowledge about other's interactions
+with a workspace~\cite{Gutwin:1996:WAR, Gutwin:1996:USA}. This type of awareness can
+often lead to high level details of a project.\\
 
-Like technical dependencies, pre-existing awareness tools also focus mostly on the high level
+Like technical dependencies, pre-existing workspace awareness tools also focus mostly on the high level
 details of a project. Most awareness tools focus on the file level to let developers know who
-is currently working on or viewing a file. There have also been some applications which focus
+is currently working on or viewing a file~\cite{Biehl:2007:FVD}. There have also been some applications which focus
 on the lower modular levels of objects and methods but the information given about these
-interactions is still only changing the module or viewing in most cases.These types of awareness
+interactions is still only changing the module or viewing in most cases~\cite{Biehl:2007:FVD}.
+These types of awareness
 allow developers to get a sense of real time development but fail to show the full impact
 of changes being made inside of a software system.\\
 
@@ -80,7 +84,10 @@ coordination recommendations?}"\\
 This paper will take the approach of discovering code change impact effects at the method
 level of source code. The method level was chosen because of its usage across multiple
 software languages as opposed to object which are only used in object oriented languages
-such a C++ of Java. Once code change impact effects are found at the method level, the 
+such a C++ of Java.  Recent science suggest that exploration in an environment
+is directed by the information that we have picked up~\cite{Neisser:1974:USE}. Thus, if we are able to relay
+information to the developer at a method level, bug prevention at that level may
+also be possible. Once code change impact effects are found at the method level, the 
 linkage of technical dependencies to developers will be described. Finally, this paper will
 describe how this newly acquired dependency information can be used to create an awareness
 tool for developers in order to prevent software failures and create social coordination
@@ -335,7 +342,8 @@ on information filtering.\\
 From the interviews of this paper, I believe information filtering can come from further 
 looking into the changesets being committed in order to determine what types of changes
 are being made to functions. For this, a combination of AST analysis as well as variable
-tracing could be used. The analysis of the abstract syntax trees can be used for determining
+tracing could be used~\cite{Neamtiu:2005:USC, Horwitz:1990:IST}. 
+The analysis of the abstract syntax trees can be used for determining
 if the actual structure of source code has changed inside a method. Since an AST does not
 handle comments or white space, a comparison of a previous AST to the new one created by
 the changeset can be used to remove changes to white space and comments. As for actual
@@ -354,8 +362,8 @@ potentially harmful impact effect inducing changes should be made. \\
 To prevent software failures, developers of a team may know what methods are being
 impacted by their changes and change them before they commit the code themselves.
 This can lead to the research of method coupling in order to provide awareness information
-of impact effects. Much research has already preformed this task at the file level as mentioned
-in the Introduction of this paper. However, with the discovery of methods often being changed 
+of impact effects~\cite{DAmbros:2006:ERV}. Much research has already preformed this task at the file level as mentioned
+in the Introduction of this paper~\cite{Beyer:2005:CSA}. However, with the discovery of methods often being changed 
 together, one can imply the same logical dependencies from files to methods. If developers
 know that whenever method A gets changed they must update method B to compensate,
 then a change to A alone can be reason for negative impact effects. This is another method
@@ -371,13 +379,16 @@ effects over the project once they are changed. It seems like the largest threat
 the interfaces to objects, especially object pool type structures.\\
 
 Future work could be focused on the interfaces of object pool type structures mentioned
-above and what makes them so harmful. Finding out what types of changes are more
+above and what makes them so harmful. Humans tend to interact with interfaces
+by reusing former interaction models and actions~\cite{Besnard:2005:ICC},
+so finding out what types of changes are more
 likely to have harmful impact effects to the software project may help developers understand
 when and where impact effects may be caused and what can be done to prevent bugs 
 or to find them quickly.\\
 
 Another point of interest is about the size of the team in contrast to the effectiveness
-of the tool. Both interviewees stated the belief that the awareness tool would be more
+of the tool. Team size on awareness has been studied to play a large role in the effectiveness
+of communication and tools~\cite{Bradner:2003:ETS}. Both interviewees stated the belief that the awareness tool would be more
 effective at a larger team size. The small team sizes were cited as being tightly knit and
 for having little need of awareness of what other developers were doing because it
 was just known. This is perhaps why other more high level approaches to awareness have
@@ -428,7 +439,7 @@ Technical dependencies are often used to predict software failures
 in large software system~\cite{Pinzger:2008:DNP, Zimmermann:2008:PDU, Kim:2006:AIB}. 
 This paper has shown how an awareness tool that is focused on the method and code reliance
 level of a software project can be implemented. It has evaluated the tool for both its underlying
-philosophy and the tool as a means of awareness inside a software project. \\
+philosophy and the tool itself as a means of awareness inside a software project. \\
 
 The conclusions that have been drawn is that developers being effected by other developer's
 code is a real world problem which does not have an easy solution. Modules of software
