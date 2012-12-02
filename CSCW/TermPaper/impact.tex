@@ -11,7 +11,7 @@
 \begin{document}
 
 %Paper title
-\title{Creation of Developer Awareness Inside Changesets}
+\title{Creation of Developer Awareness Inside Changesets Using Method Hierarchy}
 
 %Author block
 \author{\IEEEauthorblockN{Jordan Ell}
@@ -21,10 +21,21 @@ Victoria, British Columbia \\ jell@uvic.ca}}
 \maketitle
 
 \begin{abstract}
-Some abstract here.
+Software systems have become larger over time, and as a result these system's number of developers
+and technical dependencies between developers has also increased. With these expansions also
+comes the increasing risk of a software change having an negative impact somewhere else inside
+of the software system. Software failures are a multi-billion dollar issue faced by the industry and
+while better form of testing and integration are helping to ensure a minimal number of failures, 
+research to prevent failures caused by software changes is still a major concern. Numerous coordination
+recommendation systems have been built which base there recommendations off of software dependencies,
+but none focus on the impact dependencies of software changes. This paper describes how analysis
+of software changes and the technical relationships they infer can be used to create awareness among
+developers in order to avoid potential software failures. This awareness is presented using a web based
+application which takes advantage of software hierarchy and developer code changes.
 \end{abstract}
 
 \section{Introduction}
+
 
 \section{Methodology}
 
@@ -117,6 +128,7 @@ the central and right most feeds respectively in Figure~\ref{fig:impact}.\\
 \caption{The tool Impact with developer names hidden.\label{fig:impact}}
 \end{figure*}
 
+
 \section{Evaluation}
 
 \subsection{Participants}
@@ -180,6 +192,7 @@ From the four areas listed above, it should be determinable whether or not Impac
 without explicitly asking the developers. However, the developers were asked for their opinions 
 on Impact as a tool for their team's development as well as its use in industry and what changes
 they would make to the tool. \\
+
 
 \section{Results}
 This section will be broken up between in the responses of the two lead developers in regards to
@@ -268,6 +281,22 @@ that the tool had to offer and thus have skewed the results of the study.\\
 
 \section{Conclusion and Future Work}
 
+This paper has shown how an awareness tool that is focused on the method and code reliance
+level of a software project can be implemented. It has evaluated the tool for both its underlying
+philosophy and the tool as a means of awareness inside a software project. \\
+
+The conclusions that have been drawn is that developers being effected by other developer's
+code is a real world problem which does not have an easy solution. Modules of software
+have been identified as harmful structures which developers would like to become
+aware of so that they may modify or update their own code to avoid bugs. The idea of
+impact awareness has also been concluded to be a much needed methodology in 
+medium to large software projects.\\
+
+For future work, I intend on interviewing and surveying a large amount of developers
+to confirm the ideas of this paper being: impact related bugs are a real world problem; the
+types of changes that lead to impact bugs; and the development of a full tool which takes
+these results into consideration to create a better sense of impact awareness inside of
+a software project.
 
 
 \bibliographystyle{IEEEtran}
