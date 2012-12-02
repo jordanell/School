@@ -35,16 +35,70 @@ application which takes advantage of software hierarchy and developer code chang
 \end{abstract}
 
 \section{Introduction}
+Large software projects are often created using highly modular and reusable source code such as methods
+and objects. The use of these methods and object creates a vast amount of technical dependencies between
+these structures and can be in a wide variety of locations throughout a software project. This causes any
+changesets of source code to have a rippling effect, or impact effect, across the rest of the project
+~\cite{Acharya:2011:PCI}. The large the software project, the larger are these changes tend to impact
+and cause a larger number of software failures inside the system during the project's life span
+~\cite{Zimmermann:2008:PDU}. These observations of modular source code structure and the
+technical dependencies that they infer open the door to types of dependency network analysis
+in order to prevent software failures in a software system.\\
+
+Technical dependencies are often used to predict software failures in builds or changesets of
+a software system~\cite{Pinzger:2008:DNP, Zimmermann:2008:PDU}. Most pre-existing research
+has focused on a very high level modular approach as either the binary or file level~\cite{Kim:2006:AIB}. 
+These high level
+modules are mostly studied for logical dependencies on which modules are changed together most
+often. When files A and B are always changed together or binaries A and B then it is assumed that
+when a changeset is committed to the source repository using on file or binary A then there is
+a high chance of inducing a software failure. These high level predictions are often not able to
+provide any support to developers other than test focus or minor amounts of social
+coordination recommendations.\\
+
+Not only are technical dependencies a known way to prevent software failures, but as is the 
+notion of awareness. Awareness is the ability to know and understand what actions
+other members of a development team are taking. Through the notion of awareness, developers
+are provided information on their development product from which they can deduce their
+own social coordination actions. These actions can often lead to the prevention of software
+failures or catch software failures in an early stage of life. \\
+
+Like technical dependencies, pre-existing awareness tools also focus mostly on the high level
+details of a project. Most awareness tools focus on the file level to let developers know who
+is currently working on or viewing a file. There have also been some applications which focus
+on the lower modular levels of objects and methods but the information given about these
+interactions is still only changing the module or viewing in most cases.These types of awareness
+allow developers to get a sense of real time development but fail to show the full impact
+of changes being made inside of a software system.\\
+
+With the power of technical dependencies and awareness in software failure prediction and
+prevention at high level modules, the question is posed:
+"\textit{Is it possible to identify impact effects of code changes at low structural levels and can
+these effects be used in an awareness tool to prevent software failures and induce social
+coordination recommendations?}"\\
+
+This paper will take the approach of discovering code change impact effects at the method
+level of source code. The method level was chosen because of its usage across multiple
+software languages as opposed to object which are only used in object oriented languages
+such a C++ of Java. Once code change impact effects are found at the method level, the 
+linkage of technical dependencies to developers will be described. Finally, this paper will
+describe how this newly acquired dependency information can be used to create an awareness
+tool for developers in order to prevent software failures and create social coordination
+recommendations between developers using an awareness tool.\\
+
+This paper will also evaluate the end tool produced through developer interviews of teams
+who have actually used the tool.  The evaluation will be followed up by a discussion of
+the tools effectiveness and suggestions for future development and research.\\
 
 
-\section{Methodology}
+\section{Creation of Awareness Tool}
 
 The basis of the tool Impact is to create an information space which developers can see awareness information
 based on the code they have written at the method level of source code. Impact will provide information to the
 developer based on method ownership and those method's call hierarchies effected by changesets.  To preform
 these actions, a two step approach will now be described. \\
 
-\subsection{Extracting Technical Networks}
+\subsection{Extracting Technical and Developer Dependencies}
 To extract the information needed for the Impact awareness tool, the source code repository must be queried to
 extract information such as method ownership and method call hierarchies during a changeset. This information
 will provide technical dependency edges between developers caused by changesets which can then be used as
@@ -52,7 +106,12 @@ awareness information and provided to the developers. \\
 
 At each changeset, the method call graphs must be constructed. Method call graphs are a simple graph which uses
 method declarations as nodes and method invocations as directed edges. To construct the call graphs, the source 
-code repository (in this case Git) must be queried to obtain all source files of the project. Once all source files are
+code repository (in this case Git) must be queried to obtain all source files of the project. Unlike Bodden's et al.
+~\cite{Bodden:2003:HVJ}  approach of using byte code and whole projects, call graphs are built directly from source
+code files inside of code changes, which does not have the assumption of being able to fully compile.
+It is important not to require full project complication at each code change because it is an
+expensive operation as well as code change effect may cause the project to be unable to compile.
+Once all source files are
 obtained, abstract syntax trees (AST) are then compiled for each file. The abstract syntax trees contain all information
 in regards to the method call hierarchies of the project. From here, the call hierarchies can be constructed by simply
 querying the ASTs in regards to method call structures. The method call graphs have now been constructed.\\
@@ -256,9 +315,94 @@ right now. He suggested that not all changes to methods need to be reports. He t
 interfaces to methods are a more important change then adding a new variable. He suggested
 looking at what kinds of changes developers actually need to be aware of the most.\\
 
- 
 
-\section{Discussion}
+\section{Discussion and Future Research}
+The overall sense coming from the lead developer interviews was that the tool Impact was 
+headed in the correct direction. Both lead developers saw the implications such a tool
+could have in the real world and professed to have a similar tool to use in development
+practises.\\
+
+While Impact may be heading in the correct direction, the number one complaint or fault
+of the tool seems to be information overload causes by non filtering of source code changes.
+The interviews pointed out that the number of technical dependencies with methods
+becomes so large, even in small projects, that minor changes to any given method can cause
+a very large impact effect across the entire software system resulting in information
+overload from the tool. Even a change such as adding a comment or changing the 
+white space layout of a method can cause many tens of pieces of information to be sent
+to the developers even though no real change has been made. This lead to the discussion
+on information filtering.\\
+
+From the interviews of this paper, I believe information filtering can come from further 
+looking into the changesets being committed in order to determine what types of changes
+are being made to functions. For this, a combination of AST analysis as well as variable
+tracing could be used. The analysis of the abstract syntax trees can be used for determining
+if the actual structure of source code has changed inside a method. Since an AST does not
+handle comments or white space, a comparison of a previous AST to the new one created by
+the changeset can be used to remove changes to white space and comments. As for actual
+changes to the code of a method, variable tracing can be used. The interviews listed the
+input and output interfaces of methods to be the most prone to causing impact effects
+to their own code. From this variable tracing can be used. Variable tracing is the act of following
+a variable inside a module of code (in this case a method) to see how it changes and effects
+other variable. By checking to see if the input variables use has been changed such as
+using it inside a previously not used conditional or having it be assigned to another variable
+through an expression we can track the input variables usage and any modifications that
+have occurred with it. In the same sense, tracking of the output variables (if any) can 
+also be tracked to look for modifications in its use. However, these methods are implemented,
+a larger sample study to determine if these are the actual changes that developers consider
+potentially harmful impact effect inducing changes should be made. \\
+
+To prevent software failures, developers of a team may know what methods are being
+impacted by their changes and change them before they commit the code themselves.
+This can lead to the research of method coupling in order to provide awareness information
+of impact effects. Much research has already preformed this task at the file level as mentioned
+in the Introduction of this paper. However, with the discovery of methods often being changed 
+together, one can imply the same logical dependencies from files to methods. If developers
+know that whenever method A gets changed they must update method B to compensate,
+then a change to A alone can be reason for negative impact effects. This is another method
+that could be used to alert developers of potential software failures inside the system.\\
+
+While methods were identified as being one of the potentially harmful impact effect
+structures, others were also mentioned. Databases were mentioned as one of the largest
+sources of impact effects on software systems. One developer mentioned how database
+schema changes tend to effect multiple levels of the project and tend to have some of
+the most harmful effects in terms of depth. The developer also mentioned how global
+resources that are used throughout the project as contain a high level of rick for impact
+effects over the project once they are changed. It seems like the largest threats are
+the interfaces to objects, especially object pool type structures.\\
+
+Future work could be focused on the interfaces of object pool type structures mentioned
+above and what makes them so harmful. Finding out what types of changes are more
+likely to have harmful impact effects to the software project may help developers understand
+when and where impact effects may be caused and what can be done to prevent bugs 
+or to find them quickly.\\
+
+Another point of interest is about the size of the team in contrast to the effectiveness
+of the tool. Both interviewees stated the belief that the awareness tool would be more
+effective at a larger team size. The small team sizes were cited as being tightly knit and
+for having little need of awareness of what other developers were doing because it
+was just known. This is perhaps why other more high level approaches to awareness have
+been more successful in the small team. The higher level awareness applications 
+show activity of other developers that can be of use to anyone inside the project such 
+as who is editing a file as to avoid merge conflicts. However they lack the detail to
+provide read bug prevention and meaning coordination recommendations. Where as
+with the Impact tool on small teams, all developers may already know how their own code
+will be effected by others actions and thus have no need for the tool. One can see the
+contrast between the needs of a small and large teams by the awareness tools that they
+require. Thus, Impact may only be a tool to be used by large development teams or
+projects.\\
+
+A final point of discussion is the change in time and space complexities of methods.
+Time complexity being the run time of the method and space complexity being
+the amount of memory consumed by the method.
+One interviewee brought up the fact that if a method changes time or space
+complexity enough, he would be less inclined to use that method in the future.
+If changed to either of these two complexities could be detected, they could lead
+to another form of developer awareness at the method level.\\
+
+With the improvements listed in this section, Impact, or a similar tool, could become
+an extremely useful tool in the medium to large software team or project
+domain. \\
+
 
 \section{Threats To Validity}
 The two threats to validity inside of the evaluation of Impact are the size of the evaluation
@@ -270,7 +414,7 @@ from the study. Two teams were only used for this study because of the large tim
 of the study and the time constraints of willing participants. Secondly, the two developers
 interviewed pose a large threat to validity as only one of them had real world development
 experience and of that was under 5 years. Not having the background knowledge to make
-judgement calls on what developers really want have hindered the results of this case study's 
+judgement calls on what developers really want have hindered the results of this case study’s 
 results. \\
 
 A finally but smaller threat to validity is that the projects being developed by the teams were
@@ -279,8 +423,9 @@ omits the severity of mistakes inside of the source code. Without the real world
 of bugs in software development, the teams may have been less concerned with the results
 that the tool had to offer and thus have skewed the results of the study.\\
 
-\section{Conclusion and Future Work}
-
+\section{Conclusion}
+Technical dependencies are often used to predict software failures
+in large software system~\cite{Pinzger:2008:DNP, Zimmermann:2008:PDU, Kim:2006:AIB}. 
 This paper has shown how an awareness tool that is focused on the method and code reliance
 level of a software project can be implemented. It has evaluated the tool for both its underlying
 philosophy and the tool as a means of awareness inside a software project. \\

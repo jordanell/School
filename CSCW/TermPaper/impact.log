@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.10)  1 DEC 2012 21:01
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.10)  2 DEC 2012 12:18
 entering extended mode
  %&-line parsing enabled.
 **impact.tex
@@ -207,45 +207,37 @@ LaTeX Font Info:    ... okay on input line 11.
 \MPnumerator=\count108
 \everyMPtoPDFconversion=\toks22
 )
-Underfull \hbox (badness 10000) in paragraph at lines 42--46
+Underfull \hbox (badness 10000) in paragraph at lines 38--47
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--52
+Underfull \hbox (badness 10000) in paragraph at lines 48--58
 
  []
 
 
-Underfull \hbox (badness 1810) in paragraph at lines 53--59
-[]\OT1/ptm/m/n/10 At each change-set, the method call graphs must be
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--59
+Underfull \hbox (badness 10000) in paragraph at lines 59--65
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--69
+Underfull \hbox (badness 10000) in paragraph at lines 66--73
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--76
+Underfull \hbox (badness 10000) in paragraph at lines 74--79
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--85
+Underfull \hbox (badness 10000) in paragraph at lines 80--88
 
  []
 
-<images/TecNetwork.png, id=1, 1061.9675pt x 349.305pt>
-File: images/TecNetwork.png Graphic file (type png)
 
-<use images/TecNetwork.png>
-Underfull \hbox (badness 10000) in paragraph at lines 95--99
+Underfull \hbox (badness 10000) in paragraph at lines 89--92
 
  []
 
@@ -253,80 +245,83 @@ Underfull \hbox (badness 10000) in paragraph at lines 95--99
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 100--107
+Underfull \hbox (badness 10000) in paragraph at lines 96--100
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--110
+Underfull \hbox (badness 10000) in paragraph at lines 102--106
 
  []
 
 
-Underfull \hbox (badness 1478) in paragraph at lines 111--120
+Underfull \hbox (badness 1810) in paragraph at lines 107--118
+[]\OT1/ptm/m/n/10 At each change-set, the method call graphs must be
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--128
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--135
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--144
+
+ []
+
+<images/TecNetwork.png, id=9, 1061.9675pt x 349.305pt>
+File: images/TecNetwork.png Graphic file (type png)
+
+<use images/TecNetwork.png>
+Underfull \hbox (badness 10000) in paragraph at lines 154--158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--166
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--169
+
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 170--179
 \OT1/ptm/m/n/10 in-for-ma-tion. The feeds can be used for track-ing many
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--120
+Underfull \hbox (badness 10000) in paragraph at lines 170--179
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 121--123
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 180--182
 
  []
 
-<images/ImpactDemo.png, id=10, 1377.145pt x 948.54375pt>
+<images/ImpactDemo.png, id=13, 1377.145pt x 948.54375pt>
 File: images/ImpactDemo.png Graphic file (type png)
 
 <use images/ImpactDemo.png>
-Underfull \hbox (badness 1960) in paragraph at lines 135--142
+Underfull \hbox (badness 1960) in paragraph at lines 194--201
 \OT1/ptm/m/n/10 to achieve qual-ity soft-ware ap-pli-ca-tions. The course is
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--142
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 143--146
-
- []
-
-
-Underfull \hbox (badness 1509) in paragraph at lines 147--152
-\OT1/ptm/m/n/10 pre-formed mi-nor de-vel-op-ment. Team 1's lead de-vel-oper
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 147--152
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 153--158
-
- []
-
-[2 <./images/TecNetwork.png (PNG copy)>]
-Underfull \hbox (badness 1803) in paragraph at lines 163--175
-\OT1/ptm/m/n/10 ended up be-ing spin off dis-cus-sions from the orig-i-nal
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 163--175
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 176--190
-
- []
-
-[3 <./images/ImpactDemo.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 191--195
+Underfull \hbox (badness 10000) in paragraph at lines 194--201
 
  []
 
@@ -336,51 +331,149 @@ Underfull \hbox (badness 10000) in paragraph at lines 202--205
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--221
+Underfull \hbox (badness 1509) in paragraph at lines 206--211
+\OT1/ptm/m/n/10 pre-formed mi-nor de-vel-op-ment. Team 1's lead de-vel-oper
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 222--229
+Underfull \hbox (badness 10000) in paragraph at lines 212--217
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 231--235
+Underfull \hbox (badness 1803) in paragraph at lines 222--234
+\OT1/ptm/m/n/10 ended up be-ing spin off dis-cus-sions from the orig-i-nal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 222--234
+
+ []
+
+[3 <./images/TecNetwork.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 235--249
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--251
+Underfull \hbox (badness 10000) in paragraph at lines 250--254
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--258
+Underfull \hbox (badness 10000) in paragraph at lines 261--264
+
+ []
+
+[4 <./images/ImpactDemo.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 265--280
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--275
-
- []
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 276--281
+Underfull \hbox (badness 10000) in paragraph at lines 281--288
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--287
+Underfull \hbox (badness 10000) in paragraph at lines 290--294
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--294
+Underfull \hbox (badness 10000) in paragraph at lines 295--310
 
  []
 
-No file impact.bbl.
+
+Underfull \hbox (badness 10000) in paragraph at lines 311--317
+
+ []
+
+
+Underfull \hbox (badness 3849) in paragraph at lines 320--324
+[]\OT1/ptm/m/n/10 The over-all sense com-ing from the lead de-vel-oper
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--324
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 325--334
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 335--353
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 354--363
+
+ []
+
+
+Underfull \hbox (badness 2057) in paragraph at lines 364--372
+[]\OT1/ptm/m/n/10 While meth-ods were iden-ti-fied as be-ing one of the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 364--372
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 373--378
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--393
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--401
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--405
+
+ []
+
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 408--419
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 420--425
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--432
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 433--439
+
+ []
+
+(./impact.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -392,24 +485,22 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5
-
-] (./impact.aux) ) 
+[7] (./impact.aux) ) 
 Here is how much of TeX's memory you used:
- 2184 strings out of 493848
- 31337 string characters out of 1152823
- 94651 words of memory out of 3000000
- 5484 multiletter control sequences out of 15000+50000
- 33007 words of font info for 62 fonts, out of 3000000 for 9000
+ 2199 strings out of 493848
+ 31576 string characters out of 1152823
+ 96666 words of memory out of 3000000
+ 5496 multiletter control sequences out of 15000+50000
+ 34143 words of font info for 63 fonts, out of 3000000 for 9000
  717 hyphenation exceptions out of 8191
  27i,8n,20p,301b,297s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/s
-hare/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/f
-onts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/time
-s/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on impact.pdf (5 pages, 227833 bytes).
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr
+/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive
+/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/ti
+mes/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on impact.pdf (7 pages, 242433 bytes).
 PDF statistics:
- 39 PDF objects out of 1000 (max. 8388607)
+ 47 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
