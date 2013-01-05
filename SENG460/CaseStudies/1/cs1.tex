@@ -1,0 +1,177 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{University of Victoria, Software Engineering} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Central Credit Union Case Study \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Jordan Ell\\
+V00660306} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\section{Problem title}
+
+Plan the implementation of Enterprise Security Architecture (ESA) at Central 
+Credit Union by answering the following questions: What organizational 
+structure should be used to support the development of the ESA (1.1), what will
+be the key components to Central Credit Unions ESA (1.2), who in the organization
+should be ultimately responsible for information security and why (1.3), what
+will be some CFS's is the ESA's development (1.4), and where should Central 
+Credit Union starts and what are the priorities (1.5).
+
+%------------------------------------------------
+
+\subsection{ESA Organizational Structure}
+For the organizational structure of the ESA development, I would create a
+security committee as well as a security team with a liaison between the 
+two groups. The committee
+will consist of all employees at the "C-level", being the corporate security
+officer, chief information officer, chief operating officer, and chief
+financial officer. The team will consist of each manager listed in the given
+organizational figure. The liaison between the two security groups would be 
+the corporate security officer Linda McDougall. Linda is in the best position
+to be the liaison for these groups as she already is involved in company security
+and has the ability to create effective change at both the managerial level
+as well as the "C-level". If a budget permitted, it may be favourable to have
+a new hire become the liaison and whose sole purpose is the organization of the
+ESA as well as communicating change between the higher and lower powers. This
+may have the consequence of the ESA becoming stronger as a whole job is dedicated
+to the ESA as opposed to having it tacked onto preexisting work.
+
+%------------------------------------------------
+
+\subsubsection{Key Components}
+The key components can be broken down into two sets: technical and plans. The 
+technical components which are key will be internet security. As the Central
+Credit Union offers extremely high risk services and highly targeted services
+(online banking), their online security will be the highest of their concerns. 
+Other technical concerns which are lower risk but still technical concerns non
+the less would be internal technical structures such as data confidentiality
+and accessibility to employees.\\
+
+As for key components of plans, seeing as the Central Credit Union offers 
+services to end users, training of new security components to those end users
+will be critical to ensuring the regular business flow continues. Regular
+interval testing will also be key to ensure the ESA is moving forward in its
+development and to ensure that standards are being met as well as intermediate
+and end goals. Finally, interval training will be key as employees inside of
+the Central Credit Union must become aware of new security standards and 
+understand their impact on personal job performance as well as business goals.
+
+
+%------------------------------------------------
+
+\subsubsection{Responsibility}
+Ultimately, I believe that the person responsible for the outcome of the ESA
+should be Linda McDougall. Linda as being designated the liaison between the
+security committee and security team is in the best position to be fully aware
+of the project's developments and status. She also is in the best position as
+being at the "C-level" to effectively change the processes and thoughts of the
+company when it comes to the ESA. Another potential candidate would be the CEO
+Bob Smith. With the CEO becoming the responsible party for the ESA, the business
+end of the ESA is brought more to the forefront and may be taken more seriously
+by internal structures inside the company.\\
+
+A side note on this matter is of course that everyone in the company is
+ultimately responsible for the success and outcome of the ESA. Any employee could
+be responsible for a security breach and a failure of the ESA and thus assumes
+some level of responsibility.
+
+
+%------------------------------------------------
+
+\subsubsection{Critical Success Factors}
+Some critical success factors include the following. Linda's ability to
+communicate and cause actual change among the "C-level" employees who are
+responsible for the business goals of the rest of the company. Lower employees
+ability to adapt and effectively follow new ESA rules and procedures which
+will be soon put in place. Interval testing of the ESA to ensure that the
+development of the ESA is moving forward toward end goals laid out by the
+security committee and team. In with interval testing is being able to
+properly evaluate the company's base line of their current security measures
+in order to properly identify weaknesses both technical and procedural in order
+to set meaningful goals.\\
+
+I believe a success factor of any organization which is commonly overlooked
+is the ability not only to document proper procedures, but also make it easily
+available to all employees where needed and easy to understand. Too many times
+are procedures either not documented or are hidden or difficult to find 
+certain procedures for a given employee or task.
+
+
+%------------------------------------------------
+
+\subsubsection{Where To Start and Priorities}
+The Central Credit Union should start by forming the appropriate committee and
+security team as well as finding an appropriate sponsor without whom the project
+would be taken lightly. Once the organizational aspects have been assigned, the
+ESA should work to establishing a base line of where security currently stands
+as well as determining goals for the near and distance future. Base lines can
+be determined with current penetration testing and internal surveys to the
+employees. Goals can be used to determine how interval testing should be 
+accomplished in order to test and meet end goals.
+
+\end{document}
