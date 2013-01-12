@@ -1,0 +1,247 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Large Colored Title Article
+% LaTeX Template
+% Version 1.1 (25/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------
+
+\documentclass[DIV=calc, paper=a4, fontsize=11pt, twocolumn]{scrartcl}	 % A4 paper and 11pt font size
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage[protrusion=true,expansion=true]{microtype} % Better typography
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage[svgnames]{xcolor} % Enabling colors by their 'svgnames'
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{fix-cm}	 % Custom font sizes - used for the initial letter in the document
+
+\usepackage{sectsty} % Enables custom section titles
+\allsectionsfont{\usefont{OT1}{phv}{b}{n}} % Change the font of all section commands
+
+\usepackage{fancyhdr} % Needed to define custom headers/footers
+\pagestyle{fancy} % Enables the custom headers/footers
+\usepackage{lastpage} % Used to determine the number of pages in the document (for "Page X of Total")
+
+\usepackage{enumitem}
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+
+% Headers - all currently empty
+\lhead{}
+\chead{}
+\rhead{}
+
+% Footers
+\lfoot{}
+\cfoot{}
+\rfoot{\footnotesize Page \thepage\ of \pageref{LastPage}} % "Page 1 of 2"
+
+\renewcommand{\headrulewidth}{0.0pt} % No header rule
+\renewcommand{\footrulewidth}{0.4pt} % Thin footer rule
+
+\usepackage{lettrine} % Package to accentuate the first letter of the text
+\newcommand{\initial}[1]{ % Defines the command and style for the first letter
+\lettrine[lines=3,lhang=0.3,nindent=0em]{
+\color{DarkGoldenrod}
+{\textsf{#1}}}{}}
+
+%-----------------------------------------------------------------------------
+%	TITLE SECTION
+%-----------------------------------------------------------------------------
+
+\usepackage{titling} % Allows custom title configuration
+
+\newcommand{\HorRule}{\color{DarkGoldenrod} \rule{\linewidth}{1pt}} % Defines the gold horizontal rule around the title
+
+\pretitle{\vspace{-30pt} \begin{flushleft} \HorRule \fontsize{50}{50} \usefont{OT1}{phv}{b}{n} \color{DarkRed} \selectfont} % Horizontal rule before the title
+
+\title{ABC Information Security Policy} % Your article title
+
+\posttitle{\par\end{flushleft}\vskip 0.5em} % Whitespace under the title
+
+\preauthor{\begin{flushleft}\large \lineskip 0.5em \usefont{OT1}{phv}{b}{sl} \color{DarkRed}} % Author font configuration
+
+\author{Jordan Ell, } % Your name
+
+\postauthor{\footnotesize \usefont{OT1}{phv}{m}{sl} \color{Black} % Configuration for the institution name
+University of Victoria % Your institution
+
+\par\end{flushleft}\HorRule} % Horizontal rule after the title
+
+\date{} % Add a date here if you would like one to appear underneath the title block
+
+%---------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Print the title
+
+\thispagestyle{fancy} % Enabling the custom headers/footers for the first page 
+
+%-------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%--------------------------------------------------------------------------
+
+\section*{Subject Area}
+
+Laptops are personal computers given to ABC employees in order to assist
+face paces business process and increase productivity. These laptops
+can be used both at work and home to allow employee connectivity to work
+at all hours. These laptops can contain all manor of information regarding
+ABC, its employees, and customers. Laptops have become a high risk data loss
+item because of an increase of malicious software / hardware sophistication
+as well as a decrease in these malicious intents cost.
+
+The loss of an ABC issued laptop not only incurs the physical cost of
+laptop replacement, but is also subject to data security issues. These data
+security issues are also present in unattended laptops as well as stolen. It
+is important that ABC personnel become aware of the potential security risks
+involved in laptop use and take all possible steps to ensure laptop and data
+security of their machine. This policy offers guidance on the user of ABC 
+issued laptops in both their physical protection as well as virtual.
+
+\section*{Areas of Concern}
+
+The primary area of concern is the loss of confidential company information
+regarding the company itself, employees, or customers. These losses can be
+brought on by irresponsibility of laptop ownership which can lead to laptop
+theft and potential data theft of the laptop's contents. With newly emerging
+quick and relatively cheap forms of data theft such as cold boot 
+attacks, laptop
+information security has become a primary concern of ABC. Factors of laptop
+use which can lead to these attacks and data loss include:
+\begin{itemize}
+\item Laptop theft.
+\item Unattended powered on laptops.
+\item Sensitive data being stored on personal laptops.
+\item Low refresh rates if DRAM.
+\item Unprotected laptop BIOS.
+\item Laptops being left on for extended periods of time.
+\item Hard drive being unencrypted.
+\item Data loss of unsecured laptops and hard drives.
+\item DRAM attacks such as cold boot attacks.
+\item Company wide security breaches due to a single laptop being attacked.
+\end{itemize}
+
+%------------------------------------------------
+
+\section*{Intended Outcome}
+
+This policy for information security is intended to prevent virtual and 
+physical
+loss to the company in the following ways. First, to prevent physical laptop
+theft. Second, to prevent data loss attacks on laptops which need not be stolen
+or moved from their location. Finally, to promote responsible laptop use
+and ownership among all employees of ABC.
+
+%------------------------------------------------
+
+\section*{Information Security Policy}
+
+The policy outlined here is broken into responsibilities of different types of
+personal with a bottom up approach. An employee who falls under any of the listed
+categories must strictly adhere to the rules outlined.
+
+%------------------------------------------------
+
+\subsection*{Responsibilities of all Personnel}
+
+\begin{description}
+  \item[Technical] \hfill
+    \begin{itemize}
+    \item Ensure a BIOS password is installed on ABC issued laptop.
+    \item Ensure no company sensitive data is stored on issued laptop. This
+    includes company, employee and customer related sensitive information.
+    \item Ensure hard driver encryption is installed and used on 
+    ABC issued laptop.
+    \end{itemize}
+  \item[Physical] \hfill
+    \begin{itemize}
+    \item Ensure laptop is locked to immovable object when available.
+    \item When laptop is to be left unattended for longer than 10 minutes,
+    the laptop must either be locked in a cabinet or other secure location
+    or must be powered off while be locked to an immovable object.
+    \item When laptop is not being used to an extended period of time (at the
+    end of the work day or other), the laptop must be powered off.
+    \end{itemize}
+  \item[Avoid] \hfill
+   \begin{itemize}
+    \item Leaving laptop powered on for extended periods of time even in
+    a secure location.
+    \item Giving laptop to any ABC employee other than IT for an extended
+    period of time.
+    \end{itemize}
+  \item[Report] \hfill
+   \begin{itemize}
+    \item Any laptop seen unattended and not securely fasten with laptop 
+    lock or secured inside locked cabinet. 
+    \item Any discrepancy with technical measure such as BIOS password,
+    secure data storage, or hard drive encryption.
+    \item Any actual and suspected security incidents involving physical
+    or data loss.
+    \end{itemize}
+\end{description}
+
+%------------------------------------------------
+
+\subsection*{Responsibilities of IT}
+
+\begin{description}
+  \item[Technical] \hfill
+    \begin{itemize}
+    \item Ensure only high refresh rate DRAM is purchased and installed
+    on any ABC laptop issues to employees.
+    \item Ensure any hard drive encryption also flushes DRAM when the
+    laptop is powered off.
+    \item Ensure proper training in all technical controls are issued to
+    new employees of ABC and that compliance metrics are met.
+    \end{itemize}
+  \item[Compliance] \hfill
+    \begin{itemize}
+    \item Ensure data security information sessions are held with each
+    department of ABC are held at least once a year to update employees
+    about new security measures and concerns.
+    \item At the department's discretion, perform spot checks of departments
+    or employees laptops to ensure policy standards are being met.
+    \item Ensure employees properly patch software as needed on laptops as
+    patching requires employee presence with BIOS password.
+    \end{itemize}
+  \item[Avoid] \hfill
+   \begin{itemize}
+    \item Sensitive data being stored on internet facing
+    servers or ensure proper security measure have been taken 
+    for data security.
+    \end{itemize}
+\end{description}
+%------------------------------------------------
+
+\subsection*{Responsibilities of HR}
+
+\begin{description}
+  \item[Physical] \hfill
+    \begin{itemize}
+    \item Ensure all new employees are trained on proper laptop security.
+    This includes all physical items listed in the responsibilities of all
+    personnel.
+    \end{itemize}
+  \item[Compliance] \hfill
+    \begin{itemize}
+    \item At the department's discretion, perform spot checks of departments
+    or employees laptops to ensure physical policy standards are being met.
+    \end{itemize}
+\end{description}
+
+\end{document}
