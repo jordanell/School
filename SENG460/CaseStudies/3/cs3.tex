@@ -24,6 +24,9 @@
 \usepackage[english]{babel} % English language/hyphenation
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
 
+\usepackage{graphicx}
+\usepackage{array}
+
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
 
 \usepackage{sectsty} % Allows customizing section commands
@@ -112,7 +115,8 @@ The following table is used by the STRA team to identify assets within the Unive
 later be used in the threat assessment phase of the STRA process as outlined in Section~\ref{subsec:tap}.
 
 \begin{center}
-    \begin{tabular}{| 1 | 1 | 1 | 1 | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
+\resizebox{\textwidth}{!}{%
+    \begin{tabular}{| l | l | l | l | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
     \hline
     Class & Category & Group & Univ IT Dept & Confid. & Avail Int & Avail op & Integrity \\
     People & Employees & Univ IT Dept & Univ IT Dept & & High & High & \\
@@ -128,7 +132,7 @@ later be used in the threat assessment phase of the STRA process as outlined in 
     Tangible & Facilities & Library & Univ IT Dept & & Medium & Medium &  \\
     Intangible & University & Reputation & Univ IT Dept & High & High & High & High \\
     \hline
-    \end{tabular}
+    \end{tabular}}
 \end{center}
 
 This previous table represents my asset identification phase of the University of Victoria's IT infrastructure. Here
@@ -146,7 +150,8 @@ assessment phase. The values in the likelihood, gravity, and one of: confid., av
 in for the purposes of this case study.
 
 \begin{center}
-    \begin{tabular}{| 1 | 1 | 1 | 1 | p{2cm} | p{2cm} | p{2cm} | p{2cm} | | p{2cm} |}
+\resizebox{\textwidth}{!}{%
+    \begin{tabular}{| l | l | l | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
     \hline
     ID No. & Class & Agent & Event & Likelihood & Gravity & Confid. & Avail. & Integrity \\
     31 & Deliberate & Individuals & Network Exploitation & Medium & High &  & High &  \\ 
@@ -184,7 +189,7 @@ in for the purposes of this case study.
     156 & Accidents & Equipment Operators & Disrupt Production & High & Medium &  & High &  \\
     208 & Natural Hazards & Dust & Media Contamination & Low & Low &  & Very Low & Very Low \\
     \hline
-    \end{tabular}
+    \end{tabular}}
 \end{center}
 
 The table created above was created by first entering the likelihood and gravity values based on the provided
