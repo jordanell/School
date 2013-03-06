@@ -1,0 +1,411 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Laboratory Report LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{amssymb, amsmath}
+
+\title{How Big is Our Galaxy \\ ASTR 102} % Title
+
+\author{Jordan \textsc{Ell} \\ V00660306} % Author name
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+\begin{tabular}{lr}
+Date Performed: 1/1/2012\\ % Date the experiment was performed and partner's name
+Instructor: Paolo Turri % Instructor/supervisor
+\end{tabular}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Objective}
+
+The objective of this lab report, is to determine the size of the Milky Way Galaxy which
+we reside in. This object will be achieved through two mean, firs by determining the 
+distance to the M15 globular cluster, and secondly by using a method similar to Shapley's
+determining of the distance to the center of a globular cluster system.
+ 
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 3
+%----------------------------------------------------------------------------------------
+
+\section{Equipment}
+
+For this report, the following list of equipment was used. A set of 8 images of the globular
+cluster M15 all taken on a single night. A single sheet of transparent paper with graph lines
+pre-fabricated onto it. A single felt pen used for writing on the transparent paper.
+A single sheet of opaque graph paper. A regular pencil for drawing on the opaque 
+graph paper. A SHARP-EL510R calculator. The Linux computer program
+known as skycat which was used for viewing images of globular clusters and measuring their
+sizes.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 4
+%----------------------------------------------------------------------------------------
+
+\section{Procedure}
+
+\subsection{Determine the distance to M15}
+
+First, a graph was draw to represent a variable star's magnitude in the globular cluster
+known as M15. To do this, the 8 images of the cluster previously mentioned were used to
+measure the magnitude of the star at each of the frames. This was done by comparing the
+star's magnitude from a first frame to a known magnitude of a secondary star in the proceding
+frame. Some of the frames however did not have known magnitude stars. In these cases, either
+the variable star was compared to known magnitudes in it's own frame or the next frame in
+the series. Once the variable star's magnitude was measured for each frame, the graph
+was ready to be constructed. The results of these measurements can be found in
+Table~\ref{tab:m15}. The graph was constructed first on the transparent sheet of paper with
+the felt pen. The graph is drawn as apparent magnitude vs. time in fractions of a day.
+These fractions of a dat correspond to the given image frames. Once the point were plotted,
+an error barr of magnitude 0.5 was added to the graph to correct for possible measurement
+errors. \\
+
+Next the mean of the single variable star measured was calculated. This calculation
+can be found in Equation~\ref{calc:m}. As other participants were taking part in the
+experiment, the same procedure was conducted with other teams and other variable stars
+in the globular cluster. These means can be found in Table~\ref{tab:mean}. Next, 
+the mean of the variable stars mean magnitude was taken, as can be seen in 
+Equation~\ref{calc:mm}. This true mean of the variable stars measure was then used
+for a final calculation to determin the globular cluster's distance away from Earth
+as seen in Equation~\ref{calc:d1}. A final step was now taken to transfer the 
+graph previously drawn on the transparent paper to the opaque graph paper. This final
+graph can be found in the back of this report labelled as Figure 1.
+
+\subsection{Determine the distance to the galactic center}
+
+To determine the distance to the center of the Milky Way Galaxy from Earth, the Linux
+program skycat was first used. Skycat came pre loaded with images of various globular
+clusters that are located in the field of view from Earth pointed towards the 
+galactic center. Using skycat, each image was loaded to the screen. Then, each globular
+cluster was measure in diameter using arc minutes. These measurements were done by 
+measuring from one side of the "solid light" in the center of the cluster to the other
+horizontally as the image dictates. The "solid light" for this report is defined as
+where a single star can no longer be distinguished from the rest of its neighbooring 
+stars. The results of the measurements can be found in Table~\ref{tab:size}. \\
+
+Once the cluster were measure, they were inserted in to a web based application supplied
+by the lab instructor.\footnote{orca.phys.uvic.ca/OLDWEBPAGES/a120/centgal/index.html}
+This program preformed a type of weighting procedure based on the measurement of M15
+and all other globular clusters measured. the result of this program's calculation
+can be found in Equation~\ref{calc:orca}.
+
+\subsection{Miscellanious}
+
+Lastly, questions proposed by the lab manual for Astronomy 102 at the University of
+Victoria in the lab "How big is out galaxy" were answered using various calculation.
+The questions and answers can be found in Section~\ref{sec:qna} while the calculations
+themselves can be found in Section~\ref{sec:calc}.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 5
+%----------------------------------------------------------------------------------------
+
+\section{Observations}
+
+All observations for this report were made on the day of 2013-Mar-04. Since the result
+of any given observation did not depend on time of day or weather, they have been ommitted
+from this report. The measurements of the M15 globular cluster and the brightness of its
+variable stars can be found in Table~\ref{tab:m15}. The measurements of all variable stars
+mean magnitude preformed by all groups inside the lab at the time of observation can 
+be found in Table~\ref{tab:mean}. The measurements for the diameter of given globular
+clusters preformed with the skycat program can be found in Table~\ref{tab:size} given
+in arc minutes. Finally, the plotting of the variable star magnitude in the M15 globular
+cluster can be found at the back of this lab report labelled as Figure 1.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 6
+%----------------------------------------------------------------------------------------
+
+\section{Tables and Measurements}
+
+The following two table correspond to lab supplied images and measurements taken
+of that image of M15 the globular cluster. These images consisted of 8 frames taken
+at variable times apart.
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{l c}
+\hline
+Star & Magnitude\\
+\hline
+\hline
+B & 16.0\\
+B & 15.8\\
+B & 15.75\\
+B & 16.4\\
+B & 15.5\\
+B & 15.3\\
+B & 15.35\\
+B & 15.6\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Measurements B star magnitude in M15.\label{tab:m15}}
+\end{table}
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{l c}
+\hline
+Star & Mean Magnitude\\
+\hline
+\hline
+A & 16.2\\
+B & 15.7\\
+C & 15.7\\
+D & 15.8\\
+E & 15.8\\
+F & 15.6\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Measurements variable star means in M15.\label{tab:mean}}
+\end{table}
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{l c}
+\hline
+Cluster & Diameter (arc minutes)\\
+\hline
+\hline
+M15 & 3.20\\
+NGC6624 & 0.30\\
+NGC6626 & 0.82\\
+NGC6637 & 0.57\\
+NGC6638 & 0.33\\
+NGC6652 & 0.25\\
+NGC6656 & 1.13\\
+NGC6681 & 0.37\\
+NGC6715 & 0.58\\
+NGC6723 & 0.47\\
+NGC6809 & 2.40\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Globular cluster diameters in skycat.\label{tab:size}}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 7
+%----------------------------------------------------------------------------------------
+
+\section{Graphs}
+
+The graphs of a given variable star's magnitude variance in globular cluster M15
+can be found at the back of this lab report labelled as Figure 1.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 7
+%----------------------------------------------------------------------------------------
+
+\section{Calculations}
+\label{sec:calc}
+
+The following calculation creates the mean magnitude value for the measured variable star in
+the globular cluster M15 where i represents a row in Table~\ref{tab:m15}.
+
+\begin{equation}
+\label{calc:m}
+mean = \frac{\Sigma m_{i}}{8} = 15.7125
+\end{equation}
+
+The following claculation creates the mean magnitude valie for all measured varible star
+means as calculated by other participants in the lab where i represent a row in
+Table~\ref{tab:mean}
+
+\begin{equation}
+\label{calc:mm}
+mean = \frac{\Sigma m_{i}}{6} = 15.8
+\end{equation}
+
+The following calculation gives the distance in parsec from Earth to the globular cluster
+M15.
+
+\begin{equation}
+\label{calc:d1}
+D = 10^{\frac{15.8 - 0.8 + 5}{5}} = 10,000 pc
+\end{equation}
+
+The following calculation gives the results of the orcs web application used to determine
+the distance from Earth to the galactic center
+
+\begin{equation}
+\label{calc:d2}
+Orca_{d} = 25,700.24 pc
+\end{equation}
+
+The following calculations refer to the miscellanious questions asked at the end
+of this lab manual lab.
+
+\begin{equation}
+\label{calc:m1}
+Light Time = 8,000 pc * 3.26 lry/pc
+\end{equation}
+
+\begin{equation}
+\label{calc:m2}
+Distance = 8,000pc * 2\pi
+\end{equation}
+
+\begin{equation}
+\label{calc:m3}
+Time = \frac{50,000pc}{.00021pc/yr}
+\end{equation}
+
+\begin{equation}
+\label{calc:m4}
+Mass = 8.8X10^{15}*\frac{A^3}{P^2}
+\end{equation}
+
+\begin{equation}
+\label{calc:m5}
+Count = \frac{78,000,000,000}{(3*10^7)}
+\end{equation}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 8
+%----------------------------------------------------------------------------------------
+
+\section{Results}
+
+The results of this lab can be found by examining the calculations preformed in 
+Section~\ref{sec:calc}. The results for the question of "how far away is the globular
+cluster M15" are found through Equation~\ref{calc:d1} and show the result as being
+10,000 parsecs.\\
+
+The results for the question of "how far away is the galactic center from Earth"
+are found in the results of Equation~\ref{calc:d2} and show the reult as being
+25,700.24 parsecs.
+
+The results for any question that the lab manual (as previously mentioned) poses
+can be found in Section~\ref{sec:qna} while the supporting calculations can be 
+found in Section~\ref{sec:calc}.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 8
+%----------------------------------------------------------------------------------------
+
+\section{Questions and Answers}
+\label{sec:qna}
+
+The following questions and answers are asked inside of lab 6, How Big Is Our Galaxy,
+inside of the lab manual for ASTR102. The questions have been repeated for the reader.
+
+\begin{enumerate}
+
+\item[Q.] Calculate how long it takes for light to get to the sun from the center of
+the galaxy. There are 3.26 light years in one parsec.
+\item[A.] As per Equation~\ref{calc:m1} the answer is 26,000lyr.
+\item[Q.] Calculate the distance the Sun travel around the center of the galaxy.
+\item[A.] As per Equation~\ref{calc:m2} the answer is 50,000pc.
+\item[Q.] How long does it take the Sun to orbit the center of the galaxy?
+\item[A.] As per Equation~\ref{calc:m3} the answer is 240,000,000yr.
+\item[Q.] Find the mass of the galaxy.
+\item[A.] As per Equation~\ref{calc:m4} the answer is ~78,000,000,000.
+\item[Q.] If you are looking for life in our galaxy, and you spend 1 second looking
+at each star, how many years would it take to check out our galaxy?
+\item[A.] As per Equation~\ref{calc:m5} the answer is 2600yr.
+
+\end{enumerate}
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 9
+%----------------------------------------------------------------------------------------
+
+\section{Threats to Validity}
+
+There are three main threats to validity for this lab report. Two come at the hands
+of self measurement, while the third comes at the hands of reliance of external
+teams for measurement and calculation. For once, the measurements of the variable
+star magnitude measured in M15 is a threat to validity. These measurements were prefomed
+purely with the naked eye and can be subject to much debate as the magnitudes of
+stars were simply compared visually. Errors in this measurement can lead to errors
+in the drawing of Firgure 1 and the further calculations preformed on both means and
+on the distance from Earth to M15. \\
+
+The second self measurement threat to validity is the measuring of globular cluster
+sizes on the program skycat. The definition of what constitues the boundaries of a
+globular cluster causes the basis of this error aside from the actual imprefection
+of the measurement itself. The boundary used as described early was the "solid light"
+boundary. However, some globular clusters measure lacked a definite "solid light"
+boundary. This lead to potential measuring errors from one globular cluster to the
+next. These measurements effect the error in the calculation of the distance to
+the galactic center from Earth. This error leads to the rather large final calculation
+error for this question. \\
+
+The final threat to validity is the reliance of external teams for their own measurements
+of variable stars in M15 and following calculations. The numbers passed to myself
+were not validated by any other external party for validity. One external team
+admitted to large measurement errors in a variable star magnitude. These types of errors
+and possible error effect the calculation done in Equation~\ref{calc:d1}.
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 10
+%----------------------------------------------------------------------------------------
+
+\section{Conclusions}
+
+This report has shown how to calcute two items. First, by measuring the magnitude of
+variable stars, one can determine the distance of a globular cluster from Earth,
+in this case M15. Second, this report has shown how diameter measurements of globular
+clusters in a globular cluster system can be used to determine the distance from
+Earth to the galactic center.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 11
+%----------------------------------------------------------------------------------------
+
+\section{Evaluation}
+
+I found this lab interesting purely for the demonstration and experiment involving
+the magnitudes of variable stars inside a globular cluster to determine its distance.
+I had heard before that variable stars can be used to determine the distances to
+astronomical objects but had never known the procedure. It would have been interesting
+if a larger explination was given as to how this procedure works or how the formula
+used in Equation~\ref{calc:d1} was derived.
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\begin{thebibliography}{9}
+
+\bibitem{Smith:2012qr}
+Smith, J.~M. and Jones, A.~B. (2012).
+\newblock {\em Chemistry}.
+\newblock Publisher, City, 7th edition.
+
+\end{thebibliography}
+
+\end{document}
