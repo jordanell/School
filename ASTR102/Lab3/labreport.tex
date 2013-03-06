@@ -13,6 +13,7 @@
 \documentclass{article}
 
 \usepackage{amssymb, amsmath}
+\usepackage{float}
 
 \title{How Big is Our Galaxy \\ ASTR 102} % Title
 
@@ -48,7 +49,24 @@ determining of the distance to the center of a globular cluster system.
 
 \section{Introduction}
 
+We all live inside the Milky Way, the galaxy that contains our solar system. The name
+Milky Way is derived from it's appearance as a milky glowing band across the night
+sky on a clear and dark night~\cite{encyc:2012}. Not even 100 years ago, astronomers
+and common folk believed that the Milky Way was the universe. Nothing was believed
+to have existed outside of the Mily Way as these types of sizes were deemed 
+impossibly big. Then along came a man named Harlow Shapley and his famous 1918
+study of globular clusters, the galaxy, and our Sun's position inside of it
+~\cite{Bart:1972}. \\
 
+Using Cepheid variable stars~\cite{Udalski:1999}, Shapley was able to correctly
+estimate the size of the Milky Way Galaxy and the Sun's position within it. From
+these calculations are came the idea of deep space objects. Objects that lay
+outside of the Milky Way. These objects eventually became to be seen as
+other galaxies, black holes, and deep space supernovae~\cite{Fred:40}. \\
+
+Although Shapley created ground breaking procedures and calculations, this
+report will focus on merely replicating (with slight variations) some of
+his measurements and calculations.
 
 %----------------------------------------------------------------------------------------
 %	SECTION 3
@@ -148,7 +166,7 @@ The following two table correspond to lab supplied images and measurements taken
 of that image of M15 the globular cluster. These images consisted of 8 frames taken
 at variable times apart.
 
-\begin{table}[h!]
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{l c}
 \hline
@@ -169,7 +187,7 @@ B & 15.6\\
 \caption{Measurements B star magnitude in M15.\label{tab:m15}}
 \end{table}
 
-\begin{table}[h!]
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{l c}
 \hline
@@ -188,7 +206,7 @@ F & 15.6\\
 \caption{Measurements variable star means in M15.\label{tab:mean}}
 \end{table}
 
-\begin{table}[h!]
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{l c}
 \hline
@@ -322,13 +340,16 @@ inside of the lab manual for ASTR102. The questions have been repeated for the r
 
 \item[Q.] Calculate how long it takes for light to get to the sun from the center of
 the galaxy. There are 3.26 light years in one parsec.
-\item[A.] As per Equation~\ref{calc:m1} the answer is 26,000lyr.
+\item[A.] As per Equation~\ref{calc:m1} the answer is 26,000lyr. This corresponds to
+the accepted answer of 27,000lyr +- 1,000lyr~\cite{Reid:1993}.
 \item[Q.] Calculate the distance the Sun travel around the center of the galaxy.
 \item[A.] As per Equation~\ref{calc:m2} the answer is 50,000pc.
 \item[Q.] How long does it take the Sun to orbit the center of the galaxy?
-\item[A.] As per Equation~\ref{calc:m3} the answer is 240,000,000yr.
+\item[A.] As per Equation~\ref{calc:m3} the answer is 240,000,000yr. This corresponds to the
+accepted answer of 240,000,000 years~\cite{Hess:2002}.
 \item[Q.] Find the mass of the galaxy.
-\item[A.] As per Equation~\ref{calc:m4} the answer is ~78,000,000,000.
+\item[A.] As per Equation~\ref{calc:m4} the answer is ~78,000,000,000. This corresponds
+to the accepted answer of $1.0-1.5*10^{12}$~\cite{McMillan:2011}.
 \item[Q.] If you are looking for life in our galaxy, and you spend 1 second looking
 at each star, how many years would it take to check out our galaxy?
 \item[A.] As per Equation~\ref{calc:m5} the answer is 2600yr.
@@ -401,10 +422,26 @@ used in Equation~\ref{calc:d1} was derived.
 
 \begin{thebibliography}{9}
 
-\bibitem{Smith:2012qr}
-Smith, J.~M. and Jones, A.~B. (2012).
-\newblock {\em Chemistry}.
-\newblock Publisher, City, 7th edition.
+\bibitem{encyc:2012}
+"Milky Way Galaxy". Encyclopædia Britannica, Inc.. Retrieved 2012-10-31.
+
+\bibitem{Bart:1973}
+Bart J. Bok. Harlow Shapely 1885-1972 A Biographical Memoir. National Academy of Sciences
+
+\bibitem{Udalski:1999}
+Udalski, A.; Soszynski, I.; Szymanski, M.; Kubiak, M.; Pietrzynski, G.; Wozniak, P.; Zebrun, K. (1999). "The Optical Gravitational Lensing Experiment. Cepheids in the Magellanic Clouds. IV. Catalog of Cepheids from the Large Magellanic Cloud". Acta Astronomica 49: 223.
+
+\bibitem{Fred:40}
+Fred Schaaf, 40 nights to knowing the sky: a night-by-night skywatching primer, page 113
+
+\bibitem{Reid:1993}
+Reid, Mark J. (1993). "The distance to the center of the Galaxy"
+
+\bibitem{Hess:2002}
+Hess, Frances. Earth Science. New York: Glencoe Mc Graw-Hill, 2002: 348.
+
+\bibitem{McMillan:2011}
+McMillan, P. J. (July 2011). "Mass models of the Milky Way". Monthly Notices of the Royal Astronomical Society 414 (3): 2446–2457
 
 \end{thebibliography}
 
