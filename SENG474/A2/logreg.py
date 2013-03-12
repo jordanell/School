@@ -1,18 +1,13 @@
 # Imports
 import math
+import sys
 
-# Input for program
-matrix = [[1, 1, 1, 1], 
-					[0.9, 1, 1, 1],
-					[0.9, 0.875, 1, 1],
-					[0.7, 0.75, 1, -1],
-					[0.6, 0.875, 1, -1],
-					[0.6, 0.875, 1, 1],
-					[0.5, 0.75, 1, -1],
-					[0.5, 0.8125, 1, -1],
-					[0.5, 1, 1, 1],
-					[0.5, 0.875, 1, -1],
-					[0.5, 0.875, 1, 1]]
+def read_input(file_name):
+	input = open(file_name, "r")
+	for line in input:
+		if not line.startswith("#") and not line.isspace():
+			matrix.append([float(n) for n in line.split()])
+
 
 def list_average(list):
 	sum = 0
@@ -20,38 +15,71 @@ def list_average(list):
 		sum += list[x]
 	return sum / len(list)
 
-def exp_calc(y, x, w_old):
-	x = (matrix[y][3]*matrix[y][x]) / ( 1 + math.exp(matrix[y][3]*((w_old[0]*matrix[y][0]) + (w_old[1]*matrix[y][1]) + (w_old[2]*matrix[y][2]) )))
+def get_exp(y, width, w_old):
+	e = 0
+	for x in range(0, width-1):
+		e += (w_old[x] * matrix[y][x])
+	return e
+
+
+def exp_calc(y, x, width, w_old):
+	e = get_exp(y,width,w_old)
+	x = (matrix[y][width-1]*matrix[y][x]) / ( 1 + math.exp(matrix[y][width-1]*(e)))
 	return x
 
+def e_calc(width, w_old):
+	e = []
+	for y in range(0, height):
+		e.append(math.log(1+math.exp((-1*matrix[y][width-1])*(get_exp(y,width,w_old)))))
+	avg = list_average(e)
+	print ''
+	print 'E:  {0}'.format(avg)
 
-def log_step(w_old, w_new, k):
-	g1, g2, g3 = [], [], []
-	for y in range(0, 11):
-		g1.append(exp_calc(y,0,w_old))
-		g2.append(exp_calc(y,1,w_old))
-		g3.append(exp_calc(y,2,w_old))
-	w_new[0] = w_old[0] + k*(list_average(g1))
-	w_new[1] = w_old[1] + k*(list_average(g2))
-	w_new[2] = w_old[2] + k*(list_average(g3))
+
+def log_step(w_old, w_new, k, width, height):
+	for x in range(0, width-1):
+		g = []
+		for y in range(0, height):
+			g.append(exp_calc(y,x,width,w_old))
+		w_new[x] = w_old[x] + k*(list_average(g))
 	print 'The new weight vector'
-	print 'W1: {0}'.format(w_new[0])
-	print 'W2: {0}'.format(w_new[1])
-	print 'B:  {0}'.format(w_new[2])
+	for x in range(0, width-1):
+		if x < width-2:
+			print 'W{0}: {1}'.format(x+1, w_new[x])
+		else:
+			print 'B:  {0}'.format(w_new[x])
+	e_calc(width, w_old)
 
 
 # Globals
 k = 2
-w_old = [0, 0, 0]
-w_new = [0, 0, 0]
+w_old = []
+w_new = []
+
+height = 0;
+width = 0;
+matrix = []
 
 # Main program entrance
+if len(sys.argv) >= 2:
+	read_input(sys.argv[1])
+else:
+	print 'You must supply an input file.'
+	exit()
+
+height = len(matrix)
+width = len(matrix[0])
+
+for i in range(0, width-1):
+	w_old.append(0)
+	w_new.append(0)
+
 while True:
 	enter = raw_input('Press enter to preform a single step in logistic regression or type exit to stop: ')
 	if enter == 'exit':
 		break
 	print 'Preforming one step of regression'
-	log_step(w_old, w_new, k)
+	log_step(w_old, w_new, k, width, height)
 	w_old = w_new
 	print''
 
