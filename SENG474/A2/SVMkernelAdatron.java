@@ -1,3 +1,5 @@
+import java.lang.Math;
+
 public class SVMkernelAdatron{
 	Double [][] data;
 	Double [][] x;
@@ -37,25 +39,62 @@ public class SVMkernelAdatron{
 	}
 
 	public Double Classify(Double[] xn) {
-		// To be done...
+		double sum = 0.0;
+		for(int i = 0; i < N; i++) {
+			sum += y[i]*a[i]*K(x[i], xn);
+		}
+		if(sum >= 0)
+			return 1.0;
+		else
+			return -1.0;
 	}
 
 	Double K(Double[] x_i, Double[] x_j) {
-		// To be done...
+		double sum = 0.0;
+		for(int i = 0; i < M; i++)
+			sum += Math.pow(x_i[i] - x_j[i], 2);
+		return Math.exp(-1*gamma*sum);
 	}
 
 	Double Gradient_i(Double[] a, int i) {
-
-		// To be done...
+		double sum = 0.0;
+		for(int j = 0; j < N; j++) {
+			sum += y[j]*a[j]*K(x[i],x[j]);
+		}
+		return (1-y[i]*sum);
 	}
 
 	Double Dual(Double[] a) {
-		// To be done...
+		double firstSum = 0.0;
+		double secondSum = 0.0;
+		for(int i = 0; i < N; i++)
+			firstSum += a[i];
+		for(int i = 0; i < N; i++) {
+			for(int j = 0; j < N; j++) {
+				secondSum += a[i]*a[j]*y[i]*y[j]*K(x[i], x[j]);
+			}
+		}
+		return (firstSum - ((1/2)*secondSum));
 	}
 
 	Double[] ComputeAlphasWithSGD() { //This probably needs a lot of data to be smooth.
+		double eta = 1.0;
+		double C = 1.0;
+		Double[] a = new Double[N];
+		for(int i = 0; i < N; i++)
+			a[i] = 0.0;
 
-		// To be done...
+		for(int t = 1; t <= 30; t++) {
+			for(int i = 0; i < N; i++) {
+				a[i] = a[i] + eta*Gradient_i(a, i);
+
+				if(a[i] < 0.0) 
+					a[i] = 0.0;
+				if(a[i] > C)
+					a[i] = C;
+			}
+		}
+		return a;
 	}
 
 	public Double getC() {

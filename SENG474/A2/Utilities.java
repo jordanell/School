@@ -37,7 +37,7 @@ public class Utilities {
 		
 		return data;
 	}
-	
+	/*
 	public static Double Accuracy(Classifier c, Double[][] testdata) {
 		int N = testdata.length;
 		int M = testdata[0].length-1;
@@ -94,5 +94,6 @@ public class Utilities {
 			
 		return accuracysum/count;
 	}
+	*/
 
 }
