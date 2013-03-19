@@ -1,0 +1,356 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Laboratory Report LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{amssymb, amsmath}
+\usepackage{float}
+
+\title{What is the Age and Size of the Universe \\ ASTR 102} % Title
+
+\author{Jordan \textsc{Ell} \\ V00660306} % Author name
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+\begin{tabular}{lr}
+Date Performed: 18/03/2013\\ % Date the experiment was performed and partner's name
+Instructor: Paolo Turri % Instructor/supervisor
+\end{tabular}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Objective}
+
+The objective of this lab report is two answer two questions: What is the age of the 
+universe, and what is the size of the universe. Through these questions, I will also
+demostrate how the Hubble Law can be calculated by observing distance galaxies and
+how it can be used to calculate the size and age of the universe.
+ 
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+We all live in a house. That house is in a city, in a province, in a country, in a 
+continent, on Earth. Earth is in a solar system, in a galaxy, in a cluster of galaxies,
+in the Universe. Just for the scope of things. But how big and how old is that scope?
+Back in 1905, Einstein's special relativity~\cite{alb:1905} hit the scene showing that
+Light is the fastest moving matter and will always move at the same speed. This insight
+will eventually lead us down the path to how big the universe is. Einstein also
+came up with his infamous cosmological constant~\cite{urry:2008}
+which allowed the universe to stay
+the same size. He would later state this was the biggest mistake of his career.\\
+
+Later, Edwin Hubble came along and discovered the Hubble Constant~\cite{lem:1927}
+, a remnant of
+Einstein's cosmological constant (he was sort of right), a figure that shows
+the relationship to how distant two obejcts are and their velocities. Through this
+constant, and Einstein's special relativity,
+Hubble was able to make general predictions of how big the observable
+universe was and how old it was leading up to the big bang.\\
+
+While we generally take for granted the results of these experiements and calculations
+of universe size and age, very few people know how it is calculated. This report will
+demostrate how using spectroscopy on distant galaxies, we can find the hubble constant
+and thus determine the size of the universe and its age.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 3
+%----------------------------------------------------------------------------------------
+
+\section{Equipment}
+
+For this report, the following list of equipment was used. The "Contemporary Laboratory
+Experience in Astronomy" which is a Windows program developed by Larry Marshall's group
+at the Department of Physics at Gettysburg College. A SHARP-EL510R calculator. A single
+sheet of opaque graph paper. A blue pen for drawing on the graph paper. Finally, Google
+Calculator~\footnote{http://www.google.ca/help/features.html} was also used.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 4
+%----------------------------------------------------------------------------------------
+
+\section{Procedure}
+
+The procedure preformed in this report is broken down into the following two sections:
+Measruements, and Calculations
+
+\subsection{Measruements}
+
+For the following procedure, the Windows program "Contemporary Laboratory Experience in
+Astronomy" (CLEiA) was used. First, CLEiA was run from a Windows personal computer.
+From here, a number of steps in the CLEiA simulation had to be preformed for the use
+inside this lab. First the virtual dome was opened by clicking the Dome button. Next, 
+star tracking was turned on by clicking the Tracking button. Finally, the slew rate
+was set to 16 to allow faster movements of the telescope by clicking the Slew Rate
+button twice. The next procedures were preformed for 3 galaxies inside each of the
+given fields of the CLEiA program.\\
+
+The chosen galaxy was centered in the telescope's field of view. Next, the Change View
+button was clicked to get a magnified view of what the telescope's field of view was 
+pointed at. From here, the galaxy was once again centered on the cross hair. This time
+however, the cross hair were two parallel lines. These lines were placed over the
+middle of the galaxy where the best measruement could be taken. Next, the Take Reading
+button was placed which opened up a new window that had a spectroscopy graph on it.
+From here, the Start Count button was pushed. This button started the spectroscopy
+readings of the galaxy and their K and H calcium absorbption lines. For most galaxies,
+the readings continued until the Signal/Noise was at least 20.0 (some were stopped at
+10.0 for time). After the Signal/Noise level was appropriate, the Stop Count button was
+pushed to stop the reading. Now, the object's name, the apparent magnitude and K
+calcium absorption lines were read and placed in Table~\ref{tab:main}. To measure the
+K calcium line, the cursor was used to click on the lowest point of the line and
+then measure the wavelength that was given. These steps were repeated for 3 galaxies
+in each of the 6 fields given by the CLEiA program.\\
+
+\subsection{Calculations}
+
+Once all measurements had been taken, a series of calculation was preformed. For
+each row inside of Table~\ref{tab:main}, the following calculation were preformed.\\
+
+First, the change in K calcium wavelength was computed using Equation~\ref{eq:delta}.
+Nest, the velocity of the object was calculated using Equation~\ref{eq:vel}. And finally,
+the distance of the object from Earth was calculated using Equation~\ref{eq:dist}.\\
+
+After each of the latter equations were used on each row in Table~\ref{tab:main},
+Three final calculations were used to calculate the Hubble Constant
+(Equation~\ref{eq:slope}, the slope of Figure 1), 
+the size of the observable universe (Equation~\ref{eq:size}),
+and the age of the universe (Equation~\ref{eq:age}).
+
+%----------------------------------------------------------------------------------------
+%	SECTION 5
+%----------------------------------------------------------------------------------------
+
+\section{Observations}
+
+All observations for thie report were made on the day of 2013-Mar-18. Since the result
+of any given observation did not depend on time of day or weather, they have been
+omitted from this report. All spectroscopy measurements made in this report were
+made using the "Contemporary Laboratory Experience in Astronomy" (CLEiA) and can be
+found in Table~\ref{tab:main}. These are the only observations made for this report.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 6
+%----------------------------------------------------------------------------------------
+
+\section{Tables and Measurements}
+
+The following table corrsponds to the spectroscopy measurements and various other
+details of distance galaxies using CLEiA. The later columns correspond to
+calculations made using Equation~\ref{eq:delta}, Equation~\ref{eq:vel}, and
+Equation~\ref{eq:dist}.
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{l c c c c c}
+\hline
+Galaxy & magnitude & lambda & delta & v(km/s) & D(Mpc)\\
+\hline
+\hline
+Coma1 & 12.30 & 4012.0 & 78.0 & 5944 & 72.4\\
+EDW & 13.45 & 4050.0 & 116.0 & 8839 & 123.0\\
+LAM & 11.15 & 3973.0 & 39.0 & 2972 & 42.7\\
+PRC & 13.36 & 4051.0 & 117.0 & 8916 & 118.0\\
+CrBor2 & 15.43 & 4209.0 & 275.0 & 20956 & 306.2\\
+CrBor1 & 15.08 & 4208.0 & 274.0 & 20880 & 260.6\\
+CrBor3 & 15.35 & 4208.0 & 274.0 & 20880 & 295.1\\
+Boot2 & 16.76 & 4446.0 & 512.0 & 39017 & 564.9\\
+Boot3 & 16.72 & 4445.0 & 511.0 & 38941 & 554.6\\
+Boot1 & 16.52 & 4444.0 & 510.0 & 38864 & 505.8\\
+Coma3 & 12.45 & 4012.0 & 78.0 & 5944 & 77.6\\
+Coma2 & 12.55 & 4012.0 & 78.0 & 5944 & 81.3\\
+uma1-3 & 14.49 & 4130.0 & 196.0 & 14936 & 198.6\\
+uma1-1 & 14.62 & 4130.0 & 196.0 & 14936 & 210.9\\
+uma1-2 & 14.52 & 4130.0 & 196.0 & 14936 & 201.4\\
+uma2-1 & 16.87 & 4484.0 & 550.0 & 41913 & 594.3\\
+uma2-3 & 16.89 & 4484.0 & 550.0 & 41913 & 599.8\\
+uma2-2 & 16.67 & 4484.0 & 550.0 & 41913 & 542.0\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Spectroscopy measurements of galaxies in CLEiA.\label{tab:main}}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 7
+%----------------------------------------------------------------------------------------
+
+\section{Graphs}
+
+The graph of meassured galaxy Speed(km/s) vs. Distance(Mpc) can be found at the back
+of this lab report labelled as Figure 1.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 7
+%----------------------------------------------------------------------------------------
+
+\section{Calculations}
+\label{sec:calc}
+
+The following equation was used to calculate all values in Table~\ref{tab:main} under
+column delta. This equation gives the difference between an at rest body's K calcium
+absorbtion line wavelength and a moving body's K calcium absorbtion line wavelength.
+
+\begin{equation}
+\label{eq:delta}
+\Delta \lambda_{K} = \lambda' - \lambda
+\end{equation}
+
+The following equation was used to calculate all values in Table~\ref{tab:main} under
+column velocity. This equation gives the speed at which a galaxy is moving away
+from the Earth at.
+
+\begin{equation}
+\label{eq:vel}
+v = c * \frac{\Delta \lambda}{\lambda}
+\end{equation}
+
+The following equation was used to calculate all values in Table~\ref{tab:main} under
+column distance(Mpc). This equation gives the distance in megaparsecs of how far away
+a galaxy is from Earth. Here we assume the absolute magnitude, M = -22.0.
+
+\begin{equation}
+\label{eq:dist}
+D = 10^{\frac{m-M-25}{5}}
+\end{equation}
+
+The following equation was used to calculate the slope of the graph in Figure 1.
+
+\begin{equation}
+\label{eq:slope}
+H = \frac{(18000 - 6000)}{(240 - 80)} = 75km/s
+\end{equation}
+
+The following equation was used to calculate the size of the observable universe.
+
+\begin{equation}
+\label{eq:size}
+size = \frac{c}{H} = 3997Mpc = 13,000,000,000 lyr.
+\end{equation}
+
+The following equation was used to calculate the age of the universe.
+
+\begin{equation}
+\label{eq:age}
+age = \frac{1000}{H} = 13,300,000,000 years
+\end{equation}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 8
+%----------------------------------------------------------------------------------------
+
+\section{Results}
+
+The results of this report can be found by examining the results of 
+Equation~\ref{eq:size} and Equation~\ref{eq:age}. Here we find that the size
+of the observable universe was found to be 13 Billion ligh years in radius
+from the Earth. The age of the universe was found to be 13.3 billion years old.\\
+
+These results were found by using the intermediate result of the found Hubble 
+Constant which was found to be 75km/s/Mpc. The accepted results for these two
+primary questions and one intermediate step are as follows. The accepted size of
+the observable universe 14.3 billion parsecs ~\cite{gott:2005}. 
+The accepted age of the universe 13.77s billion years old~\cite{lars:2012}. 
+The accepted value
+of the Hubble constant is 69.32km/s/Mpc~\cite{WMAP:2012}.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 9
+%----------------------------------------------------------------------------------------
+
+\section{Threats to Validity}
+
+The main threat to validity in this lab report is the reliance on the CLEiA Windows
+program. Here all values into the program have been somewhat precomputed and are therefore
+subject to any errors in the initial collection of data by the creators of CLEiA and the
+astronomers who supplied the data. The other issue with CLEiA that causes a threat to
+validity is the measurements preformed on the spectroscopy printout of each galaxy
+as seen in Table~\ref{tab:main}. Each of the K calcium absorption lines were done
+by attempting to read the perfect center location of the line. These measurements
+are subject to error as the exact center of the line may not have been selected.\\
+
+A secondary thrate to validity is the calculation of the Speed vs. Distance graph
+found in the back of this lab report labelled as Figure 1. Here the line used to create
+the graph was done by hand and was a best fit line. The slope therefore does not fully
+represent the true slope of the points plotted on the graph. This could have been 
+preformed better with graphing software.
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 10
+%----------------------------------------------------------------------------------------
+
+\section{Conclusions}
+
+This report has shown how to calculate three items using the CLEiA Windows program.
+First, the Hubble Constant was calculated by determining the speed and distance of
+galaxies. Next, the hubble Constant was used in order to determine both the size of
+the observable universe as well as the age of the universe. In this report, reasonable
+answers were found that closely related to the true accepted values for the main
+questions posed in this report.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 11
+%----------------------------------------------------------------------------------------
+
+\section{Evaluation}
+
+I found this lab extermely interesting for the demostration of the universe size
+and age. I have always wondered how these ages were precisely calculated and how
+the Hubble Constant came about. The Hubble Constant seems interesting to me as
+it looks like it closely relates to both inflation and Einstein's infamous 
+cosmological constant. I had lots of questions after this lab was over however 
+but would take too long to ask. If space can expand faster than light can move
+then how does this not violate special relativity~\cite{alb:1905}. 
+Among others. I would have also
+liked to see an explination of the difference between the observable universe
+and the entire universe, or some explination of the possible shape of the 
+entire universe.
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\begin{thebibliography}{9}
+
+\bibitem{alb:1905}
+Albert Einstein (1905) "Zur Elektrodynamik bewegter Körper", Annalen der Physik 17: 891
+
+\bibitem{gott:2005}
+Gott III, J. Richard; Mario Jurić, David Schlegel, Fiona Hoyle, Michael Vogeley, Max Tegmark, Neta Bahcall, Jon Brinkmann (2005). "A Map of the Universe"
+
+\bibitem{lars:2012}
+Bennett, C.L.; Larson, L.; Weiland, J.L.; Jarosk, N.; Hinshaw, N.; Odegard, N.; Smith, K.M.; Hill, R.S. et al. (December 20, 2012). Nine-Year Wilkinson Microwave Anisotropy Probe (WMAP) Observations: Final Maps and Results
+
+\bibitem{WMAP:2012}
+http://map.gsfc.nasa.gov/ (WMAP website)
+
+\bibitem{urry:2008}
+Urry, Meg (2008). The Mysteries of Dark Energy. Yale Science. Yale University.
+
+\bibitem{lem:1927}
+Lemaître, Georges (1927). "Un univers homogène de masse constante et de rayon croissant rendant compte de la vitesse radiale des nébuleuses extra-galactiques". Annales de la Société Scientifique de Bruxelles A47: 49–56
+
+\end{thebibliography}
+
+\end{document}
