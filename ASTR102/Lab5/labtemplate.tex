@@ -1,0 +1,306 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Laboratory Report LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\title{Colour-Magnitude Diagrams \\ ASTR 102} % Title
+
+\author{Jordan \textsc{Ell} \\ V00660306} % Author name
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+\begin{tabular}{lr}
+Date Performed: 25/03/2013\\ % Date the experiment was performed and partner's name
+Instructor: Paolo Turri % Instructor/supervisor
+\end{tabular}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Objective}
+
+The objective of this lab report is to find the age and distance of both open
+and globular clusters of stars within our Milky Way galaxy using colour-magnitude
+diagrams inside the "isochrone" Linux program.
+ 
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+The Pillars of Creation are some of the most awe inspiring objects an observer can
+gaze upon when they look up at the night sky. Here we see stars being formed, solar systems
+flaring into existance, and pure beauty. However, what the untrained observer may not
+notice is that stars can be seen here, and all over the universe inside of galaxies,
+forming in clusters. There are two common types of clusters known as open and globular
+cluster. Open clusters have groups of stars forming at one time, but the stars are not
+gravitationally bound and can eventually leave the cluster, hence the term open. Globular
+clusters on the other hand have so much mass in them that the stars become gravitationally
+bound and make for very dense groupings of stars in the night sky.\\
+
+Stars form, they live, and they eventually die. Their life sequence if oten plotted on the
+Hertzsprung-Russell Diagram. This diagram has many variations such as the colour-magnitude
+diagram which can be used to measure distances and other properties of large groups of stars.
+This report will focus on exactly that task. This report will outline a procedure and
+conclusions of how to determine the distance to both open and globular clusters using the
+isochrone Linux program.\
+
+%----------------------------------------------------------------------------------------
+%	SECTION 3
+%----------------------------------------------------------------------------------------
+
+\section{Equipment}
+
+For this report, the following list of equipment was used. The "isochrone" Linux program
+which is a piece of software developed by James Clem. A SHARP-EL510R calculator.
+A single sheet of opaque paper used to record a table of measurements which latter
+became Table~\ref{tab:main}. Finally, a single pencil used to record measurements.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 4
+%----------------------------------------------------------------------------------------
+
+\section{Procedure}
+
+The procedure preformed in the report is borken down into the following two sections:
+Measurements, and Calculations.
+
+\subsection{Measurements}
+
+For the following procedure, the Linux program "isochrone" was used. First from
+isochrone, a single open or globular cluster was selected from a list of clusters
+presented to the user. From here the user was presented with a colour-magnitude
+diagram of the cluster's stars. Now, the user had esentially three options. The
+first option was to make the cluster appear further or closer to the observer. The
+second was to add or subtract dust between the observer and the cluster. Finally,
+the user had the option to add or subtract age from the cluster. With these three 
+options, a line of best fit appeared over top the the colour-magnitude diagram. 
+This line of best fit was attempted to be centered appropriately on the main 
+sequence, red giant branch, and horizontal branch where appropriate. Each of the
+three options moved the line of best fit in a distinct manor and the user
+move the line until it matched closely with the diagram of stars.\\
+
+Once the line of best fit was appropriately places on the diagram, several 
+measurements were taken. All of these measurements can be found in Table~\ref{tab:main}.
+The measurements involving numerical values were all provided by the isochrone
+program while the boolean mearuements were made using the best judgment of
+the observer in terms of the presense of certain diagram features.\\
+
+The steps just outline were preformed for each of the 11 clusters availible
+to measure in the isochrone program.
+
+\subsection{Calculations}
+
+After all measurements had been made for each of the clusters in the isochrone program,
+a simple calculation was then made to determine the distance to the cluster from
+Earth. Equation~\ref{eq:dist} was used on each of the clusters and the results of
+these calcuations can be found in Table~\ref{tab:main}.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 5
+%----------------------------------------------------------------------------------------
+
+\section{Observations}
+
+All observation for this report were made on the day of 2013-Mar-25. Since the result
+of any given observation did not depende on time of day or weather, they have been omitted
+from this report. All open and globular cluster measurements made in this report were
+made using the "isochrone" Linux computer program and can be found in Table~\ref{tab:main}
+These are the only observations made for this report.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 6
+%----------------------------------------------------------------------------------------
+
+\section{Tables and Measurements}
+
+The following table corresponds to the measurements taken using the Linux program
+isochrone which is used to measure colour-magnitude characteristics of open and
+globular clusters.
+
+\begin{table}[h!]
+\begin{center}
+\tabcolsep=0.09cm
+\begin{tabular}{l c c c c c c c c c c c}
+\hline
+Cluster & MS & RGB & HB & BS & Field Stars & $m_{sun}$ & m-M & D(pc) & E(B-V) & Age(Gyr) & [Fe/H]\\
+\hline
+\hline
+Hyades & \checkmark & \xmark & \xmark & \xmark & \xmark & NA & 4.00 & 63.10 & 0.19 & 0.11 & 0.00 \\
+M15 & \checkmark & \checkmark & \checkmark & \xmark & \xmark & 21.095 & 15.25 & 11220.18 & 0.09 & 16.00 & -2.14\\
+NGC104 & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & 18.304 & 13.15 & 4265.80 & 0.02 & 14.00 & -0.71\\
+NGC6791 & \checkmark & \checkmark & \xmark & \checkmark & \checkmark & 18.278 & 13.15 & 265.80 & 0.10 & 11.22 & 0.20\\
+h+x Persei & \checkmark & \xmark & \xmark & \xmark & \checkmark & 16.043 & 11.35 & 1862.09 & 0.00 & ZAMS & 0.00\\
+NGC6612 & \checkmark & \xmark & \xmark & \xmark & \checkmark & NA & 10.15 & 1071.52 & 0.00 & ZAMS & 0.00\\
+M67 & \checkmark & \checkmark & \xmark & \checkmark & \xmark & 14.146 & 9.40 & 758.58 & 0.02 & 4.47 & -0.04\\
+NGC188 & \checkmark & \checkmark & \xmark & \xmark & \checkmark & 15.331 & 11.40 & 1905.45 & 0.11 & 6.31 & 0.04\\
+Pleiades & \checkmark & \xmark & \xmark & \xmark & \xmark & 10.259 & 5.90 & 151.36 & 0.09 & ZAMS & 0.00\\
+Praesepe & \checkmark & \xmark & \xmark & \xmark & \xmark & 10.634 & 7.90 & 380.19 & 0.36 & 0.06 & 0.00\\
+Hipparcos & \checkmark & \checkmark & \xmark & \checkmark & \checkmark & 4.614 & -0.15 & 9.33 & 0.00 & 2.24 & 0.00\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Open and globular cluster measurements in isochrone.\label{tab:main}}
+\end{table}
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 7
+%----------------------------------------------------------------------------------------
+
+\section{Calculations}
+
+The following equation was used to calculate all values in Table~\ref{tab:main} under
+column D(pc). This equation gives the distance in parsecs of how far away an open or
+globular cluster is from Earth. Here the m-M comes also from Table~\ref{tab:main}.
+
+\begin{equation}
+\label{eq:dist}
+D = 10^{\frac{m-M+5}{5}}
+\end{equation}
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 8
+%----------------------------------------------------------------------------------------
+
+\section{Results}
+
+The results of this lab report come in the form of the distances obtained by using
+Equation~\ref{eq:dist}. These results for the distance to each globular and open cluster
+can be found in Table~\ref{tab:main} under the D(pc) column. The results obtained were
+largely within an acceptable error rate, with the two minor exceptions of
+M15 and NGC104 as they were determined to be older than the universe. The second set
+of results are those discussed in Section~\ref{sec:qna} which are answers to various
+question found in the back of the Colour-Magnitude Diagrams lab in the ASTR102 lab
+manual.
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 9
+%----------------------------------------------------------------------------------------
+
+\section{Conclusions}
+
+The only conclusions to draw from this lab report are that of a successful determination
+of the distance to various open and globular clusters found in Table~\ref{tab:main}. The
+pseudo conclusions to questions found in the ASTR102 lab manual can be found in
+Section~\ref{sec:qna}.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 9
+%----------------------------------------------------------------------------------------
+
+\section{Threats to Validity}
+
+The main threat to validity during this lab process was the measuring of the colour-
+magnitude diagrams found in the Linux program isochrone. Here, tools from the program
+were used such as add more dust between the observer and the cluster, or make the cluster
+appear futher away to get a line of best fit with the main sequence. This line of best 
+fit is the best approximation made by human eyes and was not a rigorous algorithm to
+find the perfect line of best fit.\\
+
+This threat can cause the disturbance of the following measurements: $m_{sun}$, m-M,
+E(B-V), Age(Gyr), and [FE/H] all found in Table~\ref{tab:main}. Because these measurements
+may have been skewed by the experimenters version of best fit, the calculation used
+to calculate the distance (the overall objective of this lab) may have also been skewed.
+This threat to validity would explain the two occurances in the results where the cluster's
+age appeared to be older than the universe.\\
+
+A secondary, best less extreme threat is that of the isochrone program. The program
+gave various measurements in Table~\ref{tab:main} which were not tested by the observer.
+If these numbers are inaccurate they could lead to serious issues in future calculations
+and conclusions.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 10
+%----------------------------------------------------------------------------------------
+
+\section{Question and Answers}
+\label{sec:qna}
+
+The following question and answers are asked inside lab 5, Colour-Magnitude Diagrams
+inside of the lab manual for ASTR102. The question have been repeated for the reader.
+
+\begin{enumerate}
+
+\item[Q.] How does the isochrone change when you increase the distance? Why?
+\item[A.] The isocrone moves down and slightly to the left the further the cluster is
+and opposite when the cluster is nearer. The further and object is away from the observer
+the fainter it will appear. This is seen by the isochrone shifting towards the more faint
+end of the graph.
+\item[Q.] How does the isochrone change when you increase the dust? Why?
+\item[A.] The isochrone move right and slightly up when more dust is added and the 
+opposite when dust is removed. This occurs because the more dust that is added the
+the redder the object becomes and thus its colour gets shifted towards the red.
+\item[Q.] How does the isochrone change when you increase the age? Why?
+\item[A.] The older the cluster becomes the lower the turnoff point begins to come
+down the main sequence and the RGB begins to form with the HB. This can be explained
+easily as the older starts become in a cluster, the more red giants you will over.
+If your cluster has more red giants, its life cycle must be further along because
+of how long it takes to form red giants.
+\item[Q.] Do the cluster with age=0 years have a read giant branch? Why or why not?
+\item[A.] The answer to the previous question gives us some insight into this question.
+Clusters with an age of 0 will not have a RGB because it takes stars billions of
+years to turn of the main sequence and rise up into the RGB and form red giants.
+Again, having a RGB is a sign of the cluster's age.
+\item[Q.] Are any of the clusters older than the Earth, or the universe? Comment.
+\item[A.] There are many clusters older than the Earth found in Table~\ref{tab:main}.
+These clusters do not popse a problem as stars formed before and after our own 
+star was formed. There are two clusters which appear to be older than the universe
+(M15 and NGC104). The causing of this was touched on in the threats to validity
+but to reiterate, these issues are causes by errors of best fitting the isochrone
+line to the main sequence of the cluster in the isochrone Linux program.
+\item[Q.] Compare M15 and NGC104 to the rest of the clusters in terms of the [Fe/H] levels. 
+\item[A.] These two clusters appear to have extremely less iron in their stars than
+the other clusters studied. This also coincides with their age as they are much older.
+While stars were forming in the early universe, the amount of metal in the ISM
+was very low due to the fact that supernovae and other metal generating processes
+had not occured yet. This is why very old stars have little metal. Comapred to newer
+stars which have more iron present because they formed after a time where metals
+were already present in the universe.
+
+\end{enumerate}
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 11
+%----------------------------------------------------------------------------------------
+
+\section{Evalutation}
+
+As the last lab for ASTR102, I enjoyed this quick lab as a type of recap to some
+of the earlier ideas expressed in the astronomy course. It was interesting to learn
+that the age of a cluster can be found by studying its isochrone and with facts such
+as the existance of a red giant branch. It was also extremely interesting to learn
+how some clusters in our galaxy, formed near the beginning of the universe. It would
+have been nice to know when our Milky Way formed and how the older clusters studied
+in this lab played a role in either forming or combining with the Milky Way at some
+point in its life.
+
+\end{document}
