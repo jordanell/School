@@ -84,7 +84,11 @@ public class LogisticReg {
 		this.w = new Double[M];
 		for(int i = 0; i < M; i++)
 			w[i] = 0.0;
+<<<<<<< HEAD
 		for(int i = 1; i <= 50; i++) {
+=======
+		for(int i = 1; i <= 30; i++) {
+>>>>>>> b6546ec9d24d749cfe15e7bc304671346aaa017c
 			Double[] g = Gradient(w);
 			Double e = E(w);
 			for(int j = 0; j < M; j++) {
