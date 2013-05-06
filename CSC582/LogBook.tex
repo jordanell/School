@@ -1,0 +1,180 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Journal Article
+% LaTeX Template
+% Version 1.1 (25/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[twoside]{article}
+
+\usepackage{lipsum} % Package to generate dummy text throughout this template
+
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\usepackage{multicol} % Used for the two-column layout of the document
+\usepackage{hyperref} % For hyperlinks in the PDF
+
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they need to be placed in specific locations with the [H] (e.g. \begin{table}[H])
+
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+\usepackage{paralist} % Used for the compactitem environment which makes bullet points with less space between them
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}}
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[C]{Log Book $\bullet$ May - August 2013} % Custom header text
+\fancyfoot[RO,LE]{\thepage} % Custom footer text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\title{\vspace{-15mm}\fontsize{24pt}{10pt}\selectfont\textbf{Theoretical Models and Applications: Log Book}} % Article title
+
+\author{
+\large
+\textsc{Jordan Ell}\\[2mm] % Your name
+\normalsize University of Victoria \\ % Your institution
+\normalsize \href{mailto:jell@uvic.ca}{jell@uvic.ca} % Your email address
+\vspace{-5mm}
+}
+\date{}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Insert title
+
+\thispagestyle{fancy} % All pages have headers and footers
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+\begin{abstract}
+
+\noindent \lipsum[1] % Dummy abstract text
+
+\end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\begin{multicols}{2} % Two-column layout throughout the main article text
+
+\section{May 2nd 2013}
+
+The main topic of this class was to discuss how to identify high impact papers. Some of
+the ideas that members of the class had to identify high impact papers are as follows.
+Looking at the number of citations a paper has is a good indication of how well the paper
+is known in its own field or how important it might be. Another is to look for prize winning
+papers. This can be large prizes such as the Turing award or even the best paper of a conference.
+This is a good way to identify a paper that has high impact potential as it is important at
+the time of the award. Another good way to find a high impact paper is to look at industry impact.
+Here if a paper involves the creation of a real world product which generates revenue it
+may be a high impact paper or if it can change existing products in the real world.\\
+
+I had an idea for identifying central papers but did not mention it in class. My idea is a 
+similar idea to that of industry impact and it is media impact. If a simple Google search
+can turn up a lot of results that all point to a single paper that has achieved main media 
+success, it may be a high impact paper. This ties in to industry impact as the media 
+may find out about it through industry experience. I plan on trying this method in the 
+next assignment.\\
+
+Another main area that was described this class was the discussion of what can you identify
+as a theory paper or a paper that has theory at its roots. It seems to me that theory is a
+pretty general term and as long as there is some underlying theoretical model to it. This
+can be some type of NP-Complete issue all the way to graph models.\\
+
+The assignment for next class is to find 1 or 2 high impact papers with an underlying theory
+background. This is due May 6th.
+
+
+\section{May 4th 2013}
+
+
+\section{May 6th 2013}
+
+Recap from last class: Look for highly cited paper, award winning papers, ask your supervisor, 
+and so forth when looking for high impact theory papers.\\
+
+Theory papers: A paper to find when bugs get introduced into a project.
+A paper that provides a new algorithm that determines how well a drug molecule will work. The
+first two papers have very high number of citations. The chemistry papers are foundational 
+papers in their field and found through Google Scholar. My paper on network packet loss using
+linear equations. Another paper on projected plains was found using survey papers which is 
+a potential new way of finding high impact papers. High citations seems to be the most used
+criteria for high impact papers so far. A paper on approximations to NP-Complete problems and
+how they can be used. It is a Godell prize winning paper. Dijkstra prize winning paper was 
+also said. A paper on performance analysis of networks. This paper was found by looking at
+industry impact. A paper on music retrieval says that the award winners in this field were not
+high impact even though they won. This paper has a high number of authors and also cites several
+other papers. A paper involving k-nearest neighbors for image searching. A paper that is
+central to social interactions in software engineering is now used in almost all fields of
+software engineering that involve communication. Found from experience, but also has 500
+citations. Another paper on indexing file structure to create clusters which is the theory 
+component. This paper again had lots of citations. A paper on dynamic programming from 1956 with
+a citation count of more than 11,000! Very old papers with high citation count are extremely
+foundational in their field.\\
+
+It seems like most people today went for high citations over anything for identifying
+high impact papers. I personally thing for a paper to be high impact it has to have
+two components. First is has to lay foundations for future research in a broad sense.
+For example, the first paper to explain the grand unified theory in physics allowed for
+a whole field of cosmology in the field. Yes it does have high citations but it
+also allows for a large amount of future work while also answering current questions.
+Secondly, I think high impact papers should have real world implications. This could
+be a paper on vacuum tubes which led to the first vacuum tube computer. This is a real impact
+that can help humanity.\\
+
+%----------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+
+\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
+
+\bibitem[Figueredo and Wolf, 2009]{Figueredo:2009dg}
+Figueredo, A.~J. and Wolf, P. S.~A. (2009).
+\newblock Assortative pairing and life history strategy - a cross-cultural
+  study.
+\newblock {\em Human Nature}, 20:317--330.
+ 
+\end{thebibliography}
+
+%----------------------------------------------------------------------------------------
+
+\end{multicols}
+
+\end{document}
