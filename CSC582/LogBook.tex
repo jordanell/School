@@ -1,96 +1,53 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Journal Article
-% LaTeX Template
-% Version 1.1 (25/11/12)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Original author:
-% Frits Wenneker (http://www.howtotex.com)
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This will be the main document for the Technical Networks paper to
+% be written by the Eggnet team of Jordan Ell, Triet Huynh and Braden
+% Simpson in association with Adrian Schroeter and Daniela Damian.
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+\documentclass[conference]{IEEEtran}
 
-\documentclass[twoside]{article}
+% Use of outside images
+\usepackage{graphicx} 
+% Use text inside euqations
+\usepackage{amsmath}
 
-\usepackage{lipsum} % Package to generate dummy text throughout this template
+\usepackage{balance}
+\usepackage{float}
+\floatstyle{plaintop}
+\restylefloat{table}
 
-\usepackage[sc]{mathpazo} % Use the Palatino font
-\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
-\linespread{1.05} % Line spacing - Palatino needs more space between lines
-\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+% Correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
 
-\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
-\usepackage{multicol} % Used for the two-column layout of the document
-\usepackage{hyperref} % For hyperlinks in the PDF
-
-\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
-\usepackage{booktabs} % Horizontal rules in tables
-\usepackage{float} % Required for tables and figures in the multi-column environment - they need to be placed in specific locations with the [H] (e.g. \begin{table}[H])
-
-\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
-\usepackage{paralist} % Used for the compactitem environment which makes bullet points with less space between them
-
-\usepackage{abstract} % Allows abstract customization
-\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
-\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
-
-\usepackage{titlesec} % Allows customization of titles
-\renewcommand\thesection{\Roman{section}}
-\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
-
-\usepackage{fancyhdr} % Headers and footers
-\pagestyle{fancy} % All pages have headers and footers
-\fancyhead{} % Blank out the default header
-\fancyfoot{} % Blank out the default footer
-\fancyhead[C]{Log Book $\bullet$ May - August 2013} % Custom header text
-\fancyfoot[RO,LE]{\thepage} % Custom footer text
-
-%----------------------------------------------------------------------------------------
-%	TITLE SECTION
-%----------------------------------------------------------------------------------------
-
-\title{\vspace{-15mm}\fontsize{24pt}{10pt}\selectfont\textbf{Theoretical Models and Applications: Log Book}} % Article title
-
-\author{
-\large
-\textsc{Jordan Ell}\\[2mm] % Your name
-\normalsize University of Victoria \\ % Your institution
-\normalsize \href{mailto:jell@uvic.ca}{jell@uvic.ca} % Your email address
-\vspace{-5mm}
-}
-\date{}
-
-%----------------------------------------------------------------------------------------
-
+% Begin the paper here
 \begin{document}
 
-\maketitle % Insert title
 
-\thispagestyle{fancy} % All pages have headers and footers
+% Paper title
+% Can use linebreaks \\ within to get better formatting as desired
+\title{Theoretical Models and Applications: Log Book}
 
-%----------------------------------------------------------------------------------------
-%	ABSTRACT
-%----------------------------------------------------------------------------------------
+% Authors names
+\author{\IEEEauthorblockN{Jordan Ell V00660306}
+\IEEEauthorblockA{University of Victoria,
+Victoria, British Columbia, Canada \\ jell@uvic.ca}
+}
+
+% Make the title area
+\maketitle
+
 
 \begin{abstract}
-
-\noindent \lipsum[1] % Dummy abstract text
-
+Software systems have not only become larger over time, but the amount of
+technical contributors and dependencies have also increased. With these expansions also comes
+the increasing risk of introducing a software failure into a pre-existing system.
+Software failures are a multi-billion dollar problem in the industry today and while integration and
+other forms of testing are helping to ensure a minimal number of failures, research to understand
+full impacts of code changes and their social implications is still a major concern. This paper describes
+how analysis of code changes and the technical relationships they infer can be used to detect pairs
+of developers whose technical dependencies may induce software failures. These developer pairs may
+also be used to predict future software failures as well as provide recommendations to contributors
+to solve these failures caused by source code changes.
 \end{abstract}
 
-%----------------------------------------------------------------------------------------
-%	ARTICLE CONTENTS
-%----------------------------------------------------------------------------------------
-
-\begin{multicols}{2} % Two-column layout throughout the main article text
 
 \section{May 2nd 2013}
 
@@ -102,31 +59,49 @@ papers. This can be large prizes such as the Turing award or even the best paper
 This is a good way to identify a paper that has high impact potential as it is important at
 the time of the award. Another good way to find a high impact paper is to look at industry impact.
 Here if a paper involves the creation of a real world product which generates revenue it
-may be a high impact paper or if it can change existing products in the real world.\\
+may be a high impact paper or if it can change existing products in the real world.
 
 I had an idea for identifying central papers but did not mention it in class. My idea is a 
 similar idea to that of industry impact and it is media impact. If a simple Google search
 can turn up a lot of results that all point to a single paper that has achieved main media 
 success, it may be a high impact paper. This ties in to industry impact as the media 
 may find out about it through industry experience. I plan on trying this method in the 
-next assignment.\\
+next assignment.
 
 Another main area that was described this class was the discussion of what can you identify
 as a theory paper or a paper that has theory at its roots. It seems to me that theory is a
 pretty general term and as long as there is some underlying theoretical model to it. This
-can be some type of NP-Complete issue all the way to graph models.\\
+can be some type of NP-Complete issue all the way to graph models.
 
 The assignment for next class is to find 1 or 2 high impact papers with an underlying theory
 background. This is due May 6th.
 
 
 \section{May 4th 2013}
+Today I looked up my two high impact papers for class on May 6th. I took the approach
+mentioned earlier in my log book. That is to say that I went for media and industry
+impact rather than academic impact of the paper. As my interest for this course was
+to do with networks, I started my search on Google looking for network impacting papers.
+
+To do this, I used Google to search for `Coded TCP'. I knew in advanced that encoding
+protocol packets can be used to speed up internet connections both wired and wireless,
+and I knew that TCP is the highest used protocol for consumer use. This search landed me
+on many blog and news pages that involved a group of researchers at MIT. The group found
+a way of using linear equations to solve for packets that are lost in transmission instead
+of requesting that the packets get resent. This immediately grabbed my attention as it
+contains a theory background and has obviously been large enough to attract media.
+
+I found that this new method has been implemented at MIT and has increased their internal
+networks speeds 16x. The paper that found this method is relatively new (2011), so it has
+little citations (44). However, I believe this paper can play a major role in the industry
+as the result of network speed increase requires no physical upgrade to existing networks.
+I have identified this paper, and its continuation paper, as high impact.
 
 
 \section{May 6th 2013}
 
 Recap from last class: Look for highly cited paper, award winning papers, ask your supervisor, 
-and so forth when looking for high impact theory papers.\\
+and so forth when looking for high impact theory papers.
 
 Theory papers: A paper to find when bugs get introduced into a project.
 A paper that provides a new algorithm that determines how well a drug molecule will work. The
@@ -145,7 +120,7 @@ software engineering that involve communication. Found from experience, but also
 citations. Another paper on indexing file structure to create clusters which is the theory 
 component. This paper again had lots of citations. A paper on dynamic programming from 1956 with
 a citation count of more than 11,000! Very old papers with high citation count are extremely
-foundational in their field.\\
+foundational in their field.
 
 It seems like most people today went for high citations over anything for identifying
 high impact papers. I personally thing for a paper to be high impact it has to have
@@ -155,26 +130,25 @@ a whole field of cosmology in the field. Yes it does have high citations but it
 also allows for a large amount of future work while also answering current questions.
 Secondly, I think high impact papers should have real world implications. This could
 be a paper on vacuum tubes which led to the first vacuum tube computer. This is a real impact
-that can help humanity.\\
+that can help humanity.
 
-%----------------------------------------------------
+We broke into groups and started to discuss our papers. My team has 3 students in it 
+but only had 2 papers for today. The first paper was about dynamic programming and speech
+recognition software. This paper has over 11,000 citations! This paper lays foundational
+work that is being used in industry today with Apple and Google through their speech
+recognition software. The second paper was mine and it was about packet loss in TCP 
+connections. This papers solves the problem of packet loss by using linear equations
+to solve for missing packets. We are choosing to use the dynamic programming paper
+as it has been around longer and has a larger impact (as of now) on the software
+industry than the packet loss paper which is newer and still has smaller impacts
+on industry.
 
-%----------------------------------------------------------------------------------------
-%	REFERENCE LIST
-%----------------------------------------------------------------------------------------
+\section{May 6th 2013}
 
-\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
+\bibliographystyle{IEEEtran}
+\balance
+\bibliography{paper}
 
-\bibitem[Figueredo and Wolf, 2009]{Figueredo:2009dg}
-Figueredo, A.~J. and Wolf, P. S.~A. (2009).
-\newblock Assortative pairing and life history strategy - a cross-cultural
-  study.
-\newblock {\em Human Nature}, 20:317--330.
- 
-\end{thebibliography}
 
-%----------------------------------------------------------------------------------------
-
-\end{multicols}
-
+% End of the paper
 \end{document}
