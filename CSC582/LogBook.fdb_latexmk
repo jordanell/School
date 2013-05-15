@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex LogBook"] 1368550064 "LogBook.aux" "LogBook.bbl" "LogBook" 
+["bibtex LogBook"] 1368635496 "LogBook.aux" "LogBook.bbl" "LogBook" 
   "./IEEEtran.bst" 1368471127 59215 bc5380b3434a66b895bbc75d3d380540 ""
-  "LogBook.aux" 1368550064 776 c2f47343778e86afa1ec2ee79219e406 ""
+  "LogBook.aux" 1368635497 854 9bf40006c4f20541683efad28d6cb59d ""
   "LogBook.bcf" 0 -1 0 ""
   "paper.bib" 0 -1 0 ""
   (generated)
   "LogBook.bbl"
   "LogBook.blg"
-["pdflatex"] 1368550064 "LogBook.tex" "LogBook.pdf" "LogBook" 
+["pdflatex"] 1368635496 "LogBook.tex" "LogBook.pdf" "LogBook" 
   "/etc/texmf/tex/latex/config/graphics.cfg" 1255993321 3328 2584cfe577535f0a08f3a9717b5152ab ""
   "/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii" 1251025892 71625 fad1c4b52151c234b6873a255b0ad6b3 ""
   "/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty" 1156703163 3535 ce75ca6de8380293f2081dec8ab08a93 ""
@@ -24,9 +24,9 @@
   "/usr/share/texmf-texlive/tex/latex/preprint/balance.sty" 1137110595 3366 d938ad2440edc1ea1c9042843580ec42 ""
   "/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd" 1137110629 961 15056f4a61917ceed3a44e4ac11fcc52 ""
   "IEEEtran.cls" 1368471127 201353 775b18b42342447aea341b76a89fcb61 ""
-  "LogBook.aux" 1368550064 776 c2f47343778e86afa1ec2ee79219e406 ""
+  "LogBook.aux" 1368635497 854 9bf40006c4f20541683efad28d6cb59d ""
   "LogBook.bbl" 0 -1 0 "bibtex LogBook"
-  "LogBook.tex" 1368550063 13468 f4c591e2296a9c39deef46a320719b42 ""
+  "LogBook.tex" 1368635495 14047 54cb2fa8bb603f9fa1098e3d0d77f79b ""
   (generated)
   "LogBook.log"
   "LogBook.pdf"
