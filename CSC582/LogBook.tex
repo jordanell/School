@@ -235,6 +235,75 @@ system is actually better than just TCP. Everyone agreed that the answer I
 found was correct and should be used in the presentation. We will be
 presenting tomorrow morning.
 
+\section{May 16th 2013}
+Today there were two group presentations presented in class. The first
+presentation was my own group's presentation. As per our assigned roles
+I was in charge of basically the setup to the paper and the discussion
+to be lead afterwards. I explained the motivation and high impact factors
+(which I thought our group had the best of) to the class while also giving
+a very brief overview of the paper to the class. I lead the main parts of
+the discussion after the technical parts were also presented. I think our
+group did a very good job on the presentation and had one of the better
+presentations over all to the class as they seemed engaged throughout.
+
+The second event of today was the 2nd presentation by group 4. This
+presentation was on the fire fighting problem. I did not like how their 
+paper was not actually published as that defeats the point of high impact
+papers as well as peer review. I did like how the problem was presented
+in the general overview, but the technical details were a little over 
+my head and it was difficult to follow along. I wished the presenters
+would have motivated the problem more and shown some real world
+computer science examples of the problem and how it was actually
+solved or how this method could have helped solve it.
+
+\section{May 19th 2013}
+Today I was at the Mining Software Repositories 2013 (MSR) conference in
+San Francisco. Here, a paper was presented where the authors talked about
+determining what a commit in a repository actually did to effect method
+signatures. They said this was accomplished by using abstract syntax trees.
+This got me to thinking how they went about diffing two trees as I 
+thought that the isomorphic graph problem was NP-complete. This got me
+into Googling the problem and I found out that the isomorphic problem actually
+has a polynomial run time for particular graph structures, one of those 
+being trees. So what they were talking about in the paper was possible.
+This research is right up my own interests alley because I am working on
+a problem right now that requires the diffing of trees as a possible
+solution. I did some more research and found a paper published in 1995 
+about abstract syntax trees of languages and how they can be used to find
+the result of a code change in a software repository. I also found a 
+tool developed by some software researchers that implements the basic
+algorithm in this paper while providing some good user feedback on what
+was found in the algorithm. I will surely be using this tool and paper
+going forward into my own research for my masters thesis.
+
+\sectionP{May 23rd 2013}
+Today I was at the International Conference for Software Engineers 2013 (ICSE)
+in San Francisco. Today an interesting, and winner of a distinguished paper
+award was presented, using some theoretical model known as entropy. Now,
+in my hobby life, I am very interested in astronomy and cosmology so I
+am very acquainted with the idea of entropy as the 2nd law in thermodynamics.
+The law of entropy states very simply that as time progresses, things tend
+to become less organized and more uniform by nature (See the big bang which
+was highly ordered, to the universe now which is highly unordered). The 
+author of the presented paper used this idea to determine what type of
+state a file is in after multiple authors have written code into it and
+what types of developers will touch it going into the future and how bug
+prone such a file could be (highly unordered). It was a very interesting way
+to approach the problem and offers a more general approach to the problem
+of determining if a file is bug prone in software engineering. The problem
+was previously solved by simply looking at the number of bug fixes that
+involve this file. 
+
+With this idea of entropy applied to files in software projects, I am 
+wondering if we can apply entropy to anything else inside software as the
+idea of entropy can be applied to most situations in life. I feel like a good
+study would be to measure the entropy of a software project over its
+entire life span. This may show that a software project often goes from very
+structured and rigorous effort, to a complete sense of chaos as the project
+evolves over time. It would also be interesting to see if this is true
+for all projects or only projects that are eventually abandoned and not 
+in those projects which are normally deemed healthy.
+
 \bibliographystyle{IEEEtran}
 \balance
 \bibliography{paper}
