@@ -11,6 +11,12 @@
 
 \usepackage{balance}
 \usepackage{float}
+
+\usepackage{hyperref}
+\newcommand\fnurl[2]{%
+  \href{#2}{#1}\footnote{\url{#2}}%
+}
+
 \floatstyle{plaintop}
 \restylefloat{table}
 
@@ -597,6 +603,50 @@ solution.
 
 The only other thing to note about the midterm was that I found the paper that started Google. It was
 the actual introductary paper for the Google search engine. I just thought that was very cool.
+
+\section{June 23rd 2013}
+Today I did the research online required for our assignment which is due on Monday June 24th 2013. This
+assignment required us to pick a topic we find interesting and search online for multimedia tutorials 
+and articles which could be useful for teaching other members of the class. I found this assignment
+a little difficult because the topics I am truly interested in have no real public appeal to them so
+the amount of multimedia presentation online are quite lacking. First I started with tree / graph edit
+distances. However, I really only found either wikipedia articles pertaining to isomorphism or I found
+academic papers of authors trying to solve minimal graph edit distances in very specific cases. People
+in the general public or even students at universities for the most part would have no interest in
+learning these topics so I found that the articles online reflected that by not having engaging learning
+media for thew topic. I can't tell if this is a serious problem in academia, that only the more public
+topics gets such attention to warrent multimedia learning, or if that is an appropriate response to the
+number of interested parties. After the tree edit distance problem failed (which is sad because that is
+the most interesting topic to me) I moved on to community detection. Here I found a plethera of tools 
+availible online which all preform some sort of community detection and most of them offer many 
+different algorithms for solving this issue. I thought perhaps this would be a good starting point for
+comparing and contrasting different community detection algorithms and learning how they work. However,
+the problems lies in abstraction. The tools themselves, for the most part, do not explain how the various
+algorithms work, they just abstract that information away to the algorithm name and preform the actions
+for the user. This made me look up the explinations of some of the algorithms and again, for the most part,
+all I found were technical research papers on how they work, besides the more known algorithms which had
+a couple youtube videos for how they worked. This again did not feel right to me as it seems when dealing
+with community detection, the solutions are abstracted away form the user in order to generate an 
+easy to use tool. This being the case, I did not pick this as my topic. 
+
+Since I am very interested in data mining and community detection, I thought why not combine them.
+I decided to go with cluster analysis on graphs. Here I found an algorithm called 
+k-means (\fnurl{Wikipedia}{http://en.wikipedia.org/wiki/K-means_algorithm}) which I
+remembered from my data mining class I took. K-means uses the 
+Voronoi cell (\fnurl{Wikipedia}{http://en.wikipedia.org/wiki/Voronoi_cell}) theoretical model in graphs
+in order to generate the clusters of nodes present. I found some great wikipedia articles on cluster
+analysis and Voronoi cells as well as some 
+youtube videos (\fnurl{Youtube}{https://www.youtube.com/watch?v=0MQEt10e4NM}
+\fnurl{Youtube}{https://www.youtube.com/watch?v=4shfFAArxSc}
+\fnurl{Youtube}{https://www.youtube.com/watch?v=aiJ8II94qck}) 
+explaining all the math behind the algorithm
+which walks the viewer through step by step. The best part about this algorithm is that it can be applied
+to problems we have seen before. I found an online 
+presentation (\fnurl{UofA}{www.cs.ualberta.ca/~nray1/CMPUT466_551/Clustering.ppt‎}) explaining how k-means can be used to
+segment images into their appropriate parts. This is the same issue as seen in the second round of 
+presentations. I think k-means could also be applied to community detection as also presented in the
+second round of presentations. I have decided to present k-means to the class tomorrow as my topic,
+along with all the media sources I found.
 
 
 \bibliographystyle{IEEEtran}
