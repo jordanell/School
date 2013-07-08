@@ -648,6 +648,96 @@ presentations. I think k-means could also be applied to community detection as a
 second round of presentations. I have decided to present k-means to the class tomorrow as my topic,
 along with all the media sources I found.
 
+\section{June 24th 2013}
+Today we had a normal class where all of our material we found over the previous week was presented to
+the class. This material covered learning resources that students found and would like to use for the last
+month or so of this class. There were basically three main fields that were presented. The first the foremost
+being Markov chains. Over 4 students presented information on Markov chains and had material for the class
+to use to learn. For the most part the material seemed quite interesting although it is hard to tell without
+getting my hands dirty on the meat of the subject matter. I plan on going over lots of the student material
+presented in class today in the coming weeks.
+
+The next, and most interesting, topic presented to the class was about procedural generation, specifically
+in music. I personally love procedural generation, from simple L-Trees in two dimensional space all the way up
+to fully generated worlds such as in the video game Minecraft or in generating music. I have a great interest
+in this topic as I know a lot of companies such as Pixar and Dreamworks are starting to move away from artist
+frawn everything and more into procedural generation, expecially for large scale productions. The topic presented
+today covered the generation of simple music, however a book was mentioned that I know from the past as to being
+extremely popular in computing. The book covers lots of interesting snippets of code as well as a theoretical
+background and builds its way up through procedural generation of music. I might go out and pick this book up
+as I have heard a lot of great things.
+
+After today's events, it seems like Markov chains and procedural generation will be the key topics going into
+the future of the class. This is a good combination because you often find Markov chains in procedural generation.
+
+\section{June 27th 2013}
+Today, we has a guest lecture in class that was extremely interesting. I will keep this log book entry short
+and just go over the key points and what my general thoughts were. The talk was all about the modeling of disease
+and bio-disasters such as the spread of smallpox and westnile virus. It was interesting to see how mathematical
+models, specifically computational models can be used to figure out how the virus will spread and what the best
+course of action is. This is very similar to the fire fighting problem that we learned about earlier in the course
+material. While the meat of the subject is interesting, the best slide I saw during the lecture was the process
+slide for developing a scientific model of some event or phenonena. The guest speaker had a slide that showed an
+iterative process where the modeler should go through a series of steps which eventually loop back on themselves
+for further refinement of the model to be generated. Not only does this process apply directly to modeling
+disease outbreak, it is also a perfect example of agile software development which I thought was an interesting
+connection. The fact that some analysis of the overall problem is done, followed by an iterative refinement of
+product is just a perfect connection between software and mathematical modelling. 
+
+Other than the stated above, the guest speaker was very engaging and had great material for our class to learn.
+I would hope to see more guest lectures moving into the future.
+
+\section{June 30th and July 1st 2013}
+I am writing these two days of my log book together as they pertain to the same work items preformed by myself.
+Over the last two days, I have spent some time looking through some of the student suggested material for further
+learning in the class on June 24th 2013. I started by watching the video series presented by Braden on Markov chains.
+These videos, while a great introduction to the material, seemed very slow at first for me. The first three videos
+basically stepped through how to use matrix multiplication and iterative loops to explain and show the use of
+Markov chains. This was pretty tedious for myself but a good refresher non the less. The whole time these videos
+were running I was actually wondering to myself if Markov chains always converge with the more steps you take.
+Thankfully I did not need to look any further as the last 2 videos in the series answered this and many other
+similar questions. So overall this was a good video tutorial once you get past the beginning.
+
+Since Markov chains are not exactly my favorite subject, from here I moved onto procedural generation of graphics.
+I have had some experience in this before with L-Trees but nothing too major. Aside from the material posted, I found
+a great website on the material(\fnurl{Procedural Generation}{http://www.gameprogrammer.com/fractal.html}) and decided
+to go over it in details. This website has a tutorial on how random fractal terrain in generated in 3d video games.
+It goes over everything from the theory behind the implementation all the way up to and including a working example
+along with the source code of the algorithm. I really had fun reading this tutorial and it makes me want to make
+a small video game as a final project to this class where the world is dynamically generated using these philosophys.
+
+This is it for now. I do not know how far we are suppose to go in our own reading of this material so I will stop
+after these two examples listed above. Hopefully we talk more about procedural generation in class. I look forward
+to hearing Nick's ideas on the subject as I know he has had some experience in procedural generation in music.
+
+\section{July 2nd - 5th 2013}
+I am again bunching up my log book entry into a single entry as the following material is generally from the
+same experience over the time frame given. This week I started working on my final project for the class. Since my
+own research is in areas of software repository mining, I decided to stay with that trend. Something I have always
+been interested in is software evolution of a project over its life span. What I mean here is how the code changes
+in its actual meaning over time. To preform such an action, code needs to be compared with previous version inside
+the project. This means building abstract syntax trees of the code and then comparing them, which definetly means
+edit distances of trees as previously studied and mention in this log book and class. 
+
+I started by looking online to see if there was any papers on this exact material, thankfully I found a paper where
+the authors created a tool known as ChangeDistiller. Here they almost implemented exactly what I need. They defined
+create, move, and delete actions on a tree while as creating a taxonomy of change types in Java source code. There
+taxonomy included items such as adding a method or changing a class field. This tool they created was really great
+so I decided to use it going forward. I learned how their source code operates and even made some slight modifications
+to it to include exactly what I needed. 
+
+Once this base project was found, I went forward with creating my own project. I decided a web interface would be
+great for a visualization of the data to be generated. Braden helped me in creating this front end interface. After
+that was built, we simply defined what types of changes we cared about for the project we were studying and ran our
+new program on pre-existing project with these metrics. The whole development process was actually very smooth and
+we ended up with quite a nice little tool(\fnurl{API Evolution}{http://ballroom.segal.uvic.ca/}). 
+
+We now have some research questions we would like to answer in terms of actually doing something useful with this
+information, as well as possibly publish our work. I am interested to see how the project behaves around stable release
+points of the project's milestones. Does the project slow down around these points? Are certain metrics high than others?
+The list of questions could go on and on with this. I look forward to the final paper of our project and answering
+these questions. As the month goes on I will provide small updates in this log book with any findings.
+
 
 \bibliographystyle{IEEEtran}
 \balance
