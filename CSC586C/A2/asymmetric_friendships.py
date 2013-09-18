@@ -5,17 +5,17 @@ def mapper(record):
 	key = record[0]
 	val = record[1]
 	if key < val:
-		mr.emit_intermediate(key,val)
+		mr.emit_intermediate((key,val),1)
 	else:
-		mr.emit_intermediate(val,key)
+		mr.emit_intermediate((val,key),1)
 
 def reducer(key, list_of_values):
 	total = 0
 	for v in list_of_values:
 		total += 1
-	if total is 1:
-		mr.emit((key, list_of_values[0]))
-		mr.emit((list_of_values[0], key))
+	if total <= 1:
+		mr.emit((key[0], key[1]))
+		mr.emit((key[1], key[0]))
 
 mr = MapReduce.MapReduce()
 inputdata = open(sys.argv[1])
