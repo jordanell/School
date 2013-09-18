@@ -2,6 +2,9 @@ import sys
 import json
 import MapReduce
 
+# Basic algorithm learned from here:
+# http://adhoop.wordpress.com/2012/03/31/matrix-multiplication-using-mapreduce-1-step-solution/
+
 def mapper_1(record):
 	matrix = record[0]
 	if matrix == 'a':
@@ -24,6 +27,8 @@ def mapper_2(record):
 		for i in range(1,rows+1):
 			emit_intermediate((i,record[2]),(('b',record[1]),record[3]))
 
+# Fancy tuple searching found here:
+# http://stackoverflow.com/questions/2917372/how-to-search-a-list-of-tuples-in-python
 def tuple_search(list_of_values, matrix, j):
 	try:
 		[x[0] for x in list_of_values].index((matrix,j))
