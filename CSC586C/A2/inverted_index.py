@@ -11,7 +11,8 @@ def mapper(record):
 def reducer(key, list_of_values):
 	values = []
 	for v in list_of_values:
-		values.append(v)
+		if v not in values:
+			values.append(v)
 	mr.emit((key, values))
 
 mr = MapReduce.MapReduce()
