@@ -1,9 +1,13 @@
 # Fdb version 3
-<<<<<<< HEAD
-["pdflatex"] 1384977918 "paper.tex" "paper.pdf" "paper" 
-=======
-["pdflatex"] 1384796989 "paper.tex" "paper.pdf" "paper" 
->>>>>>> 2dcf6a484656c3fce08d74b5d7a419ec222ac11c
+["bibtex paper"] 1386713217 "paper.aux" "paper.bbl" "paper" 
+  "./IEEEtran.bst" 1360023900 59215 bc5380b3434a66b895bbc75d3d380540 ""
+  "paper.aux" 1386713217 3416 233115757e24faa35f5fdd55ba29f90b ""
+  "paper.bcf" 0 -1 0 ""
+  "paper.bib" 1386709874 5703 124356c3ad580eedb64d2dcc99da450a ""
+  (generated)
+  "paper.blg"
+  "paper.bbl"
+["pdflatex"] 1386713217 "paper.tex" "paper.pdf" "paper" 
   "/etc/texmf/tex/latex/config/graphics.cfg" 1255993321 3328 2584cfe577535f0a08f3a9717b5152ab ""
   "/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii" 1251025892 71625 fad1c4b52151c234b6873a255b0ad6b3 ""
   "/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty" 1156703163 3535 ce75ca6de8380293f2081dec8ab08a93 ""
@@ -18,16 +22,17 @@
   "/usr/share/texmf-texlive/tex/latex/graphics/trig.sty" 1156702488 3153 c50e6bd54d2dd3933fc52bcf369bec4a ""
   "/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def" 1322143080 40817 59149cdca908875781bb2f74014004ed ""
   "/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd" 1137110629 961 15056f4a61917ceed3a44e4ac11fcc52 ""
-<<<<<<< HEAD
-  "IEEEtran.cls" 1377976566 201353 775b18b42342447aea341b76a89fcb61 ""
-  "paper.aux" 1384977918 222 748a8af7421e253ef1fc021b12437bc8 ""
-  "paper.tex" 1384977917 5618 41a74d24dd149bd4d51fbfad32fd8f61 ""
-=======
-  "IEEEtran.cls" 1384795518 201353 775b18b42342447aea341b76a89fcb61 ""
-  "images/bag.png" 1384795518 67342 6fa141813734760a2dcba3e445aa3d6e ""
-  "paper.aux" 1384796989 678 d1b481ff36aefcbd47b6fbc0a74a849c ""
-  "paper.tex" 1384796989 25750 bbf481a9dfc90b1d607e8472c96165fa ""
->>>>>>> 2dcf6a484656c3fce08d74b5d7a419ec222ac11c
+  "IEEEtran.cls" 1360023900 201353 775b18b42342447aea341b76a89fcb61 ""
+  "images/activity.png" 1385502588 41289 0ec3b90184246d908f3c301b52d9d033 ""
+  "images/parsing.png" 1386701730 16914 75cb7d3ffe3048acc41e1a26e40369c8 ""
+  "images/rel.png" 1385502644 18606 b867280558d6af73c4c1f48b0e2bec14 ""
+  "images/req.png" 1385502630 19520 dc06b6a9cdcec0a97a3803b4c0c9cc5c ""
+  "images/requirements.png" 1386713112 23705 c46090fca49c8f6c399d0a7b31e1d0d2 ""
+  "images/rules.png" 1386701745 11914 7d1700abb0afbdb2f8fba57301e728bc ""
+  "images/sent.png" 1385502604 21173 6a783dc37b8288eddf0c41cdbaccd2ed ""
+  "paper.aux" 1386713217 3416 233115757e24faa35f5fdd55ba29f90b ""
+  "paper.bbl" 1386713217 5054 a401145233797f518290b1caf484d0e5 "bibtex paper"
+  "paper.tex" 1386713216 31982 e74cb49492ba3390dcd56154d42e39ae ""
   (generated)
   "paper.pdf"
   "paper.log"
