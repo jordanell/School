@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1384718023 "paper.tex" "paper.pdf" "paper" 
+["pdflatex"] 1384977918 "paper.tex" "paper.pdf" "paper" 
   "/etc/texmf/tex/latex/config/graphics.cfg" 1255993321 3328 2584cfe577535f0a08f3a9717b5152ab ""
   "/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii" 1251025892 71625 fad1c4b52151c234b6873a255b0ad6b3 ""
   "/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty" 1156703163 3535 ce75ca6de8380293f2081dec8ab08a93 ""
@@ -15,9 +15,8 @@
   "/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def" 1322143080 40817 59149cdca908875781bb2f74014004ed ""
   "/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd" 1137110629 961 15056f4a61917ceed3a44e4ac11fcc52 ""
   "IEEEtran.cls" 1377976566 201353 775b18b42342447aea341b76a89fcb61 ""
-  "images/bag.png" 1384715935 67342 6fa141813734760a2dcba3e445aa3d6e ""
-  "paper.aux" 1384718024 678 d1b481ff36aefcbd47b6fbc0a74a849c ""
-  "paper.tex" 1384718023 25707 7671a4714449f2bb102e4510f98accb2 ""
+  "paper.aux" 1384977918 222 748a8af7421e253ef1fc021b12437bc8 ""
+  "paper.tex" 1384977917 5618 41a74d24dd149bd4d51fbfad32fd8f61 ""
   (generated)
   "paper.pdf"
   "paper.log"

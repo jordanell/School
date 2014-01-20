@@ -21,18 +21,14 @@ main()
   pthread_mutex_init(&mutex, NULL);
 
   pthread_t thread1, thread2;
-  const char *message1 = "Barber";
-  const char *message2 = "Customer";
   int iret1, iret2;
 
-  iret1 = pthread_create( &thread1, NULL, barber_entry, (void*) message1);
-  iret2 = pthread_create( &thread2, NULL, customer_entry, (void*) message2);
+  iret1 = pthread_create( &thread1, NULL, barber_entry, NULL);
+  iret2 = pthread_create( &thread2, NULL, customer_entry, NULL);
 
   pthread_join(thread1, NULL);
   pthread_join(thread2, NULL);
 
-  printf("Barber 1 returns: %d\n",iret1);
-  printf("Customer 2 returns: %d\n",iret2);
   exit(0);
 }
 
