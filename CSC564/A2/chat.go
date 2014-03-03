@@ -1,7 +1,7 @@
-/* **********N-CLIENT CHAT SERVER ***********************
-   ********** run program in one  terminal********
-   http://ajithkadambur.wordpress.com/2012/02/28/n-client-chat-server-in-go-language/
-   ******* in another one run :- telnet localhost 9988********/
+/* 
+Followed tutorial at: 
+	http://ajithkadambur.wordpress.com/2012/02/28/n-client-chat-server-in-go-language/
+*/
 package main
 
 import (
@@ -11,11 +11,11 @@ import (
 )
 
 type ClientChat struct {
-	Name string
-	IN chan string
-	OUT chan string
-	Con net.Conn
-	Quit chan bool
+	Name 						string
+	IN 				chan 	string
+	OUT				chan 	string
+	Con 			net.Conn
+	Quit 			chan 	bool
 	ListChain *list.List
 }
 
@@ -75,7 +75,7 @@ func clientreceiver(client *ClientChat) {
 			buf[i] = 0x00
 		}
 	}
-	client.OUT <- client.Name+" has left chat"
+	client.OUT <- client.Name+" has left chat server!"
 }
 
 func clientsender(client *ClientChat) {
@@ -88,7 +88,6 @@ func clientsender(client *ClientChat) {
 				break
 		}
 	}
-	
 }
 
 func clientHandling(con net.Conn,ch chan string,lst *list.List) {
@@ -99,14 +98,14 @@ func clientHandling(con net.Conn,ch chan string,lst *list.List) {
 	go clientsender(newclient)
 	go clientreceiver(newclient)
 	lst.PushBack(*newclient)
-	ch <- string(name + "has join the chat\n")
+	ch <- string(name + "has join the chat server!\n")
 }
 
 func main() {
 	clientlist := list.New()
 	in := make(chan string)
 	go handlingINOUT(in,clientlist)
-	netlisten,_ := net.Listen("tcp","127.0.0.1:9988")
+	netlisten,_ := net.Listen("tcp","127.0.0.1:9999")
 	defer netlisten.Close()
 	for {
 		conn,_ := netlisten.Accept()
