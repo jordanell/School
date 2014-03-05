@@ -9,10 +9,8 @@ import urllib
 from bs4 import BeautifulSoup
 from sets import Set
 from database import db_connector
-from pos_extractor import pos_extractor
-from sentiment import analyzer
 
-class forum_crawler:
+class crawler:
 	base_url = ""
 
 	url_pending = Set([])
@@ -20,9 +18,6 @@ class forum_crawler:
 	visited = Set([])
 
 	db = db_connector()
-
-	pos = pos_extractor(None)
-	sent_analyzer = analyzer()
 
 	def __init__(self, base_url):
 		self.base_url = base_url

@@ -2,13 +2,13 @@ import urlparse
 import urllib
 from bs4 import BeautifulSoup
 from sets import Set
-from forum_crawler import forum_crawler
+from crawler import crawler
 import datetime
 
-class hearthstone_crawler(forum_crawler):
+class hearthstone_crawler(crawler):
 
 	def __init__(self, base_url):
-		forum_crawler.__init__(self, base_url)
+		crawler.__init__(self, base_url)
 
 	def get_title(self, soup):
 		return soup.find("span", {"class": "topic-title"}).string
