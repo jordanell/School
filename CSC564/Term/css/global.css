@@ -1,0 +1,104 @@
+* {
+	color: white;
+}
+
+pre {
+	width: 100%;
+}
+
+h3 {
+	font-size: 18px !important;
+	color: #1b9766 !important;
+}
+
+a {
+	color: #1b9766 !important;
+}
+
+.navbar-brand {
+	color: white !important;
+}
+
+body, html {
+	margin-top: 71px;
+	background-color: #ededed;
+}
+
+.navbar-header {
+  float: left;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+}
+
+.navbar {
+	background-color: #1b9766;
+	border-color: #1b9766;
+}
+
+.navbar-brand {
+	float:none;
+}
+
+.logo {
+	margin-left: 5px;
+	height: 40px;
+}
+
+.wrapper {
+	height: 100%;
+	background-color: grey;
+}
+
+.meta-wrapper {
+	padding: 20px 10px 20px 10px;
+	position: fixed;
+	height: 100%;
+	background-color: #444;
+	width: 280px;
+}
+
+
+#messages-wrapper {
+	overflow: scroll;
+	overflow-x: scroll;
+	overflow-y: scroll;
+	position: fixed;
+	padding-top: 20px;
+	margin-left: 280px;
+	height: 77%;
+	width: 1400px;
+}
+
+.chat-input {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 15%;
+	margin-left: 280px;
+	background-color: #ababab;
+}
+
+.chat-form {
+	padding-top: 10px;
+}
+
+#chatInput {
+	width: 70%;
+	height: 30px;
+	line-height: 20px;
+	font-size: 20px;
+}
+
+#inputName {
+	width: 20%;
+	height: 30px;
+	line-height: 20px;
+	font-size: 20px;
+}
+
+#send-btn {
+	margin-top: -11px;
+	width: 225px;
+	height: 30;
+}

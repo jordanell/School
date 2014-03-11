@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Go Chat</title>
+		<meta chaset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/png" href="favicon.png">
+
+		<link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/global.css" />
+
+		<script src="lib/jquery-2.1.0.min.js"></script>
+		<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+		<script src="lib/jquery.json-2.4.min.js"></script>
+		<script src="lib/knockout-2.2.0.js"></script>
+		<script data-main="js/main" src="lib/require.js"></script>
+
+		<script src="js/enter.js"></script>
+
+		<style>
+			@import url("lib/bootstrap/css/bootstrap.min.css");
+		</style>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="#">Go Concurrent Chat System<img class="logo" src="favicon.png" /></a>
+		    </div>
+		  </div>
+		</nav>
+
+		<div class="wrapper">
+			<div class="meta-wrapper">
+				<row>
+					<div class="col-md-4">
+						<img src="me.jpg" />
+					</div>
+					<div class="col-md-8">
+						<h3>Jordan Ell</h3>
+					</div>
+				</row>
+				<row>
+					<div class="col-md-12" style="margin-top: 20px;">
+						<p>
+							This chat server was created as part of my CSC564 Concurrency term project at the University of Victoria.
+							This chat server utilizes a Go concurrent backend with a websockets plugin in order to handle concurrent users
+							with non deterministic inputs.
+						</p>
+					</div>
+				</row>
+				<row>
+					<div class="col-md-12">
+						<h3>Resources</h3>
+					</div>
+					<div class="col-md-12">
+						<p>
+							For those interest in learning Go for web backend support, and for those wondering how I build this webpage, 
+							the following resources can be seen:
+						</p>
+						<a href="http://golang.org/doc/install" style="display: block;">Installing Go</a>
+						<a href="http://godoc.org/code.google.com/p/go.net/websocket"style="display: block;">Websockets in Go</a>
+						<a href="http://gary.burd.info/go-websocket-chat" style="display: block;">Websockets Tutorial</a>
+						<a href="https://github.com/tenntenn/golang-samples" style="display: block;">Chat Server Example / Go Examples</a>
+					</div>
+				</row>
+				<row>
+					<div class="col-md-12" style="margin-top: 20px;">
+						<h3>Shameless Plug</h3>
+					</div>
+					<div class="col-md-12">
+						<img src="riipen.png" />
+					</div>
+					<div class="col-md-12">
+						<p>
+							I have a website called Riipen.com and it is where companies post short term projects for students to complete in order
+							to help them gain real world experience, buff their resume, and help the companies find talent. Check it out!
+						</p>
+					</div>
+				</row>
+			</div>
+
+			<div class="container-fluid" id="messages-wrapper">
+				<div class="row">
+					<div class="col-md-12">
+						<div data-bind="foreach: messages">
+							<div>
+								<h3><!-- ko text: author --><!-- /ko --> says:</h3>
+								<pre data-bind="text:body"></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="container-fluid chat-input">
+				<div class="row">
+					<div class="col-md-12">
+						<form class="chat-form" role="form" data-bind="with: editingMessage">
+							<div class="form-group">
+								<label class="control-label" for="inputName">Name :</label>
+								<input id="inputName" type="text" data-bind="value: author" />
+								<label class="control-label" for="chatInput">Chat Input :</label>
+								<input type="text" class="form-control" id="chatInput" data-bind="value: body">
+								<a type="submit" id="send-btn" class="btn btn-default" data-bind="click: $parent.send.bind($parent)">Send</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
