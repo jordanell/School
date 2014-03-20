@@ -60,5 +60,9 @@ class db_connector:
 			VALUES (%s, %s, %s, %s, %s);""", (discussion_id, created_at, user_name, user_title, body))
 		self.commit()
 
+	def get_all_posts(self):
+		self.cur.execute("""SELECT * FROM posts limit 100;""")
+		return self.cur.fetchall()
+
 	def commit(self):
 		self.conn.commit()
