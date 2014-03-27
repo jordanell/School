@@ -61,8 +61,26 @@ class db_connector:
 		self.commit()
 
 	def get_all_posts(self):
-		self.cur.execute("""SELECT * FROM posts limit 100;""")
+		self.cur.execute("""SELECT * FROM posts_unique;""")
 		return self.cur.fetchall()
+
+	def clear_output(self):
+		self.cur.execute("""DELETE FROM supports""")
+		self.commit()
+		self.cur.execute("""DELETE FROM requirements""")
+		self.commit()
+
+	def insert_requirement(self, id_value):
+		self.cur.execute(
+			"""INSERT INTO requirements (id)
+			VALUES(%s);""", (id_value,))
+		self.commit()
+
+	def insert_support(self, requirement_id, body, nouns):
+		self.cur.execute(
+			"""INSERT INTO supports (requirement_id, body, nouns)
+			VALUES(%s, %s, %s);""", (requirement_id, body, nouns))
+		self.commit()
 
 	def commit(self):
 		self.conn.commit()
