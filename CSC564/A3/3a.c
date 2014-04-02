@@ -58,14 +58,15 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <CL/cl.h>
-#include <time.h>
+#include <OpenCL/opencl.h>
+#include <mach/mach.h>
+#include <mach/mach_time.h>
 
 ////////////////////////////////////////////////////////////////////////////////
 
 // Use a static data size for simplicity
 //
-#define DATA_SIZE (1024)
+#define DATA_SIZE (262144)
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -131,7 +132,7 @@ const char *KernelSourceTwo = "\n" \
 int main(int argc, char** argv)
 {
     int err;                            // error code returned from api calls
-
+    
     float a[DATA_SIZE];                 // original data sets given to device
     float b[DATA_SIZE];
     float c[DATA_SIZE];
@@ -139,26 +140,32 @@ int main(int argc, char** argv)
     float scratch[DATA_SIZE];
     float reduction_results[DATA_SIZE];
     unsigned int correct;               // number of correct results returned
-
+    
     size_t global;                      // global domain size for our calculation
     size_t local;                       // local domain size for our calculation
-
+    
     cl_platform_id platform_id;         // platform id
     cl_device_id device_id;             // compute device id
     cl_context context;                 // compute context
     cl_command_queue commands;          // compute command queue
     cl_program program;                 // compute program
     cl_kernel kernel;                   // compute kernel
-
+    
     cl_mem input_a;                     // device memory used for the input array
     cl_mem input_b;                     // device memory used for the input array
     cl_mem input_c;                     // device memory used for the input array
     cl_mem output;                      // device memory used for the output array
-
+    
     cl_mem input_buffer;
     cl_mem input_scratch;
     cl_mem result;
-
+    
+    uint64_t        start;
+    uint64_t        end;
+    uint64_t        elapsed;
+    uint64_t        elapsedNano;
+    static mach_timebase_info_data_t    sTimebaseInfo;
+    
     // Fill our data sets with random float values
     //
     int i = 0;
@@ -170,7 +177,7 @@ int main(int argc, char** argv)
         c[i] = rand() / (float)RAND_MAX;
         scratch[i] = 0.0f;
     }
-
+    
     // Connect to a compute device
     //
     int gpu = 1;
@@ -181,7 +188,7 @@ int main(int argc, char** argv)
         printf("Error: Failed to create a device group!\n");
         return EXIT_FAILURE;
     }
-
+    
     // Create a compute context
     //
     context = clCreateContext(0, 1, &device_id, NULL, NULL, &err);
@@ -190,7 +197,7 @@ int main(int argc, char** argv)
         printf("Error: Failed to create a compute context!\n");
         return EXIT_FAILURE;
     }
-
+    
     // Create a command commands
     //
     commands = clCreateCommandQueue(context, device_id, 0, &err);
@@ -199,9 +206,13 @@ int main(int argc, char** argv)
         printf("Error: Failed to create a command commands!\n");
         return EXIT_FAILURE;
     }
-
+    
+    // Start the timing
+    //
+    start = mach_absolute_time();
+    
     ////////////////////////////////// FORMULA KERNEL ////////////////////////////////////////////////
-
+    
     // Create the compute program from the source buffer
     //
     program = clCreateProgramWithSource(context, 1, (const char **) & KernelSourceOne, NULL, &err);
@@ -210,7 +221,7 @@ int main(int argc, char** argv)
         printf("Error: Failed to create compute program!\n");
         return EXIT_FAILURE;
     }
-
+    
     // Build the program executable
     //
     err = clBuildProgram(program, 0, NULL, NULL, NULL, NULL);
@@ -218,17 +229,17 @@ int main(int argc, char** argv)
     {
         size_t len;
         char buffer[2048];
-
+        
         printf("Error: Failed to build program executable!\n");
         clGetProgramBuildInfo(program, device_id, CL_PROGRAM_BUILD_LOG, sizeof(buffer), buffer, &len);
         printf("%s\n", buffer);
         exit(1);
     }
-
+    
     // Start the timing
     //
-
-
+    
+    
     // Create the compute kernel in the program we wish to run
     //
     kernel = clCreateKernel(program, "formula", &err);
@@ -237,7 +248,7 @@ int main(int argc, char** argv)
         printf("Error: Failed to create compute kernel!\n");
         exit(1);
     }
-
+    
     // Create the input and output arrays in device memory for our calculation
     //
     input_a = clCreateBuffer(context,  CL_MEM_READ_ONLY,  sizeof(float) * count, NULL, NULL);
@@ -249,7 +260,7 @@ int main(int argc, char** argv)
         printf("Error: Failed to allocate device memory!\n");
         exit(1);
     }
-
+    
     // Write our data sets into the input array in device memory
     //
     err  = clEnqueueWriteBuffer(commands, input_a, CL_TRUE, 0, sizeof(float) * count, a, 0, NULL, NULL);
@@ -260,7 +271,7 @@ int main(int argc, char** argv)
         printf("Error: Failed to write to source array!\n");
         exit(1);
     }
-
+    
     // Set the arguments to our compute kernel
     //
     err = 0;
@@ -274,7 +285,7 @@ int main(int argc, char** argv)
         printf("Error: Failed to set kernel arguments! %d\n", err);
         exit(1);
     }
-
+    
     // Get the maximum work group size for executing the kernel on the device
     //
     err = clGetKernelWorkGroupInfo(kernel, device_id, CL_KERNEL_WORK_GROUP_SIZE, sizeof(local), &local, NULL);
@@ -283,7 +294,7 @@ int main(int argc, char** argv)
         printf("Error: Failed to retrieve kernel work group info! %d\n", err);
         exit(1);
     }
-
+    
     // Execute the kernel over the entire range of our 1d input data sets
     // using the maximum number of work group items for this device
     //
@@ -294,11 +305,11 @@ int main(int argc, char** argv)
         printf("Error: Failed to execute kernel!\n");
         return EXIT_FAILURE;
     }
-
+    
     // Wait for the command commands to get serviced before reading back results
     //
     clFinish(commands);
-
+    
     // Read back the results from the device to verify the output
     //
     err = clEnqueueReadBuffer( commands, output, CL_TRUE, 0, sizeof(float) * count, results, 0, NULL, NULL );
@@ -307,9 +318,9 @@ int main(int argc, char** argv)
         printf("Error: Failed to read output array! %d\n", err);
         exit(1);
     }
-
+    
     ////////////////////////////////// REDUCTION KERNEL ////////////////////////////////////////////////
-
+    
     // Create the compute program from the source buffer
     //
     program = clCreateProgramWithSource(context, 1, (const char **) & KernelSourceTwo, NULL, &err);
@@ -318,7 +329,7 @@ int main(int argc, char** argv)
         printf("Error: Failed to create compute program!\n");
         return EXIT_FAILURE;
     }
-
+    
     // Build the program executable
     //
     err = clBuildProgram(program, 0, NULL, NULL, NULL, NULL);
@@ -326,13 +337,13 @@ int main(int argc, char** argv)
     {
         size_t len;
         char buffer[2048];
-
+        
         printf("Error: Failed to build program executable!\n");
         clGetProgramBuildInfo(program, device_id, CL_PROGRAM_BUILD_LOG, sizeof(buffer), buffer, &len);
         printf("%s\n", buffer);
         exit(1);
     }
-
+    
     // Create the compute kernel in the program we wish to run
     //
     kernel = clCreateKernel(program, "reduce", &err);
@@ -341,7 +352,7 @@ int main(int argc, char** argv)
         printf("Error: Failed to create compute kernel!\n");
         exit(1);
     }
-
+    
     // Create the input and output arrays in device memory for our calculation
     //
     input_buffer = clCreateBuffer(context,  CL_MEM_READ_ONLY,  sizeof(float) * count, NULL, NULL);
@@ -352,7 +363,7 @@ int main(int argc, char** argv)
         printf("Error: Failed to allocate device memory!\n");
         exit(1);
     }
-
+    
     // Write our data sets into the input array in device memory
     //
     err  = clEnqueueWriteBuffer(commands, input_buffer, CL_TRUE, 0, sizeof(float) * count, results, 0, NULL, NULL);
@@ -362,7 +373,7 @@ int main(int argc, char** argv)
         printf("Error: Failed to write to source array!\n");
         exit(1);
     }
-
+    
     // Set the arguments to our compute kernel
     //
     err = 0;
@@ -375,7 +386,7 @@ int main(int argc, char** argv)
         printf("Error: Failed to set kernel arguments! %d\n", err);
         exit(1);
     }
-
+    
     // Get the maximum work group size for executing the kernel on the device
     //
     err = clGetKernelWorkGroupInfo(kernel, device_id, CL_KERNEL_WORK_GROUP_SIZE, sizeof(local), &local, NULL);
@@ -384,7 +395,7 @@ int main(int argc, char** argv)
         printf("Error: Failed to retrieve kernel work group info! %d\n", err);
         exit(1);
     }
-
+    
     // Execute the kernel over the entire range of our 1d input data sets
     // using the maximum number of work group items for this device
     //
@@ -395,11 +406,11 @@ int main(int argc, char** argv)
         printf("Error: Failed to execute kernel!\n");
         return EXIT_FAILURE;
     }
-
+    
     // Wait for the command commands to get serviced before reading back results
     //
     clFinish(commands);
-
+    
     // Read back the results from the device to verify the output
     //
     err = clEnqueueReadBuffer( commands, output, CL_TRUE, 0, sizeof(float) * count, reduction_results, 0, NULL, NULL );
@@ -408,10 +419,17 @@ int main(int argc, char** argv)
         printf("Error: Failed to read output array! %d\n", err);
         exit(1);
     }
-
+    
     // End the timing
     //
-
+    end = mach_absolute_time();
+    elapsed = end - start;
+    if ( sTimebaseInfo.denom == 0 ) {
+        (void) mach_timebase_info(&sTimebaseInfo);
+    }
+    elapsedNano = elapsed * sTimebaseInfo.numer / sTimebaseInfo.denom;
+    printf("Elspased time: %fs\n", (float)elapsedNano / 1000000000.0f);
+    
     // Validate our results
     //
     correct = 0;
@@ -420,11 +438,11 @@ int main(int argc, char** argv)
         if(floorf(results[i] * 10000) == floorf(((a[i] * b[i]) + c[i]) * 10000))
             correct++;
     }
-
+    
     // Print a brief summary detailing the results
     //
     printf("Computed '%d/%d' correct values!\n", correct, count);
-
+    
     // Shutdown and cleanup
     //
     clReleaseMemObject(input_a);
@@ -435,6 +453,6 @@ int main(int argc, char** argv)
     clReleaseKernel(kernel);
     clReleaseCommandQueue(commands);
     clReleaseContext(context);
-
+    
     return 0;
 }
