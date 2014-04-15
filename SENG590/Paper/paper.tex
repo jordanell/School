@@ -1,11 +1,10 @@
 \documentclass[conference]{IEEEtran}
 
 % Use of outside images
-\usepackage{graphicx} 
+\usepackage{graphicx}
 % Use text inside euqations
 \usepackage{amsmath}
 
-\usepackage{balance}
 \usepackage{float}
 \floatstyle{plaintop}
 \restylefloat{table}
@@ -31,14 +30,14 @@ Victoria, British Columbia, Canada \\ jell@uvic.ca}
 
 
 \begin{abstract}
-Requirements elicitation has been recognized as a crucial activity in any software development project. 
+Requirements elicitation has been recognized as a crucial activity in any software development project.
 Unfortunately, collecting and examining new requirements can often be a difficult manual task when
 information is distributed across numerous stakeholders. As a result, new automated requirements elicitation tools
 have started to surface which take advantage of information sharing tools, such as online forums and wiki pages.
 In this study, I look to create a new methodology for automatically eliciting requirements from online forums in
 order to better support developers and remove the manual process of finding said requirements with human work effort.
 I perform a case study of a video game Hearthstone: Heroes of Warcraft in which online forum postings are used to
-extract requirements which the users would like to see fulfilled by the game developers. After analyzing 4000 posts 
+extract requirements which the users would like to see fulfilled by the game developers. After analyzing 4000 posts
 from the forum, 911 new requirements were found with an accuracy of 13\% validity. These results show the beginnings
 of an emerging area of research which requires much future work and elaboration.
 \end{abstract}
@@ -62,9 +61,9 @@ their opinions and wants.
 For video game development, hearing from the community is extremely important~\cite{Ruggles:2005:OCB}. Almost any
 video game creators will employ a ``Community Manager'' in order to monitor their online
 communities and communicate the needs and wants of the users to the development teams and
-business teams. This job can be a tedious task, as it is up to the community manager to 
+business teams. This job can be a tedious task, as it is up to the community manager to
 go through thousands, if not millions, of online discussions in order to find out what
-users really want from the game and how they can go about implementing these 
+users really want from the game and how they can go about implementing these
 requirements~\cite{Gottipati:2011:FRA}.
 This may involve many hours each day going through post after post to identify requirements
 that the community of users has created for the developers.
@@ -82,17 +81,17 @@ by a domain expert. All of these approaches have not been fully automated and re
 human intervention for their results to be accurate.
 
 % Question
-In order to remedy this manual and slow process with full automation, I ask the research question: 
+In order to remedy this manual and slow process with full automation, I ask the research question:
 ``Can software requirements be automatically elicited from online forums?''
 
 % Quick results
 To address this question, I perform a case study of the video game Hearthstone: Heroes of Warcraft,
 which is a created by Blizzard Entertainment. By scraping their online forums, and applying some
-natural language processing techniques, I was able to extract 911 new requirements from the forums 
-with a validity accuracy of 13\%. 
+natural language processing techniques, I was able to extract 911 new requirements from the forums
+with a validity accuracy of 13\%.
 
 % Outline
-The rest of this paper is outlined as follows. Related work will first be discussed to underline 
+The rest of this paper is outlined as follows. Related work will first be discussed to underline
 how this research is novel. Methodology will then be presented to explain exactly what steps were taken
 for the research. Results and discussion will then follow to go over what was found and what steps
 can be take in the future to improve these results.
@@ -113,7 +112,7 @@ listing to recommend requirements to other products in that domains. This allows
 be found through online text by simply comparing what features similar products have. Taylor et
 al.~\cite{Taylor} looked into extracting requirements from similar product's product descriptions.
 This is again a sort of comparison between products to find new requirements. Both these methods
-involve knowing where requirements are unfortunately and do not solve the issue of pure 
+involve knowing where requirements are unfortunately and do not solve the issue of pure
 open text requirements mining which is found is online forums.
 
 Castro-Herrera et al.~\cite{Castro-Herrera:2009:RSD} have also looked at online forums for
@@ -133,7 +132,7 @@ community presence in their online forums for all the game products. This helps 
 rich and diverse test bed of forum posts from which information can be collected. Second, Hearthstone was
 selected because of the phase in which its game development was in. At the time of this research, Hearthstone
 had been in open beta for 2 months and was roughly 1 month short of its official launch date. This put my
-research in a perfect position where players were still finding bugs, tweaking the game play settings, 
+research in a perfect position where players were still finding bugs, tweaking the game play settings,
 assessing the visuals and so much more. Because of this, my results had the highest chance of finding
 exactly what players wanted to change, and with some sense of urgency as the game was about to make its
 debut.
@@ -178,7 +177,7 @@ Created & The time which the discussion was created \\
 
 Once the information was extracted, I simply stored it in a PostgreSQL database for future use. It can
 be seen in Table~\ref{tab:posts} and Table~\ref{tab:discussions} that information about posts and their
-discussion threads was collected. A total of 44,381 posts were scraped from 5495 discussion threads. 
+discussion threads was collected. A total of 44,381 posts were scraped from 5495 discussion threads.
 
 \subsection{Technical Approach}
 
@@ -189,7 +188,7 @@ me to have my analysis in line with my results, which are requirements sentences
 downside of analyzing on a per sentence basis is the loss of context as to what the user was writing about
 may occur. Once sentences were obtained, a plagiarism technique of finding similar nouns in sentences was
 used to identify similar sentences. For this, each noun from each sentence was extracted into that sentence's
-bag of nouns. From here, the cosine similarity formula was used to identify which bag of nouns were similar. 
+bag of nouns. From here, the cosine similarity formula was used to identify which bag of nouns were similar.
 A threshold of 60\% similarity was used as the cut off, meaning that sentences had to be at least 60\% similar
 in their nouns in order to be grouped together.
 
@@ -204,7 +203,7 @@ the notion of ``chunking''~\cite{Collobert:2011:NLP} was used. Chunking is essen
 lexicographical identifier can be applied to each word of the sentence. This allows me to identify the nouns.
 
 After the sentence have been divided into their groups of similarity, it is time to identify the requirements,
-of each group. For this, I again used the NLTK library and used a methodology known as 
+of each group. For this, I again used the NLTK library and used a methodology known as
 ``phrasing''~\cite{Collobert:2011:NLP}. Phrasing
 essential groups parts of sentences together into their applicable phrase type.
 
@@ -227,8 +226,8 @@ have a noun and verb phrase, the extraction of these phrases can be quite diffic
 a larger amount of flexibility, not all sentence structures can be identified using this method, as a grammar must
 be provided which fits this structure. Again this limitation will be addressed later in this paper.
 
-Now that sentences with the correct requirement structure have been found, simple key word analysis is used 
-to complete this approach. As it can be seen in Figure~\ref{fig:phrase}, a verb phrase begins with a verb. 
+Now that sentences with the correct requirement structure have been found, simple key word analysis is used
+to complete this approach. As it can be seen in Figure~\ref{fig:phrase}, a verb phrase begins with a verb.
 We can use this knowledge to identify request type sentences. I created a list of words:
 
 \begin{itemize}
@@ -249,7 +248,7 @@ now automatically elicited requirements from online forum data.
 In order to validate what was found to be a requirement automatically, a simple inter-rater reliability~\cite{gwet2001handbook}
 validation was applied
 with three judges (myself and two external judges). All three judges had domain knowledge of Hearthstone as all three
-had played the game before and therefor would be able to interpret the requirements correctly. 100 requirements were selected randomly 
+had played the game before and therefor would be able to interpret the requirements correctly. 100 requirements were selected randomly
 to be tested. These random 100 only had one constraint, and that was that they come from sentence groups
 which has a minimum of 100 similar sentences. Each judge was given the list of 100 requirements and asked to give a binary result of Yes or No. A Yes
 indicated that the judge found that the requirement was a real requirement for Hearthstone and that they could easily
@@ -292,7 +291,7 @@ to be accurate be a single judge.
 
 \section{Discussion and Future Work}
 
-While the methodology presented in this paper can be considered a good start in automatic requirements elicitation, 
+While the methodology presented in this paper can be considered a good start in automatic requirements elicitation,
 many limitations exist as can be seen in the final 13\% accuracy rate. Early on in the methodology, we see a large
 weakness come along with the phrasing section of work. Here, I require that a sentence take the structure of noun
 phrase followed by a verb phrase. First off, in order to extract this structure, a grammar must be used which is compliant with
@@ -301,7 +300,7 @@ can be constructed using the English language. This is quite a lofty task. For t
 (limited) grammars that came ``in the box'' with NLTK. This has a large consequence of missing potential sentences
 which do not fit this grammar. This inevitably leads to missing requirements down the road. To fix this issue, a large
 catalog of English sentence grammars must be created in order to properly parse all English sentences by chunking and
-phrasing. This may be an extremely large (if not impossible~\cite{shieber1985eac}) task which would require 
+phrasing. This may be an extremely large (if not impossible~\cite{shieber1985eac}) task which would require
 manual intervention but may benefit not only requirements
 elicitation, but all of natural language processing.
 
@@ -313,7 +312,7 @@ the methodology are actually not requirements. The result ``Turn 10 is when big 
 a requirement, while many other results have the word ``it'' in them, referring to a previous sentence's object but become
 unreadable given the sentence oriented results.
 
-In order to fix the issue of the word ``it'' being used so frequently, a pre-processing substitution phase may be a correct 
+In order to fix the issue of the word ``it'' being used so frequently, a pre-processing substitution phase may be a correct
 choice. Here, a find and replace algorithm might be of some use. Finding the word it and then looking back at the current and
 previous sentences to find the  object being refereed to, and then replacing ``it'' with that word. This paper was not able
 to try such a methodology because of time constraints but this should be labeled as a key area of future work.
@@ -341,7 +340,7 @@ as well as a full catalog of English grammars in order to construct all possible
 This paper represents a good first step in processing unstructured text from a community of contributers in order
 to automatically elicit requirements from the users community.
 
-\bibliographystyle{}
+\bibliographystyle{IEEEtran}
 \bibliography{paper}
 
 
